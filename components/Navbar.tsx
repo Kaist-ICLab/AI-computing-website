@@ -171,7 +171,7 @@ const Navbar: React.FC<NavbarProps> = ({
                         setPage("education-courses");
                       }
                     }}
-                    className={`flex items-center gap-1 font-black text-xs transition-all uppercase tracking-widest relative py-2 ${
+                    className={`flex items-center gap-1 font-black text-sm transition-all uppercase tracking-widest relative py-2 ${
                       !showDarkNavbar
                         ? isActive
                           ? "text-[#004191]"
