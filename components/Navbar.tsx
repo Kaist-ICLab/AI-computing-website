@@ -53,7 +53,20 @@ const Navbar: React.FC<NavbarProps> = ({
         },
       ],
     },
-    { id: "admission", label: t.admission, sub: [] },
+    {
+      id: "admission",
+      label: t.admission,
+      sub: [
+        {
+          label: lang === "ko" ? "학사과정" : "Undergraduate",
+          action: () => setPage("admission-ug"),
+        },
+        {
+          label: lang === "ko" ? "대학원과정" : "Graduate",
+          action: () => setPage("admission-grad"),
+        },
+      ],
+    },
     {
       id: "education-section",
       label: t.education,
@@ -111,16 +124,16 @@ const Navbar: React.FC<NavbarProps> = ({
               />
               <div className="flex flex-col items-start leading-none">
                 <span
-                  className={`font-black text-lg md:text-xl tracking-tighter transition-colors ${logoColor}`}
+                  className={`font-black text-lg md:text-xl tracking-tighter italic transition-colors ${logoColor}`}
                 >
-                  AI Computing
+                  COLLEGE OF AI
                 </span>
                 <span
                   className={`font-extrabold text-[8px] tracking-[0.2em] uppercase transition-colors ${
                     showDarkNavbar ? "text-blue-200" : "text-slate-500"
                   }`}
                 >
-                  COLLEGE OF AI
+                  AI Computing
                 </span>
               </div>
             </div>
@@ -132,7 +145,9 @@ const Navbar: React.FC<NavbarProps> = ({
                 (item.id === "intro-section" && isIntroActive) ||
                 (item.id === "education-section" && isEducationActive) ||
                 (item.id === "people-section" && currentPage === "people") ||
-                (item.id === "admission" && currentPage === "admission");
+                (item.id === "admission" &&
+                  (currentPage === "admission-ug" ||
+                    currentPage === "admission-grad"));
 
               return (
                 <div
@@ -162,7 +177,7 @@ const Navbar: React.FC<NavbarProps> = ({
                             ?.scrollIntoView({ behavior: "smooth" });
                         }
                       } else if (item.id === "admission") {
-                        setPage("admission");
+                        setPage("admission-ug");
                       } else if (item.id === "intro-section") {
                         setPage("welcome-message");
                       } else if (item.id === "people-section") {

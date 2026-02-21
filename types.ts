@@ -1,6 +1,13 @@
-
-export type Language = 'ko' | 'en';
-export type Page = 'home' | 'welcome-message' | 'dept-intro' | 'people' | 'admission' | 'education-courses' | 'education-reqs';
+export type Language = "ko" | "en";
+export type Page =
+  | "home"
+  | "welcome-message"
+  | "dept-intro"
+  | "people"
+  | "admission-ug"
+  | "admission-grad"
+  | "education-courses"
+  | "education-reqs";
 
 export interface ReqSection {
   title: string;
@@ -57,5 +64,5 @@ export interface TranslationContent {
   education: EducationTranslation;
   common: {
     footerNote: string;
-  }
+  };
 }

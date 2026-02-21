@@ -36,8 +36,10 @@ const App: React.FC = () => {
         return <DeptIntroPage t={t.intro} lang={lang} />;
       case "people":
         return <PeoplePage lang={lang} title={t.nav.people} />;
-      case "admission":
-        return <AdmissionPage t={t.admission} lang={lang} />;
+      case "admission-ug":
+        return <AdmissionPage type="ug" t={t.admission} lang={lang} />;
+      case "admission-grad":
+        return <AdmissionPage type="grad" t={t.admission} lang={lang} />;
       case "education-courses":
         return <CourseListPage t={t.education} lang={lang} />;
       case "education-reqs":
