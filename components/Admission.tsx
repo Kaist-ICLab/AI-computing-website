@@ -36,21 +36,21 @@ const Admission: React.FC<AdmissionProps> = ({ type, t, lang }) => {
       desc: t.ugKoreanDesc,
       url: "https://admission.kaist.ac.kr/undergraduate",
       icon: null,
-      full: false,
+      full: true,
     },
     {
       title: t.ugIntl,
       desc: t.ugIntlDesc,
       url: "https://admission.kaist.ac.kr/intl-undergraduate",
       icon: null,
-      full: false,
+      full: true,
     },
   ];
 
   return (
     <section className="py-24 bg-white text-slate-900 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="mb-24 max-w-3xl">
+        <div className="mb-24 max-w-4xl">
           <h2 className="text-3xl sm:text-5xl font-black mb-8 tracking-tighter text-slate-900">
             {type === "ug" ? t.ugTitle : t.gradTitle}
           </h2>
@@ -80,10 +80,10 @@ const Admission: React.FC<AdmissionProps> = ({ type, t, lang }) => {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`group bg-white border border-slate-200 rounded-[2rem] p-8 sm:p-12 transition-all hover:shadow-2xl hover:shadow-slate-200/50 hover:border-blue-200 flex flex-col justify-between ${link.full ? "md:col-span-2 flex-row items-center" : ""}`}
+                className={`group bg-white border border-slate-200 rounded-[2rem] p-8 sm:p-10 transition-all hover:shadow-2xl hover:shadow-slate-200/50 hover:border-blue-200 flex ${idx === 0 ? "md:col-span-2 flex-row items-center justify-between" : "flex-col items-start"}`}
               >
                 <div
-                  className={`flex items-start gap-8 ${link.full ? "items-center" : "flex-col"}`}
+                  className={`flex gap-8 ${idx === 0 ? "items-center" : "flex-col items-start mb-8"}`}
                 >
                   {link.icon && (
                     <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center group-hover:bg-blue-100 transition-colors shrink-0">
@@ -91,17 +91,19 @@ const Admission: React.FC<AdmissionProps> = ({ type, t, lang }) => {
                     </div>
                   )}
                   <div>
-                    <h3 className="text-2xl font-black text-slate-900 mb-3 group-hover:text-[#004191] transition-colors">
+                    <h3
+                      className={`${idx === 0 ? "text-2xl" : "text-xl"} font-black text-slate-900 mb-2 group-hover:text-[#004191] transition-colors`}
+                    >
                       {link.title}
                     </h3>
-                    <p className="text-slate-500 font-medium leading-relaxed">
+                    <p className="text-slate-500 font-medium text-sm leading-relaxed">
                       {link.desc}
                     </p>
                   </div>
                 </div>
 
                 <div
-                  className={`mt-8 flex items-center text-[#004191] font-black text-xs uppercase tracking-widest ${link.full ? "mt-0 shrink-0" : ""}`}
+                  className={`flex items-center text-[#004191] font-black text-[10px] uppercase tracking-widest shrink-0 ${idx === 0 ? "ml-4" : "mt-auto"}`}
                 >
                   {t.readMore}
                   <svg
