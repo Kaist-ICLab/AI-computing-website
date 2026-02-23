@@ -60,6 +60,17 @@ export interface TranslationContent {
     gradDesc: string;
     scheduleTitle: string;
     scheduleItems: { date: string; event: string; method: string }[];
+    eligibilityTitle: string;
+    eligibility: { course: string; criteria: string }[];
+    categoriesTitle: string;
+    categories: { type: string; desc: string }[];
+    admissionHome: string;
+    admissionHomeDesc: string;
+    ugKorean: string;
+    ugKoreanDesc: string;
+    ugIntl: string;
+    ugIntlDesc: string;
+    readMore: string;
   };
   education: EducationTranslation;
   common: {
