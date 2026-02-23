@@ -26,6 +26,7 @@ const Navbar: React.FC<NavbarProps> = ({
   currentPage,
 }) => {
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
+  const [dropdownLeft, setDropdownLeft] = useState<number | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navContainerRef = useRef<HTMLDivElement>(null);
 
@@ -152,11 +153,18 @@ const Navbar: React.FC<NavbarProps> = ({
                 <div
                   key={item.id}
                   className="h-full flex items-center relative"
-                  onMouseEnter={() =>
-                    item.sub.length > 0
-                      ? setActiveMenu(item.id)
-                      : setActiveMenu(null)
-                  }
+                  onMouseEnter={(e) => {
+                    if (item.sub.length > 0 && navContainerRef.current) {
+                      const itemRect = e.currentTarget.getBoundingClientRect();
+                      const containerRect = navContainerRef.current.getBoundingClientRect();
+
+                      setActiveMenu(item.id);
+                      setDropdownLeft(itemRect.left - containerRect.left - 47);
+                    } else {
+                      setActiveMenu(null);
+                      setDropdownLeft(null);
+                    }
+                  }}
                 >
                   <button
                     onClick={() => {
@@ -225,14 +233,16 @@ const Navbar: React.FC<NavbarProps> = ({
         </div>
       </div>
 
-      {/* Desktop Dropdown Panel */}
       <div
         className={`hidden md:block absolute top-20 left-0 w-full bg-white border-b border-gray-200 shadow-xl transition-all duration-300 ease-in-out pb-1
           ${activeMenu ? "opacity-100 visible" : "opacity-0 invisible"}
         `}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex flex-col space-y-1">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div
+            className="flex flex-col space-y-1 py-4 w-fit"
+            style={{ marginLeft: dropdownLeft ?? 0 }}
+          >
             {navItems
               .find((i) => i.id === activeMenu)
               ?.sub.map((sub, idx) => (
