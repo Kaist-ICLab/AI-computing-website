@@ -50,11 +50,11 @@ const Admission: React.FC<AdmissionProps> = ({ type, t, lang }) => {
   return (
     <section className="py-24 bg-white text-slate-900 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="mb-24 max-w-4xl">
+        <div className="mb-24 max-w-3xl">
           <h2 className="text-3xl sm:text-5xl font-black mb-8 tracking-tighter text-slate-900">
             {type === "ug" ? t.ugTitle : t.gradTitle}
           </h2>
-          <p className="text-slate-600 leading-relaxed font-medium text-lg mb-10">
+          <p className="text-slate-600 leading-relaxed font-medium text-lg mb-10 whitespace-pre-line">
             {type === "ug" ? t.ugDesc : t.gradDesc}
           </p>
           {type === "grad" && (
@@ -85,9 +85,13 @@ const Admission: React.FC<AdmissionProps> = ({ type, t, lang }) => {
                 <div
                   className={`flex gap-8 ${idx === 0 ? "items-center" : "flex-col items-start mb-8"}`}
                 >
-                  {link.icon && (
+                  {link.icon ? (
                     <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center group-hover:bg-blue-100 transition-colors shrink-0">
                       {link.icon}
+                    </div>
+                  ) : (
+                    <div className="w-16 h-16 bg-slate-50 rounded-full flex items-center justify-center group-hover:bg-slate-100 transition-colors shrink-0">
+                      <div className="w-2 h-2 bg-slate-300 rounded-full" />
                     </div>
                   )}
                   <div>
@@ -96,7 +100,7 @@ const Admission: React.FC<AdmissionProps> = ({ type, t, lang }) => {
                     >
                       {link.title}
                     </h3>
-                    <p className="text-slate-500 font-medium text-sm leading-relaxed">
+                    <p className="text-slate-500 font-medium text-sm leading-relaxed whitespace-pre-line">
                       {link.desc}
                     </p>
                   </div>
@@ -125,41 +129,134 @@ const Admission: React.FC<AdmissionProps> = ({ type, t, lang }) => {
           </div>
         ) : (
           <div className="space-y-24">
-            {/* Schedule */}
+            {/* Schedule 1 */}
             <div className="bg-slate-50 rounded-[2.5rem] p-8 sm:p-16 border border-slate-100">
               <h3 className="text-2xl font-black text-slate-900 tracking-tight flex items-center gap-4 mb-12">
                 <Calendar className="w-8 h-8 text-[#004191]" />
-                {t.scheduleTitle}
+                {t.gradSchedule1Title}
               </h3>
               <div className="overflow-x-auto">
                 <table className="min-w-full">
                   <thead>
                     <tr className="border-b-2 border-slate-200">
-                      <th className="px-6 py-6 text-left text-[10px] font-black text-slate-400 uppercase tracking-widest">
-                        {lang === "ko" ? "일정" : "Timeline"}
+                      <th className="px-6 py-6 text-left text-[14px] font-black text-slate-900 uppercase tracking-widest">
+                        {lang === "ko" ? "구분" : "Category"}
                       </th>
-                      <th className="px-6 py-6 text-left text-[10px] font-black text-slate-400 uppercase tracking-widest">
-                        {lang === "ko" ? "내용" : "Process"}
+                      <th className="px-6 py-6 text-left text-[14px] font-black text-slate-900 uppercase tracking-widest">
+                        {lang === "ko" ? "지원일정" : "Timeline"}
                       </th>
-                      <th className="px-6 py-6 text-left text-[10px] font-black text-slate-400 uppercase tracking-widest">
-                        {lang === "ko" ? "비고" : "Remarks"}
+                      <th className="px-6 py-6 text-left text-[14px] font-black text-slate-900 uppercase tracking-widest">
+                        {lang === "ko" ? "접수방법" : "Method"}
                       </th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-slate-100">
-                    {t.scheduleItems.map((item: any, idx: number) => (
+                    {t.gradSchedule1Items.map((item: any, idx: number) => (
                       <tr
                         key={idx}
                         className="hover:bg-white transition-colors"
                       >
-                        <td className="px-6 py-8 text-sm font-black text-[#004191] uppercase">
-                          {item.date}
+                        <td className="px-6 py-8 text-sm font-black text-slate-900 uppercase">
+                          {item.category}
                         </td>
-                        <td className="px-6 py-8 text-lg font-bold text-slate-900">
-                          {item.event}
+                        <td className="px-6 py-8 text-lg font-bold text-[#004191] whitespace-pre-line">
+                          {item.timeline}
                         </td>
-                        <td className="px-6 py-8 text-sm text-slate-500 font-semibold">
+                        <td className="px-6 py-8 text-sm text-slate-500 font-semibold whitespace-pre-line">
                           {item.method}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Schedule 2 */}
+            <div className="bg-slate-50 rounded-[2.5rem] p-8 sm:p-16 border border-slate-100">
+              <h3 className="text-2xl font-black text-slate-900 tracking-tight flex items-center gap-4 mb-12 whitespace-pre-line">
+                <Calendar className="w-8 h-8 text-[#004191]" />
+                {t.gradSchedule2Title}
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="min-w-full">
+                  <thead>
+                    <tr className="border-b-2 border-slate-200">
+                      <th className="px-6 py-6 text-left text-[14px] font-black text-slate-900 uppercase tracking-widest">
+                        {lang === "ko" ? "구분" : "Category"}
+                      </th>
+                      <th className="px-6 py-6 text-left text-[14px] font-black text-slate-900 uppercase tracking-widest">
+                        {lang === "ko" ? "지원일정" : "Timeline"}
+                      </th>
+                      <th className="px-6 py-6 text-left text-[14px] font-black text-slate-900 uppercase tracking-widest">
+                        {lang === "ko" ? "접수방법" : "Method"}
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-100">
+                    {t.gradSchedule2Items.map((item: any, idx: number) => (
+                      <tr
+                        key={idx}
+                        className="hover:bg-white transition-colors"
+                      >
+                        <td className="px-6 py-8 text-sm font-black text-slate-900 uppercase">
+                          {item.category}
+                        </td>
+                        <td className="px-6 py-8 text-lg font-bold text-[#004191] whitespace-pre-line">
+                          {item.timeline}
+                        </td>
+                        <td className="px-6 py-8 text-sm text-slate-500 font-semibold whitespace-pre-line">
+                          {item.method}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Advisor Info */}
+            <div className="bg-white rounded-[2.5rem] p-8 sm:p-16 border border-slate-100 shadow-sm">
+              <h3 className="text-2xl font-black text-slate-900 tracking-tight mb-12">
+                {t.advisorTitle}
+              </h3>
+              <div className="space-y-6 mb-16">
+                {t.advisorContent.map((item: string, idx: number) => (
+                  <div key={idx} className="flex items-start gap-4">
+                    <div className="w-1.5 h-1.5 bg-[#004191] rounded-full mt-2.5 shrink-0" />
+                    <p className="text-slate-600 font-medium leading-relaxed whitespace-pre-line">
+                      {item}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
+              <h4 className="text-xl font-black text-slate-900 mb-8">
+                {t.advisorTimingTitle}
+              </h4>
+              <div className="overflow-x-auto">
+                <table className="min-w-full">
+                  <thead>
+                    <tr className="border-b-2 border-slate-200">
+                      <th className="px-6 py-6 text-left text-[14px] font-black text-slate-900 uppercase tracking-widest w-1/3">
+                        {lang === "ko" ? "과정" : "Course"}
+                      </th>
+                      <th className="px-6 py-6 text-left text-[14px] font-black text-slate-900 uppercase tracking-widest">
+                        {lang === "ko" ? "신청 시기" : "Timing"}
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-100">
+                    {t.advisorTimingItems.map((item: any, idx: number) => (
+                      <tr
+                        key={idx}
+                        className="hover:bg-slate-50 transition-colors"
+                      >
+                        <td className="px-6 py-8 text-sm font-black text-slate-900">
+                          {item.course}
+                        </td>
+                        <td className="px-6 py-8 text-sm text-slate-600 font-medium leading-relaxed whitespace-pre-line">
+                          {item.timing}
                         </td>
                       </tr>
                     ))}
@@ -177,10 +274,10 @@ const Admission: React.FC<AdmissionProps> = ({ type, t, lang }) => {
                 <table className="min-w-full">
                   <thead>
                     <tr className="border-b-2 border-slate-200">
-                      <th className="px-6 py-6 text-left text-[10px] font-black text-slate-400 uppercase tracking-widest w-1/3">
+                      <th className="px-6 py-6 text-left text-[14px] font-black text-slate-900 uppercase tracking-widest w-1/3">
                         {lang === "ko" ? "과정" : "Course"}
                       </th>
-                      <th className="px-6 py-6 text-left text-[10px] font-black text-slate-400 uppercase tracking-widest">
+                      <th className="px-6 py-6 text-left text-[14px] font-black text-slate-900 uppercase tracking-widest">
                         {lang === "ko" ? "지원 자격" : "Criteria"}
                       </th>
                     </tr>
@@ -218,7 +315,7 @@ const Admission: React.FC<AdmissionProps> = ({ type, t, lang }) => {
                     <h4 className="text-blue-400 font-black text-xs uppercase tracking-widest mb-4">
                       {item.type}
                     </h4>
-                    <p className="text-white/70 text-sm font-medium leading-relaxed">
+                    <p className="text-white/70 text-sm font-medium leading-relaxed whitespace-pre-line">
                       {item.desc}
                     </p>
                   </div>

@@ -56,36 +56,92 @@ export const translations: Record<"ko" | "en", TranslationContent> = {
       title: "입학 안내",
       ugTitle: "학사과정 입학 안내",
       ugDesc:
-        "KAIST 학부생은 전공선택 없이 무학과로 입학을 하고 있습니다. 무학과 입학 후 2학기 때 AI컴퓨팅을 포함한 전공을 선택하고 있습니다. 이에 대한 자세한 설명은 KAIST 입학처 홈페이지에서 제공하고 있습니다.",
+        "KAIST 학부생은 전공선택 없이 무학과로 입학을 하고 있습니다. \n무학과 입학 후 2학기 때 AI컴퓨팅을 포함한 전공을 선택하고 있습니다. \n이에 대한 자세한 설명은 KAIST 입학처 홈페이지에서 제공하고 있습니다.",
       gradTitle: "대학원과정 입학 안내",
       gradDesc:
-        "석사과정, 박사과정, (KAIST석사재학생) 석박사 통합과정, (KAIST학사재학생) 학·석박통합연계과정 신입생을 모집합니다.",
-      scheduleTitle: "2026학년도 가을학기 신입생 입학전형 일정",
-      scheduleItems: [
+        "석사과정, 박사과정, (KAIST석사재학생) 석박사 통합과정, \n(KAIST학사재학생) 학·석박통합연계과정 신입생을 모집합니다.",
+      gradSchedule1Title: "2026학년도 가을학기 입학 신입생 입학전형 일정표",
+      gradSchedule1Items: [
         {
-          date: "2026. 03. 27 ~ 04. 07",
-          event: "원서접수",
-          method: "KAIST 입시시스템 (온라인)",
+          category: "원서접수(서류제출 포함)",
+          timeline: "2026. 03. 27(금) 10:00 \n~ 04. 07(화) 17:30",
+          method:
+            "KAIST 입시시스템 (https://gradapply.kaist.ac.kr)에서 지원서 작성 및 전형료 결제",
         },
         {
-          date: "2026. 05. 14",
-          event: "1단계 합격자 발표",
-          method: "입시시스템 공지",
+          category: "1단계 합격자 발표",
+          timeline: "2026. 05. 14(목) 14:00 이후",
+          method: "KAIST 입시시스템 (https://gradapply.kaist.ac.kr 합격자발표)",
+        },
+        // {
+        //   category: "프로그래밍 시험(석사과정)",
+        //   timeline: "2026. 05. 16(토) 14:00",
+        //   method: "전산학부의 프로그래밍 시험과 동일함",
+        // },
+        {
+          category: "2단계 전형(면접)",
+          timeline: "2026. 05. 16(토) ~ 05. 26(화)",
+          method:
+            "개인별 2단계 전형 일정 및 장소 확인(입시시스템을 통하여 공지)",
         },
         {
-          date: "2026. 05. 16",
-          event: "프로그래밍 시험 (석사)",
-          method: "전산학부 공동 실시",
+          category: "최종합격자 발표",
+          timeline: "2026. 06. 25(목) 14:00 이후",
+          method:
+            "KAIST 입시시스템 (https://gradapply.kaist.ac.kr 합격자 발표)",
+        },
+      ],
+      gradSchedule2Title:
+        "2026학년도 가을학기 입학 (KAIST 학사 재학생 대상)학·석박통합연계과정 \n및 (KAIST 석사과정 재학생 대상) 석사·박사학위통합과정 입학전형 일정표",
+      gradSchedule2Items: [
+        {
+          category: "원서접수(서류제출 포함)",
+          timeline: "2026. 04. 08(수) 10:00 \n~ 04. 14(화) 17:30",
+          method:
+            "KAIST 입시시스템 (https://gradapply.kaist.ac.kr)에서 지원서 작성 및 전형료 결제",
         },
         {
-          date: "2026. 05. 16 ~ 05. 26",
-          event: "2단계 전형 (면접)",
-          method: "개별 안내",
+          category: "1단계 합격자 발표",
+          timeline: "2026. 05. 14(목) 14:00 이후",
+          method:
+            "KAIST 입시시스템 (https://gradapply.kaist.ac.kr 합격자발표)\n개인별 2단계 전형 일정 및 장소 확인(입시시스템을 통하여 공지)",
         },
         {
-          date: "2026. 06. 25",
-          event: "최종합격자 발표",
-          method: "입시시스템 공지",
+          category: "2단계 전형(면접)",
+          timeline: "2026. 05. 16(토) ~ 05. 26(화)",
+          method: "-",
+        },
+        {
+          category: "최종합격자 발표",
+          timeline: "2026. 06. 25(목) 14:00 이후",
+          method:
+            "KAIST 입시시스템 (https://gradapply.kaist.ac.kr 합격자 발표)",
+        },
+      ],
+      advisorTitle: "지도 교수 신청 관련 사항",
+      advisorContent: [
+        "국비로 입학한 학생은 AI컴퓨팅학과 모든 교수를 지도교수로 신청할 수 있습니다. 신청한 지도교수가 국비TO가 있고 학생지도를 희망할 경우 매칭이 됩니다.",
+        "교수의 연구비에서 지원받는 KAIST 장학생으로 입학한 학생은 연구비 지원 교수만이 지도교수가 될 수 있습니다.",
+        "KAIST프로그램 장학생은 KAIST프로그램 참여 교수만을 지도교수로 신청할 수 있습니다.",
+        "일반 장학생은 AI컴퓨팅학과 모든 교수를 지도교수로 신청할 수 있습니다.",
+      ],
+      advisorTimingTitle: "지도교수 신청 시기",
+      advisorTimingItems: [
+        { course: "석사과정", timing: "최종 합격자 발표 및 석사 OT 이후 매칭" },
+        {
+          course: "박사과정",
+          timing:
+            "원서접수 전 매칭 \n(원서접수 전 지도예정교수 컨택하여 사전 협의 후 지원, 온라인 원서접수 시 지도예정교수 1명 입력 필수)",
+        },
+        {
+          course: "재학생 석박사통합과정",
+          timing:
+            "원서접수 전 매칭 \n(원서접수 전 지도예정교수 컨택하여 사전 협의 후 지원, 온라인 원서접수 시 지도예정교수 1명 입력 필수)",
+        },
+        {
+          course: "학·석박통합연계과정",
+          timing:
+            "원서접수 전 매칭 (원서접수 전 지도예정교수와 사전협의 후 지원)",
         },
       ],
       eligibilityTitle: "지원 자격",
@@ -265,7 +321,7 @@ export const translations: Record<"ko" | "en", TranslationContent> = {
   en: {
     nav: {
       home: "Home",
-      intro: "Introduction",
+      intro: "Intro",
       people: "People",
       admission: "Admission",
       education: "Education",
@@ -322,32 +378,88 @@ export const translations: Record<"ko" | "en", TranslationContent> = {
       gradTitle: "Graduate Admission",
       gradDesc:
         "Recruiting for Master's, Ph.D., M.S.-Ph.D. Integrated, and B.S.-M.S.-Ph.D. Integrated programs.",
-      scheduleTitle: "2026 Fall Semester Admission Timeline",
-      scheduleItems: [
+      gradSchedule1Title:
+        "2026 Fall Semester Admission Timeline for New Students",
+      gradSchedule1Items: [
         {
-          date: "2026. 03. 27 ~ 04. 07",
-          event: "Online Application",
-          method: "KAIST Admissions System",
+          category: "Application (incl. documents)",
+          timeline: "2026. 03. 27(Fri) 10:00 ~ 04. 07(Tue) 17:30",
+          method:
+            "Online application at KAIST Admissions System (https://gradapply.kaist.ac.kr)",
         },
         {
-          date: "2026. 05. 14",
-          event: "1st Stage Results",
-          method: "Portal Notice",
+          category: "1st Stage Results",
+          timeline: "2026. 05. 14(Thu) 14:00+",
+          method: "Portal Notice (https://gradapply.kaist.ac.kr)",
         },
         {
-          date: "2026. 05. 16",
-          event: "Programming Exam (M.S.)",
-          method: "Jointly held with CS Dept",
+          category: "Programming Exam (M.S.)",
+          timeline: "2026. 05. 16(Sat) 14:00",
+          method: "Jointly held with School of Computing",
         },
         {
-          date: "2026. 05. 16 ~ 05. 26",
-          event: "2nd Stage (Interview)",
-          method: "Individual Schedule",
+          category: "2nd Stage (Interview)",
+          timeline: "2026. 05. 16(Sat) ~ 05. 26(Tue)",
+          method: "Check individual schedule on the admissions system",
         },
         {
-          date: "2026. 06. 25",
-          event: "Final Admission Result",
-          method: "Portal Notice",
+          category: "Final Results",
+          timeline: "2026. 06. 25(Thu) 14:00+",
+          method: "Portal Notice (https://gradapply.kaist.ac.kr)",
+        },
+      ],
+      gradSchedule2Title:
+        "2026 Fall Semester Admission Timeline for KAIST Students (Integrated Programs)",
+      gradSchedule2Items: [
+        {
+          category: "Application (incl. documents)",
+          timeline: "2026. 04. 08(Wed) 10:00 ~ 04. 14(Tue) 17:30",
+          method:
+            "Online application at KAIST Admissions System (https://gradapply.kaist.ac.kr)",
+        },
+        {
+          category: "1st Stage Results",
+          timeline: "2026. 05. 14(Thu) 14:00+",
+          method: "Portal Notice (https://gradapply.kaist.ac.kr)",
+        },
+        {
+          category: "2nd Stage (Interview)",
+          timeline: "2026. 05. 16(Sat) ~ 05. 26(Tue)",
+          method: "-",
+        },
+        {
+          category: "Final Results",
+          timeline: "2026. 06. 25(Thu) 14:00+",
+          method: "Portal Notice (https://gradapply.kaist.ac.kr)",
+        },
+      ],
+      advisorTitle: "Advisor Application Information",
+      advisorContent: [
+        "Government-funded students can apply to any professor in the Department of AI Computing. Matching occurs if the professor has a quota and wishes to advise the student.",
+        "KAIST-funded students can only be advised by the professor providing the research funds.",
+        "KAIST Program students can only be advised by professors participating in the specific program.",
+        "General students can apply to any professor in the Department of AI Computing.",
+      ],
+      advisorTimingTitle: "Advisor Application Timing",
+      advisorTimingItems: [
+        {
+          course: "Master's",
+          timing: "Matched after final results and Master's Orientation",
+        },
+        {
+          course: "Ph.D.",
+          timing:
+            "Pre-matched before application (Contact prospective advisor for agreement, must enter 1 prospective advisor during online application)",
+        },
+        {
+          course: "Integrated (Current Students)",
+          timing:
+            "Pre-matched before application (Contact prospective advisor for agreement, must enter 1 prospective advisor during online application)",
+        },
+        {
+          course: "B.S.-M.S.-Ph.D. Integrated",
+          timing:
+            "Pre-matched before application (Contact prospective advisor for agreement)",
         },
       ],
       eligibilityTitle: "Eligibility",
