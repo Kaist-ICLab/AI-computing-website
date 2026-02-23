@@ -1,16 +1,16 @@
+import React, { useContext } from 'react';
+import { LanguageContext } from '../App';
 
-import React from 'react';
-import { Language } from '../types';
-
-const Announcements: React.FC<{ lang: Language, title: string }> = ({ lang, title }) => {
+const Announcements: React.FC<{ title: string }> = ({ title }) => {
+  const { lang } = useContext(LanguageContext);
   const dummyNews = [
-    { 
-      date: '2024.05.20', 
+    {
+      date: '2024.05.20',
       title: lang === 'ko' ? 'AI 컴퓨팅학과 공식 홈페이지 개발 소식' : 'Development of AI Computing Dept Website',
       category: lang === 'ko' ? '공지' : 'Notice'
     },
-    { 
-      date: '2024.05.15', 
+    {
+      date: '2024.05.15',
       title: lang === 'ko' ? '2026학년도 가을학기 입시설명회 안내' : '2026 Fall Admission Information Session',
       category: lang === 'ko' ? '학사' : 'Academic'
     }
@@ -22,7 +22,7 @@ const Announcements: React.FC<{ lang: Language, title: string }> = ({ lang, titl
         <div className="flex justify-between items-center mb-20">
           <h2 className="text-4xl sm:text-5xl font-black text-slate-900 tracking-tighter uppercase">{title}</h2>
           <button className="text-[10px] font-black text-[#004191] uppercase tracking-[0.3em] border-b-2 border-[#004191] pb-1 hover:text-sky-600 hover:border-sky-600 transition-all">
-            {lang === 'ko' ? '전체보기' : 'View All Posts'} 
+            {lang === 'ko' ? '전체보기' : 'View All Posts'}
           </button>
         </div>
 

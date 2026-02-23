@@ -1,8 +1,10 @@
 
-import React, { useState } from 'react';
-import { Language, ReqSection, TranslationContent } from '../types';
+import React, { useState, useContext } from 'react';
+import { ReqSection } from '../types';
+import { LanguageContext } from '../App';
 
-const RequirementsPage: React.FC<{ t: TranslationContent, lang: Language }> = ({ t, lang }) => {
+const RequirementsPage: React.FC = () => {
+  const { lang, t } = useContext(LanguageContext);
   const [reqType, setReqType] = useState<'ug' | 'grad'>('ug');
   const education = t.education;
 
@@ -10,7 +12,7 @@ const RequirementsPage: React.FC<{ t: TranslationContent, lang: Language }> = ({
     <div className="bg-white rounded-[2.5rem] shadow-sm border border-slate-100 p-8 sm:p-16 mb-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <h2 className="text-3xl font-black text-slate-900 mb-2 tracking-tight">{title}</h2>
       {subtitle && <p className="text-slate-400 font-bold text-sm mb-12 uppercase tracking-widest">{subtitle}</p>}
-      
+
       <div className="space-y-12">
         {sections.map((section, idx) => (
           <section key={idx} className="relative">
@@ -59,19 +61,17 @@ const RequirementsPage: React.FC<{ t: TranslationContent, lang: Language }> = ({
         {/* Level Toggle */}
         <div className="flex justify-center mb-16">
           <div className="bg-slate-200/50 p-1.5 rounded-3xl flex shadow-inner">
-            <button 
+            <button
               onClick={() => setReqType('ug')}
-              className={`px-12 py-4 rounded-2xl text-xs font-black uppercase tracking-widest transition-all ${
-                reqType === 'ug' ? 'bg-white text-blue-900 shadow-md scale-105' : 'text-slate-500 hover:text-slate-800'
-              }`}
+              className={`px-12 py-4 rounded-2xl text-xs font-black uppercase tracking-widest transition-all ${reqType === 'ug' ? 'bg-white text-blue-900 shadow-md scale-105' : 'text-slate-500 hover:text-slate-800'
+                }`}
             >
               {lang === 'ko' ? '학사 과정' : 'Undergraduate'}
             </button>
-            <button 
+            <button
               onClick={() => setReqType('grad')}
-              className={`px-12 py-4 rounded-2xl text-xs font-black uppercase tracking-widest transition-all ${
-                reqType === 'grad' ? 'bg-white text-blue-900 shadow-md scale-105' : 'text-slate-500 hover:text-slate-800'
-              }`}
+              className={`px-12 py-4 rounded-2xl text-xs font-black uppercase tracking-widest transition-all ${reqType === 'grad' ? 'bg-white text-blue-900 shadow-md scale-105' : 'text-slate-500 hover:text-slate-800'
+                }`}
             >
               {lang === 'ko' ? '대학원 과정' : 'Graduate'}
             </button>
@@ -81,25 +81,25 @@ const RequirementsPage: React.FC<{ t: TranslationContent, lang: Language }> = ({
         {/* Content */}
         <div className="space-y-16">
           {reqType === 'ug' ? (
-            <ReqCard 
-              title={lang === 'ko' ? 'AI 컴퓨팅학과 - 학사과정' : 'AI Computing - Undergraduate'} 
+            <ReqCard
+              title={lang === 'ko' ? 'AI 컴퓨팅학과 - 학사과정' : 'AI Computing - Undergraduate'}
               subtitle="Major Course Requirements for Admitted in 2025 and after"
               sections={education.ug.sections}
             />
           ) : (
             <>
-              <ReqCard 
-                title={lang === 'ko' ? 'AI 컴퓨팅학과 - 석사과정' : "AI Computing - Master's"} 
+              <ReqCard
+                title={lang === 'ko' ? 'AI 컴퓨팅학과 - 석사과정' : "AI Computing - Master's"}
                 subtitle="Completion Requirements for Admitted in 2026 and after"
                 sections={education.grad.master}
               />
-              <ReqCard 
-                title={lang === 'ko' ? 'AI 컴퓨팅학과 - 박사과정' : 'AI Computing - Doctoral'} 
+              <ReqCard
+                title={lang === 'ko' ? 'AI 컴퓨팅학과 - 박사과정' : 'AI Computing - Doctoral'}
                 subtitle="Completion Requirements for Admitted in 2026 and after"
                 sections={education.grad.phd}
               />
-              <ReqCard 
-                title={lang === 'ko' ? 'AI 컴퓨팅학과 - 석박사통합' : 'AI Computing - MS-PhD Integrated'} 
+              <ReqCard
+                title={lang === 'ko' ? 'AI 컴퓨팅학과 - 석박사통합' : 'AI Computing - MS-PhD Integrated'}
                 subtitle="Completion Requirements for Admitted in 2026 and after"
                 sections={education.grad.integrated}
               />

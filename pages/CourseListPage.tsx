@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { LanguageContext } from "../App";
 import { Language } from "../types";
 
 const courses = [
@@ -103,7 +104,9 @@ const courses = [
   },
 ];
 
-const CourseListPage: React.FC<{ t: any; lang: Language }> = ({ t, lang }) => {
+const CourseListPage: React.FC = () => {
+  const { lang, t } = useContext(LanguageContext);
+  const education = t.education;
   const ugCourses = courses.filter((c) => c.level !== "5000-level+");
   const gradCourses = courses.filter((c) => c.level === "5000-level+");
 
@@ -167,7 +170,7 @@ const CourseListPage: React.FC<{ t: any; lang: Language }> = ({ t, lang }) => {
     <div className="pt-24 pb-20">
       <div className="bg-slate-50 border-b border-slate-100 py-20 text-center mb-16">
         <h1 className="text-4xl sm:text-5xl font-black text-slate-900 tracking-tighter uppercase mb-4">
-          {t.courseTitle}
+          {education.courseTitle}
         </h1>
         <p className="text-slate-500 font-bold uppercase tracking-[0.3em] text-xs">
           Advanced Curriculum for AI-Native Leaders

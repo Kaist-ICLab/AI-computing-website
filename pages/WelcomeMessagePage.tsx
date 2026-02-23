@@ -1,11 +1,9 @@
-import React from "react";
-import { Language } from "../types";
+import React, { useContext } from "react";
+import { LanguageContext } from "../App";
 import { Quote } from "lucide-react";
 
-const WelcomeMessagePage: React.FC<{ t: any; lang: Language }> = ({
-  t,
-  lang,
-}) => {
+const WelcomeMessagePage: React.FC = () => {
+  const { lang, t } = useContext(LanguageContext);
   return (
     <div className="pt-24 min-h-screen bg-white">
       <div className="bg-slate-50 border-b border-slate-100 py-16 text-center">
@@ -28,7 +26,7 @@ const WelcomeMessagePage: React.FC<{ t: any; lang: Language }> = ({
               {t.welcomeTitle}
             </h2> */}
             <div className="text-lg text-slate-700 leading-[1.8] font-medium whitespace-pre-line space-y-6">
-              {t.welcomeContent}
+              {t.intro.welcomeContent}
             </div>
           </div>
           <div className="mt-16 pt-10 border-t border-slate-100 text-right">

@@ -1,104 +1,102 @@
-import React, { useState, useRef } from "react";
-import { Language, Page } from "../types";
+import React, { useState, useRef, useContext } from "react";
+import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { Globe, Menu, X } from "lucide-react";
+import { LanguageContext } from "../App";
 
 interface NavbarProps {
-  lang: Language;
-  setLang: (lang: Language) => void;
-  t: any;
   isScrolled: boolean;
-  setPage: (page: Page) => void;
-  currentPage: Page;
 }
 
 interface NavItem {
   id: string;
   label: string;
-  sub: { label: string; action: () => void }[];
+  path: string;
+  sub: { label: string; path: string }[];
 }
 
-const Navbar: React.FC<NavbarProps> = ({
-  lang,
-  setLang,
-  t,
-  isScrolled,
-  setPage,
-  currentPage,
-}) => {
+const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
+  const { lang, setLang, t } = useContext(LanguageContext);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [dropdownLeft, setDropdownLeft] = useState<number | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navContainerRef = useRef<HTMLDivElement>(null);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const navItems: NavItem[] = [
     {
       id: "intro-section",
-      label: t.intro,
+      label: t.nav.intro,
+      path: "/welcome-message",
       sub: [
         {
           label: lang === "ko" ? "학과장 인사말" : "Welcome Message",
-          action: () => setPage("welcome-message"),
+          path: "/welcome-message",
         },
         {
           label: lang === "ko" ? "학과 소개" : "AI Computing Dept Introduction",
-          action: () => setPage("dept-intro"),
+          path: "/dept-intro",
         },
       ],
     },
     {
       id: "people-section",
-      label: t.people,
+      label: t.nav.people,
+      path: "/people",
       sub: [
         {
           label: lang === "ko" ? "교수진" : "Faculty",
-          action: () => setPage("people"),
+          path: "/people",
         },
       ],
     },
     {
       id: "admission",
-      label: t.admission,
+      label: t.nav.admission,
+      path: "/admission-ug",
       sub: [
         {
           label: lang === "ko" ? "학사과정" : "Undergraduate",
-          action: () => setPage("admission-ug"),
+          path: "/admission-ug",
         },
         {
           label: lang === "ko" ? "대학원과정" : "Graduate",
-          action: () => setPage("admission-grad"),
+          path: "/admission-grad",
         },
       ],
     },
     {
       id: "education-section",
-      label: t.education,
+      label: t.nav.education,
+      path: "/education-courses",
       sub: [
         {
           label: lang === "ko" ? "교과목 안내" : "Course Guide",
-          action: () => setPage("education-courses"),
+          path: "/education-courses",
         },
         {
           label: lang === "ko" ? "이수요건" : "Requirements",
-          action: () => setPage("education-reqs"),
+          path: "/education-reqs",
         },
       ],
     },
-    { id: "announcements", label: lang === "ko" ? "공지" : "Notice", sub: [] },
+    { id: "announcements", label: lang === "ko" ? "공지" : "Notice", path: "/", sub: [] },
   ];
 
-  const isHome = currentPage === "home";
+  const isHome = location.pathname === "/";
   const showDarkNavbar = isHome && !isScrolled;
 
   const logoColor = !showDarkNavbar ? "text-[#002380]" : "text-white";
-
   const logoFilter = !showDarkNavbar
     ? "brightness-0 [filter:sepia(100%)_hue-rotate(190deg)_saturate(500%)]"
     : "brightness-0 invert";
 
   const isEducationActive =
-    currentPage === "education-courses" || currentPage === "education-reqs";
+    location.pathname === "/education-courses" || location.pathname === "/education-reqs";
   const isIntroActive =
-    currentPage === "welcome-message" || currentPage === "dept-intro";
+    location.pathname === "/welcome-message" || location.pathname === "/dept-intro";
+  const isAdmissionActive =
+    location.pathname === "/admission-ug" || location.pathname === "/admission-grad";
 
   return (
     <nav
@@ -114,9 +112,9 @@ const Navbar: React.FC<NavbarProps> = ({
       >
         <div className="flex justify-between items-center h-20">
           <div className="flex items-center gap-4">
-            <div
+            <Link
+              to="/"
               className="flex items-center gap-4 group cursor-pointer"
-              onClick={() => setPage("home")}
             >
               <img
                 src="https://images.seeklogo.com/logo-png/40/2/kaist-korea-advanced-institute-of-science-and-tech-logo-png_seeklogo-402926.png"
@@ -136,18 +134,17 @@ const Navbar: React.FC<NavbarProps> = ({
                   AI 컴퓨팅학과
                 </span>
               </div>
-            </div>
+            </Link>
           </div>
 
           <div className="hidden md:flex items-center space-x-12 h-full">
             {navItems.map((item) => {
-              const isActive =
+              const active =
                 (item.id === "intro-section" && isIntroActive) ||
                 (item.id === "education-section" && isEducationActive) ||
-                (item.id === "people-section" && currentPage === "people") ||
-                (item.id === "admission" &&
-                  (currentPage === "admission-ug" ||
-                    currentPage === "admission-grad"));
+                (item.id === "people-section" && location.pathname === "/people") ||
+                (item.id === "admission" && isAdmissionActive) ||
+                (item.id === "announcements" && location.pathname === "/" && location.hash === "#announcements-summary");
 
               return (
                 <div
@@ -157,7 +154,6 @@ const Navbar: React.FC<NavbarProps> = ({
                     if (item.sub.length > 0 && navContainerRef.current) {
                       const itemRect = e.currentTarget.getBoundingClientRect();
                       const containerRect = navContainerRef.current.getBoundingClientRect();
-
                       setActiveMenu(item.id);
                       setDropdownLeft(itemRect.left - containerRect.left - 47);
                     } else {
@@ -166,46 +162,40 @@ const Navbar: React.FC<NavbarProps> = ({
                     }
                   }}
                 >
-                  <button
-                    onClick={() => {
-                      if (item.id === "announcements") {
-                        if (currentPage !== "home") {
-                          setPage("home");
-                          setTimeout(
-                            () =>
-                              document
-                                .getElementById("announcements-summary")
-                                ?.scrollIntoView({ behavior: "smooth" }),
-                            300,
-                          );
+                  {item.id === "announcements" ? (
+                    <button
+                      onClick={() => {
+                        if (location.pathname !== "/") {
+                          navigate("/");
+                          setTimeout(() => {
+                            document.getElementById("announcements-summary")?.scrollIntoView({ behavior: "smooth" });
+                          }, 300);
                         } else {
-                          document
-                            .getElementById("announcements-summary")
-                            ?.scrollIntoView({ behavior: "smooth" });
+                          document.getElementById("announcements-summary")?.scrollIntoView({ behavior: "smooth" });
                         }
-                      } else if (item.id === "admission") {
-                        setPage("admission-ug");
-                      } else if (item.id === "intro-section") {
-                        setPage("welcome-message");
-                      } else if (item.id === "people-section") {
-                        setPage("people");
-                      } else if (item.id === "education-section") {
-                        setPage("education-courses");
+                      }}
+                      className={`flex items-center gap-1 text-base font-bold transition-all relative py-2 ${!showDarkNavbar
+                        ? active ? "text-[#002380]" : "text-slate-700 hover:text-[#002380]"
+                        : "text-white/80 hover:text-white"
+                        }`}
+                    >
+                      {item.label}
+                      <span className={`absolute bottom-0 left-0 h-0.5 transition-all ${!showDarkNavbar ? "bg-[#002380]" : "bg-white"} ${active ? "w-full" : "w-0"}`}></span>
+                    </button>
+                  ) : (
+                    <NavLink
+                      to={item.path}
+                      className={({ isActive }) =>
+                        `flex items-center gap-1 text-base font-bold transition-all relative py-2 ${!showDarkNavbar
+                          ? active || isActive ? "text-[#002380]" : "text-slate-700 hover:text-[#002380]"
+                          : "text-white/80 hover:text-white"
+                        }`
                       }
-                    }}
-                    className={`flex items-center gap-1 text-base font-bold transition-all relative py-2 ${!showDarkNavbar
-                      ? isActive
-                        ? "text-[#002380]"
-                        : "text-slate-700 hover:text-[#002380]"
-                      : "text-white/80 hover:text-white"
-                      }`}
-                  >
-                    {item.label}
-                    <span
-                      className={`absolute bottom-0 left-0 h-0.5 transition-all group-hover:w-full ${!showDarkNavbar ? "bg-[#002380]" : "bg-white"
-                        } ${isActive ? "w-full" : "w-0"}`}
-                    ></span>
-                  </button>
+                    >
+                      {item.label}
+                      <span className={`absolute bottom-0 left-0 h-0.5 transition-all ${!showDarkNavbar ? "bg-[#002380]" : "bg-white"} ${active ? "w-full" : "w-0"}`}></span>
+                    </NavLink>
+                  )}
                 </div>
               );
             })}
@@ -252,19 +242,17 @@ const Navbar: React.FC<NavbarProps> = ({
             {navItems
               .find((i) => i.id === activeMenu)
               ?.sub.map((sub, idx) => (
-                <button
+                <Link
                   key={idx}
-                  onClick={() => {
-                    sub.action();
-                    setActiveMenu(null);
-                  }}
+                  to={sub.path}
+                  onClick={() => setActiveMenu(null)}
                   className="group flex items-center space-x-4 text-left w-fit p-2 rounded-xl hover:bg-slate-50 transition-all"
                 >
                   <span className="w-1.5 h-1.5 bg-slate-300 group-hover:bg-[#002380] rounded-full transition-colors" />
                   <span className="text-sm font-medium text-slate-600 group-hover:text-[#002380] transition-colors">
                     {sub.label}
                   </span>
-                </button>
+                </Link>
               ))}
           </div>
         </div>
@@ -279,53 +267,43 @@ const Navbar: React.FC<NavbarProps> = ({
         <div className="px-6 py-4 mb-6 space-y-4">
           {navItems.map((item) => (
             <div key={item.id} className="space-y-2">
-              <button
-                className={`block text-lg font-bold text-left w-full ${(item.id === "intro-section" && isIntroActive) ||
-                  (item.id === "education-section" && isEducationActive) ||
-                  (item.id === "people-section" && currentPage === "people") ||
-                  (item.id === "admission" &&
-                    (currentPage === "admission-ug" ||
-                      currentPage === "admission-grad"))
-                  ? "text-[#002380]"
-                  : "text-gray-700"
-                  }`}
-                onClick={() => {
-                  if (item.sub.length === 0) {
-                    if (item.id === "announcements") {
-                      if (currentPage !== "home") {
-                        setPage("home");
-                        setTimeout(() => document.getElementById("announcements-summary")?.scrollIntoView({ behavior: "smooth" }), 300);
-                      } else {
-                        document.getElementById("announcements-summary")?.scrollIntoView({ behavior: "smooth" });
-                      }
-                    } else if (item.id === "admission") {
-                      setPage("admission-ug");
-                    } else if (item.id === "intro-section") {
-                      setPage("welcome-message");
-                    } else if (item.id === "people-section") {
-                      setPage("people");
-                    } else if (item.id === "education-section") {
-                      setPage("education-courses");
+              {item.id === "announcements" ? (
+                <button
+                  className="block text-lg font-bold text-left w-full text-gray-700"
+                  onClick={() => {
+                    if (location.pathname !== "/") {
+                      navigate("/");
+                      setTimeout(() => document.getElementById("announcements-summary")?.scrollIntoView({ behavior: "smooth" }), 300);
+                    } else {
+                      document.getElementById("announcements-summary")?.scrollIntoView({ behavior: "smooth" });
                     }
                     setMobileMenuOpen(false);
+                  }}
+                >
+                  {item.label}
+                </button>
+              ) : (
+                <NavLink
+                  to={item.path}
+                  className={({ isActive }) =>
+                    `block text-lg font-bold text-left w-full ${isActive ? "text-[#002380]" : "text-gray-700"}`
                   }
-                }}
-              >
-                {item.label}
-              </button>
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {item.label}
+                </NavLink>
+              )}
               {item.sub.length > 0 && (
                 <div className="pl-4 space-y-2">
                   {item.sub.map((sub, idx) => (
-                    <button
+                    <Link
                       key={idx}
-                      onClick={() => {
-                        sub.action();
-                        setMobileMenuOpen(false);
-                      }}
+                      to={sub.path}
+                      onClick={() => setMobileMenuOpen(false)}
                       className="block text-gray-600 hover:text-[#002380] transition-colors text-left w-full"
                     >
                       {sub.label}
-                    </button>
+                    </Link>
                   ))}
                 </div>
               )}
