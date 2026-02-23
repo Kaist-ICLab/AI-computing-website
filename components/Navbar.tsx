@@ -214,12 +214,18 @@ const Navbar: React.FC<NavbarProps> = ({
           <div className="flex items-center space-x-2">
             <button
               onClick={() => setLang(lang === "en" ? "ko" : "en")}
-              className="text-[10px] font-bold text-gray-400 hover:text-[#002380] border border-gray-200 rounded px-2 py-1 transition-all"
+              className={`text-[10px] font-bold border rounded px-2 py-1 transition-all ${!showDarkNavbar
+                ? "text-gray-400 hover:text-[#002380] border-gray-200"
+                : "text-white border-white/40 hover:bg-white/10"
+                }`}
             >
               {lang === "en" ? "KOREAN" : "ENGLISH"}
             </button>
             <button
-              className="md:hidden p-2 text-gray-500 hover:text-[#002380] transition-colors"
+              className={`md:hidden p-2 transition-colors ${!showDarkNavbar
+                ? "text-gray-500 hover:text-[#002380]"
+                : "text-white hover:bg-white/10"
+                }`}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label="Toggle mobile menu"
             >
