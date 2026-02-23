@@ -12,7 +12,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
 const App: React.FC = () => {
-  const [lang, setLang] = useState<Language>("ko");
+  const [lang, setLang] = useState<Language>("en");
   const [page, setPage] = useState<Page>("home");
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -60,7 +60,7 @@ const App: React.FC = () => {
         currentPage={page}
       />
       <main className="flex-grow">{renderPage()}</main>
-      <Footer t={t.common} lang={lang} />
+      <Footer lang={lang} />
     </div>
   );
 };

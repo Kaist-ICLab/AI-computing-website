@@ -265,7 +265,7 @@ export const translations: Record<"ko" | "en", TranslationContent> = {
   en: {
     nav: {
       home: "Home",
-      intro: "Intro",
+      intro: "Introduction",
       people: "People",
       admission: "Admission",
       education: "Education",
