@@ -9,7 +9,7 @@ const RequirementsPage: React.FC = () => {
   const education = t.education;
 
   const ReqCard = ({ title, subtitle, sections }: { title: string, subtitle?: string, sections: ReqSection[] }) => (
-    <div className="bg-white rounded-[2.5rem] shadow-sm border border-slate-100 p-8 sm:p-16 mb-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
+    <div className="bg-white rounded-[2.5rem] shadow-md border border-slate-200 p-8 sm:p-16 mb-12 animate-in fade-in slide-in-from-bottom-4 duration-500">
       <h2 className="text-3xl font-black text-slate-900 mb-2 tracking-tight">{title}</h2>
       {subtitle && <p className="text-slate-400 font-bold text-sm mb-12 uppercase tracking-widest">{subtitle}</p>}
 
@@ -46,15 +46,18 @@ const RequirementsPage: React.FC = () => {
   );
 
   return (
-    <div className="pt-24 pb-20 bg-slate-50 min-h-screen">
+    <div className="pt-32 pb-12 min-h-screen">
       {/* Header */}
-      <div className="bg-white border-b border-slate-100 py-20 text-center mb-12">
-        <h1 className="text-4xl sm:text-5xl font-black text-slate-900 tracking-tighter uppercase mb-4">
+      <div className="mb-8 max-w-6xl mx-auto flex flex-col items-center text-center gap-8">
+        <h1 className="text-4xl sm:text-5xl font-black tracking-tighter text-[#004191]">
           {education.reqTitle}
         </h1>
-        <p className="text-slate-500 font-bold uppercase tracking-[0.3em] text-[10px]">
-          Academic Standards for AI-Native Leaders
-        </p>
+        <div className="text-slate-500 leading-relaxed font-bold text-xs uppercase tracking-widest whitespace-pre-line max-w-5xl flex flex-col gap-2">
+          <p>{education.reqDesc}</p>
+          <p className="italic text-slate-400 normal-case tracking-normal">
+            {education.reqNotice}
+          </p>
+        </div>
       </div>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -83,24 +86,24 @@ const RequirementsPage: React.FC = () => {
           {reqType === 'ug' ? (
             <ReqCard
               title={lang === 'ko' ? 'AI 컴퓨팅학과 - 학사과정' : 'AI Computing - Undergraduate'}
-              subtitle="Major Course Requirements for Admitted in 2025 and after"
+              subtitle={education.ugSubtitle}
               sections={education.ug.sections}
             />
           ) : (
             <>
               <ReqCard
                 title={lang === 'ko' ? 'AI 컴퓨팅학과 - 석사과정' : "AI Computing - Master's"}
-                subtitle="Completion Requirements for Admitted in 2026 and after"
+                subtitle={education.gradSubtitle}
                 sections={education.grad.master}
               />
               <ReqCard
                 title={lang === 'ko' ? 'AI 컴퓨팅학과 - 박사과정' : 'AI Computing - Doctoral'}
-                subtitle="Completion Requirements for Admitted in 2026 and after"
+                subtitle={education.gradSubtitle}
                 sections={education.grad.phd}
               />
               <ReqCard
                 title={lang === 'ko' ? 'AI 컴퓨팅학과 - 석박사통합' : 'AI Computing - MS-PhD Integrated'}
-                subtitle="Completion Requirements for Admitted in 2026 and after"
+                subtitle={education.gradSubtitle}
                 sections={education.grad.integrated}
               />
             </>

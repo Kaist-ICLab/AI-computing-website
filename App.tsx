@@ -9,6 +9,7 @@ import PeoplePage from "./pages/PeoplePage";
 import AdmissionPage from "./pages/AdmissionPage";
 import CourseListPage from "./pages/CourseListPage";
 import RequirementsPage from "./pages/RequirementsPage";
+import NoticePage from "./pages/NoticePage";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
@@ -19,9 +20,9 @@ interface LanguageContextType {
 }
 
 export const LanguageContext = React.createContext<LanguageContextType>({
-  lang: "en",
+  lang: "ko",
   setLang: () => { },
-  t: translations.en,
+  t: translations.ko,
 });
 
 const ScrollToTop = () => {
@@ -33,7 +34,7 @@ const ScrollToTop = () => {
 };
 
 const AppContent: React.FC = () => {
-  const [lang, setLang] = useState<Language>("en");
+  const [lang, setLang] = useState<Language>("ko");
   const [isScrolled, setIsScrolled] = useState(false);
   const t = translations[lang];
 
@@ -58,6 +59,7 @@ const AppContent: React.FC = () => {
             <Route path="/admission-grad" element={<AdmissionPage type="grad" />} />
             <Route path="/education-courses" element={<CourseListPage />} />
             <Route path="/education-reqs" element={<RequirementsPage />} />
+            <Route path="/notice" element={<NoticePage />} />
           </Routes>
         </main>
         <Footer />

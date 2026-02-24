@@ -80,7 +80,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
         },
       ],
     },
-    { id: "announcements", label: lang === "ko" ? "공지" : "Notice", path: "/", sub: [] },
+    { id: "announcements", label: t.nav.announcements, path: "/notice", sub: [] },
   ];
 
   const isHome = location.pathname === "/";
@@ -144,7 +144,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                 (item.id === "education-section" && isEducationActive) ||
                 (item.id === "people-section" && location.pathname === "/people") ||
                 (item.id === "admission" && isAdmissionActive) ||
-                (item.id === "announcements" && location.pathname === "/" && location.hash === "#announcements-summary");
+                (item.id === "announcements" && location.pathname === "/notice");
 
               return (
                 <div
@@ -162,40 +162,18 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                     }
                   }}
                 >
-                  {item.id === "announcements" ? (
-                    <button
-                      onClick={() => {
-                        if (location.pathname !== "/") {
-                          navigate("/");
-                          setTimeout(() => {
-                            document.getElementById("announcements-summary")?.scrollIntoView({ behavior: "smooth" });
-                          }, 300);
-                        } else {
-                          document.getElementById("announcements-summary")?.scrollIntoView({ behavior: "smooth" });
-                        }
-                      }}
-                      className={`flex items-center gap-1 text-base font-bold transition-all relative py-2 ${!showDarkNavbar
-                        ? active ? "text-[#002380]" : "text-slate-700 hover:text-[#002380]"
+                  <NavLink
+                    to={item.path}
+                    className={({ isActive }) =>
+                      `flex items-center gap-1 text-base font-bold transition-all relative py-2 ${!showDarkNavbar
+                        ? active || isActive ? "text-[#002380]" : "text-slate-700 hover:text-[#002380]"
                         : "text-white/80 hover:text-white"
-                        }`}
-                    >
-                      {item.label}
-                      <span className={`absolute bottom-0 left-0 h-0.5 transition-all ${!showDarkNavbar ? "bg-[#002380]" : "bg-white"} ${active ? "w-full" : "w-0"}`}></span>
-                    </button>
-                  ) : (
-                    <NavLink
-                      to={item.path}
-                      className={({ isActive }) =>
-                        `flex items-center gap-1 text-base font-bold transition-all relative py-2 ${!showDarkNavbar
-                          ? active || isActive ? "text-[#002380]" : "text-slate-700 hover:text-[#002380]"
-                          : "text-white/80 hover:text-white"
-                        }`
-                      }
-                    >
-                      {item.label}
-                      <span className={`absolute bottom-0 left-0 h-0.5 transition-all ${!showDarkNavbar ? "bg-[#002380]" : "bg-white"} ${active ? "w-full" : "w-0"}`}></span>
-                    </NavLink>
-                  )}
+                      }`
+                    }
+                  >
+                    {item.label}
+                    <span className={`absolute bottom-0 left-0 h-0.5 transition-all ${!showDarkNavbar ? "bg-[#002380]" : "bg-white"} ${active ? "w-full" : "w-0"}`}></span>
+                  </NavLink>
                 </div>
               );
             })}
@@ -267,32 +245,15 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
         <div className="px-6 py-4 mb-6 space-y-4">
           {navItems.map((item) => (
             <div key={item.id} className="space-y-2">
-              {item.id === "announcements" ? (
-                <button
-                  className="block text-lg font-bold text-left w-full text-gray-700"
-                  onClick={() => {
-                    if (location.pathname !== "/") {
-                      navigate("/");
-                      setTimeout(() => document.getElementById("announcements-summary")?.scrollIntoView({ behavior: "smooth" }), 300);
-                    } else {
-                      document.getElementById("announcements-summary")?.scrollIntoView({ behavior: "smooth" });
-                    }
-                    setMobileMenuOpen(false);
-                  }}
-                >
-                  {item.label}
-                </button>
-              ) : (
-                <NavLink
-                  to={item.path}
-                  className={({ isActive }) =>
-                    `block text-lg font-bold text-left w-full ${isActive ? "text-[#002380]" : "text-gray-700"}`
-                  }
-                  onClick={() => setMobileMenuOpen(false)}
-                >
-                  {item.label}
-                </NavLink>
-              )}
+              <NavLink
+                to={item.path}
+                className={({ isActive }) =>
+                  `block text-lg font-bold text-left w-full ${isActive ? "text-[#002380]" : "text-gray-700"}`
+                }
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                {item.label}
+              </NavLink>
               {item.sub.length > 0 && (
                 <div className="pl-4 space-y-2">
                   {item.sub.map((sub, idx) => (

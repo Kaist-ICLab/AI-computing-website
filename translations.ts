@@ -73,11 +73,7 @@ export const translations: Record<"ko" | "en", TranslationContent> = {
           timeline: "2026. 05. 14(목) 14:00 이후",
           method: "KAIST 입시시스템 (https://gradapply.kaist.ac.kr 합격자발표)",
         },
-        // {
-        //   category: "프로그래밍 시험(석사과정)",
-        //   timeline: "2026. 05. 16(토) 14:00",
-        //   method: "전산학부의 프로그래밍 시험과 동일함",
-        // },
+
         {
           category: "2단계 전형(면접)",
           timeline: "2026. 05. 16(토) ~ 05. 26(화)",
@@ -198,7 +194,12 @@ export const translations: Record<"ko" | "en", TranslationContent> = {
     education: {
       title: "교육 과정",
       courseTitle: "교과목 안내",
+      courseSubtitle: "AI-Native 리더를 위한 심화 교육과정",
       reqTitle: "이수 요건",
+      reqDesc: "학위 이수를 위한 지침 및 기준입니다.",
+      reqNotice: "* 아래 이수요건은 잠정적이며 변경될 수 있습니다.",
+      ugSubtitle: "2025학년도 이후 입학생 전공 이수요건",
+      gradSubtitle: "2026학년도 이후 입학생 이수요건",
       ug: {
         sections: [
           {
@@ -316,6 +317,8 @@ export const translations: Record<"ko" | "en", TranslationContent> = {
     common: {
       footerNote:
         "본 정보는 학과 운영 사정에 따라 변경될 수 있으니 공지사항을 상시 확인하시기 바랍니다.",
+      noticeTitle: "공지",
+      noticeSubtitle: "학과 공지사항 및 업데이트",
     },
   },
   en: {
@@ -377,7 +380,7 @@ export const translations: Record<"ko" | "en", TranslationContent> = {
         "KAIST undergraduate students are admitted without declaring a major and enter as undeclared students. At the end of the second semester, they choose their major, which may include AI Computing among other disciplines. More detailed information about this process is available on the KAIST Admissions Office website.",
       gradTitle: "Graduate Admission",
       gradDesc:
-        "Recruiting for Master's, Ph.D., M.S.-Ph.D. Integrated, and B.S.-M.S.-Ph.D. Integrated programs.",
+        "The Department of AI Computing will begin accepting international graduate students in Spring 2027. For general information, please refer to the KAIST Graduate Admissions website:",
       gradSchedule1Title:
         "2026 Fall Semester Admission Timeline for New Students",
       gradSchedule1Items: [
@@ -392,11 +395,7 @@ export const translations: Record<"ko" | "en", TranslationContent> = {
           timeline: "2026. 05. 14(Thu) 14:00+",
           method: "Portal Notice (https://gradapply.kaist.ac.kr)",
         },
-        {
-          category: "Programming Exam (M.S.)",
-          timeline: "2026. 05. 16(Sat) 14:00",
-          method: "Jointly held with School of Computing",
-        },
+
         {
           category: "2nd Stage (Interview)",
           timeline: "2026. 05. 16(Sat) ~ 05. 26(Tue)",
@@ -507,16 +506,21 @@ export const translations: Record<"ko" | "en", TranslationContent> = {
       ],
       admissionHome: "Admissions Home",
       admissionHomeDesc: "Visit the main KAIST Admissions website.",
-      ugKorean: "Undergraduate (Korean)",
+      ugKorean: "Undergraduate (Korean Students)",
       ugKoreanDesc: "Admission guide for Korean undergraduate students.",
-      ugIntl: "Undergraduate (International)",
+      ugIntl: "Undergraduate (International Students)",
       ugIntlDesc: "Admission guide for international undergraduate students.",
       readMore: "Read More",
     },
     education: {
       title: "Education",
       courseTitle: "Course Guide",
+      courseSubtitle: "Advanced Curriculum for AI-Native Leaders",
       reqTitle: "Graduation Requirements",
+      reqDesc: "Guidelines and criteria for completing your degree program.",
+      reqNotice: "* The requirements below are tentative and subject to change.",
+      ugSubtitle: "Major Course Requirements for Admitted in 2025 and after",
+      gradSubtitle: "Completion Requirements for Admitted in 2026 and after",
       ug: {
         sections: [
           {
@@ -655,6 +659,8 @@ export const translations: Record<"ko" | "en", TranslationContent> = {
     common: {
       footerNote:
         "Information may change depending on department circumstances. Please check notices regularly.",
+      noticeTitle: "Notice",
+      noticeSubtitle: "DEPARTMENT ANNOUNCEMENTS & UPDATES",
     },
   },
 };

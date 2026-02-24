@@ -16,7 +16,7 @@ const Admission: React.FC<AdmissionProps> = ({ type, t, lang }) => {
       url: "https://admission.kaist.ac.kr/home",
       icon: (
         <svg
-          className="w-8 h-8 text-[#004191]"
+          className="w-8 h-8 text-[#004191] group-hover:text-white transition-colors"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -48,18 +48,22 @@ const Admission: React.FC<AdmissionProps> = ({ type, t, lang }) => {
   ];
 
   return (
-    <section className="py-24 bg-white text-slate-900 relative">
+    <section className="pt-8 pb-12 bg-white text-slate-900 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="mb-24 max-w-3xl">
-          <h2 className="text-3xl sm:text-5xl font-black mb-8 tracking-tighter text-slate-900">
+        <div className="mb-16 max-w-6xl mx-auto flex flex-col items-center text-center gap-8">
+          <h2 className="text-4xl sm:text-5xl font-black tracking-tighter text-[#004191]">
             {type === "ug" ? t.ugTitle : t.gradTitle}
           </h2>
-          <p className="text-slate-600 leading-relaxed font-medium text-lg mb-10 whitespace-pre-line">
+          <p className="text-slate-500 leading-relaxed font-bold text-xs uppercase tracking-widest whitespace-pre-line max-w-5xl">
             {type === "ug" ? t.ugDesc : t.gradDesc}
           </p>
           {type === "grad" && (
             <a
-              href="https://gradapply.kaist.ac.kr"
+              href={
+                lang === "en"
+                  ? "https://admission.kaist.ac.kr/intl-graduate"
+                  : "https://gradapply.kaist.ac.kr"
+              }
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center bg-[#004191] text-white px-10 py-5 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-blue-800 transition-all shadow-xl shadow-blue-900/20"
@@ -73,41 +77,37 @@ const Admission: React.FC<AdmissionProps> = ({ type, t, lang }) => {
         </div>
 
         {type === "ug" ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {ugLinks.map((link, idx) => (
               <a
                 key={idx}
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`group bg-white border border-slate-200 rounded-[2rem] p-8 sm:p-10 transition-all hover:shadow-2xl hover:shadow-slate-200/50 hover:border-blue-200 flex ${idx === 0 ? "md:col-span-2 flex-row items-center justify-between" : "flex-col items-start"}`}
+                className={`group bg-white border border-slate-200 rounded-3xl p-6 sm:p-10 transition-all duration-300 hover:shadow-xl hover:border-[#004191] hover:-translate-y-1 flex flex-col items-center text-center animate-in fade-in slide-in-from-bottom-4 fill-mode-both duration-700 ${idx === 0 ? "md:col-span-2 md:flex-row md:text-left md:items-center" : "min-h-[220px]"}`}
+                style={{ animationDelay: `${idx * 150}ms` }}
               >
-                <div
-                  className={`flex gap-8 ${idx === 0 ? "items-center" : "flex-col items-start mb-8"}`}
-                >
-                  {link.icon && (
-                    <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center group-hover:bg-blue-100 transition-colors shrink-0">
+                {link.icon && idx === 0 && (
+                  <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center group-hover:bg-[#004191] transition-colors shrink-0 mb-6 md:mb-0 md:mr-8">
+                    <div className="group-hover:text-white transition-colors">
                       {link.icon}
                     </div>
-                  )}
-                  <div>
-                    <h3
-                      className={`${idx === 0 ? "text-2xl" : "text-xl"} font-black text-slate-900 mb-2 group-hover:text-[#004191] transition-colors`}
-                    >
-                      {link.title}
-                    </h3>
-                    <p className="text-slate-500 font-medium text-sm leading-relaxed whitespace-pre-line">
-                      {link.desc}
-                    </p>
                   </div>
+                )}
+
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-[#004191] transition-colors whitespace-pre-line">
+                    {link.title}
+                  </h3>
+                  <p className="text-slate-500 text-sm leading-relaxed px-4 md:px-0">
+                    {link.desc}
+                  </p>
                 </div>
 
-                <div
-                  className={`flex items-center text-[#004191] font-black text-[10px] uppercase tracking-widest shrink-0 ${idx === 0 ? "ml-4" : "mt-auto"}`}
-                >
+                <div className="mt-8 md:mt-0 flex items-center text-[#004191] font-bold text-base transition-transform group-hover:translate-x-1">
                   {t.readMore}
                   <svg
-                    className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform"
+                    className="w-4 h-4 ml-2"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -123,10 +123,68 @@ const Admission: React.FC<AdmissionProps> = ({ type, t, lang }) => {
               </a>
             ))}
           </div>
-        ) : (
-          <div className="space-y-24">
+        ) : (type === "grad" && lang === "en") ? null : (
+          <div className="space-y-16">
+            {/* Eligibility */}
+            <div className="bg-white rounded-[2.5rem] p-6 sm:p-10 border border-slate-200 shadow-md">
+              <h3 className="text-2xl font-black text-slate-900 tracking-tight mb-12">
+                {t.eligibilityTitle}
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="min-w-full">
+                  <thead>
+                    <tr className="border-b-2 border-slate-200">
+                      <th className="px-6 py-6 text-left text-[14px] font-black text-slate-900 uppercase tracking-widest w-1/3">
+                        {lang === "ko" ? "과정" : "Course"}
+                      </th>
+                      <th className="px-6 py-6 text-left text-[14px] font-black text-slate-900 uppercase tracking-widest">
+                        {lang === "ko" ? "지원 자격" : "Criteria"}
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-100">
+                    {t.eligibility.map((item: any, idx: number) => (
+                      <tr
+                        key={idx}
+                        className="hover:bg-slate-50 transition-colors"
+                      >
+                        <td className="px-6 py-8 text-sm font-black text-slate-900">
+                          {item.course}
+                        </td>
+                        <td className="px-6 py-8 text-sm text-slate-600 font-medium whitespace-pre-line leading-relaxed">
+                          {item.criteria}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Categories */}
+            <div className="bg-slate-900 rounded-[2.5rem] p-6 sm:p-10 text-white">
+              <h3 className="text-2xl font-black text-white tracking-tight mb-12">
+                {t.categoriesTitle}
+              </h3>
+              <div className="grid sm:grid-cols-3 gap-8">
+                {t.categories.map((item: any, idx: number) => (
+                  <div
+                    key={idx}
+                    className="bg-white/5 border border-white/10 p-8 rounded-3xl"
+                  >
+                    <h4 className="text-blue-400 font-black text-xs uppercase tracking-widest mb-4">
+                      {item.type}
+                    </h4>
+                    <p className="text-white/70 text-sm font-medium leading-relaxed whitespace-pre-line">
+                      {item.desc}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
             {/* Schedule 1 */}
-            <div className="bg-slate-50 rounded-[2.5rem] p-8 sm:p-16 border border-slate-100">
+            <div className="bg-slate-50 rounded-[2.5rem] p-6 sm:p-10 border border-slate-200 shadow-md">
               <h3 className="text-2xl font-black text-slate-900 tracking-tight flex items-center gap-4 mb-12">
                 <Calendar className="w-8 h-8 text-[#004191]" />
                 {t.gradSchedule1Title}
@@ -169,7 +227,7 @@ const Admission: React.FC<AdmissionProps> = ({ type, t, lang }) => {
             </div>
 
             {/* Schedule 2 */}
-            <div className="bg-slate-50 rounded-[2.5rem] p-8 sm:p-16 border border-slate-100">
+            <div className="bg-slate-50 rounded-[2.5rem] p-6 sm:p-10 border border-slate-200 shadow-md">
               <h3 className="text-2xl font-black text-slate-900 tracking-tight flex items-center gap-4 mb-12 whitespace-pre-line">
                 <Calendar className="w-8 h-8 text-[#004191]" />
                 {t.gradSchedule2Title}
@@ -212,7 +270,7 @@ const Admission: React.FC<AdmissionProps> = ({ type, t, lang }) => {
             </div>
 
             {/* Advisor Info */}
-            <div className="bg-white rounded-[2.5rem] p-8 sm:p-16 border border-slate-100 shadow-sm">
+            <div className="bg-white rounded-[2.5rem] p-6 sm:p-10 border border-slate-200 shadow-md">
               <h3 className="text-2xl font-black text-slate-900 tracking-tight mb-12">
                 {t.advisorTitle}
               </h3>
@@ -261,63 +319,7 @@ const Admission: React.FC<AdmissionProps> = ({ type, t, lang }) => {
               </div>
             </div>
 
-            {/* Eligibility */}
-            <div className="bg-white rounded-[2.5rem] p-8 sm:p-16 border border-slate-100 shadow-sm">
-              <h3 className="text-2xl font-black text-slate-900 tracking-tight mb-12">
-                {t.eligibilityTitle}
-              </h3>
-              <div className="overflow-x-auto">
-                <table className="min-w-full">
-                  <thead>
-                    <tr className="border-b-2 border-slate-200">
-                      <th className="px-6 py-6 text-left text-[14px] font-black text-slate-900 uppercase tracking-widest w-1/3">
-                        {lang === "ko" ? "과정" : "Course"}
-                      </th>
-                      <th className="px-6 py-6 text-left text-[14px] font-black text-slate-900 uppercase tracking-widest">
-                        {lang === "ko" ? "지원 자격" : "Criteria"}
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-slate-100">
-                    {t.eligibility.map((item: any, idx: number) => (
-                      <tr
-                        key={idx}
-                        className="hover:bg-slate-50 transition-colors"
-                      >
-                        <td className="px-6 py-8 text-sm font-black text-slate-900">
-                          {item.course}
-                        </td>
-                        <td className="px-6 py-8 text-sm text-slate-600 font-medium whitespace-pre-line leading-relaxed">
-                          {item.criteria}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
 
-            {/* Categories */}
-            <div className="bg-slate-900 rounded-[2.5rem] p-8 sm:p-16 text-white">
-              <h3 className="text-2xl font-black text-white tracking-tight mb-12">
-                {t.categoriesTitle}
-              </h3>
-              <div className="grid sm:grid-cols-3 gap-8">
-                {t.categories.map((item: any, idx: number) => (
-                  <div
-                    key={idx}
-                    className="bg-white/5 border border-white/10 p-8 rounded-3xl"
-                  >
-                    <h4 className="text-blue-400 font-black text-xs uppercase tracking-widest mb-4">
-                      {item.type}
-                    </h4>
-                    <p className="text-white/70 text-sm font-medium leading-relaxed whitespace-pre-line">
-                      {item.desc}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         )}
       </div>

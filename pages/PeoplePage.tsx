@@ -6,7 +6,7 @@ const PeoplePage: React.FC = () => {
   const { lang, t } = useContext(LanguageContext);
   const title = t.nav.people;
   return (
-    <div className="pt-24 pb-20">
+    <div className="pt-24">
       {/* <div className="bg-slate-50 border-b border-slate-100 py-20 text-center mb-10">
         <h1 className="text-4xl sm:text-5xl font-black text-slate-900 tracking-tighter uppercase mb-4">
           {title}

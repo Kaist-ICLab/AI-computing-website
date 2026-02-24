@@ -111,12 +111,12 @@ const CourseListPage: React.FC = () => {
   const gradCourses = courses.filter((c) => c.level === "5000-level+");
 
   const renderTable = (courseList: typeof courses, title: string) => (
-    <div className="mb-20">
+    <div className="mb-12">
       <h2 className="text-2xl font-black text-slate-900 mb-8 flex items-center gap-4">
         <span className="w-2 h-8 bg-[#004191] rounded-full"></span>
         {title}
       </h2>
-      <div className="border border-slate-200 rounded-3xl overflow-hidden shadow-xl shadow-slate-200/30 bg-white">
+      <div className="border border-slate-200 rounded-3xl overflow-hidden shadow-md bg-white">
         <div className="overflow-x-auto">
           <table className="min-w-full">
             <thead className="bg-slate-50 border-b border-slate-200">
@@ -167,13 +167,13 @@ const CourseListPage: React.FC = () => {
   );
 
   return (
-    <div className="pt-24 pb-20">
-      <div className="bg-slate-50 border-b border-slate-100 py-20 text-center mb-16">
-        <h1 className="text-4xl sm:text-5xl font-black text-slate-900 tracking-tighter uppercase mb-4">
+    <div className="pt-32 pb-8">
+      <div className="mb-16 max-w-6xl mx-auto flex flex-col items-center text-center gap-8">
+        <h1 className="text-4xl sm:text-5xl font-black tracking-tighter text-[#004191]">
           {education.courseTitle}
         </h1>
-        <p className="text-slate-500 font-bold uppercase tracking-[0.3em] text-xs">
-          Advanced Curriculum for AI-Native Leaders
+        <p className="text-slate-500 leading-relaxed font-bold text-xs uppercase tracking-widest whitespace-pre-line max-w-5xl">
+          {education.courseSubtitle}
         </p>
       </div>
 

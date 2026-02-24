@@ -7,7 +7,8 @@ export type Page =
   | "admission-ug"
   | "admission-grad"
   | "education-courses"
-  | "education-reqs";
+  | "education-reqs"
+  | "notice";
 
 export interface ReqSection {
   title: string;
@@ -19,7 +20,12 @@ export interface ReqSection {
 export interface EducationTranslation {
   title: string;
   courseTitle: string;
+  courseSubtitle: string;
   reqTitle: string;
+  reqDesc: string;
+  reqNotice: string;
+  ugSubtitle: string;
+  gradSubtitle: string;
   ug: {
     sections: ReqSection[];
   };
@@ -58,8 +64,14 @@ export interface TranslationContent {
     ugDesc: string;
     gradTitle: string;
     gradDesc: string;
-    scheduleTitle: string;
-    scheduleItems: { date: string; event: string; method: string }[];
+    gradSchedule1Title: string;
+    gradSchedule1Items: { category: string; timeline: string; method: string }[];
+    gradSchedule2Title: string;
+    gradSchedule2Items: { category: string; timeline: string; method: string }[];
+    advisorTitle: string;
+    advisorContent: string[];
+    advisorTimingTitle: string;
+    advisorTimingItems: { course: string; timing: string }[];
     eligibilityTitle: string;
     eligibility: { course: string; criteria: string }[];
     categoriesTitle: string;
@@ -75,5 +87,7 @@ export interface TranslationContent {
   education: EducationTranslation;
   common: {
     footerNote: string;
+    noticeTitle: string;
+    noticeSubtitle: string;
   };
 }
