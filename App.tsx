@@ -19,9 +19,9 @@ interface LanguageContextType {
 }
 
 export const LanguageContext = React.createContext<LanguageContextType>({
-  lang: "en",
+  lang: "ko",
   setLang: () => { },
-  t: translations.en,
+  t: translations.ko,
 });
 
 const ScrollToTop = () => {
@@ -33,7 +33,7 @@ const ScrollToTop = () => {
 };
 
 const AppContent: React.FC = () => {
-  const [lang, setLang] = useState<Language>("en");
+  const [lang, setLang] = useState<Language>("ko");
   const [isScrolled, setIsScrolled] = useState(false);
   const t = translations[lang];
 
