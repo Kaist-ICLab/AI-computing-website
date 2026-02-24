@@ -71,11 +71,11 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
       path: "/education-courses",
       sub: [
         {
-          label: lang === "ko" ? "교과목 안내" : "Course Guide",
+          label: lang === "ko" ? "교과목 안내" : "Course Information",
           path: "/education-courses",
         },
         {
-          label: lang === "ko" ? "이수요건" : "Requirements",
+          label: lang === "ko" ? "이수요건" : "Graduation Requirements",
           path: "/education-reqs",
         },
       ],
