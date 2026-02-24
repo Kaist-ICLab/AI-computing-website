@@ -126,7 +126,7 @@ const Admission: React.FC<AdmissionProps> = ({ type, t, lang }) => {
         ) : (type === "grad" && lang === "en") ? null : (
           <div className="space-y-16">
             {/* Eligibility */}
-            <div className="bg-white rounded-[2.5rem] p-6 sm:p-10 border border-slate-100 shadow-sm">
+            <div className="bg-white rounded-[2.5rem] p-6 sm:p-10 border border-slate-200 shadow-md">
               <h3 className="text-2xl font-black text-slate-900 tracking-tight mb-12">
                 {t.eligibilityTitle}
               </h3>
@@ -184,7 +184,7 @@ const Admission: React.FC<AdmissionProps> = ({ type, t, lang }) => {
             </div>
 
             {/* Schedule 1 */}
-            <div className="bg-slate-50 rounded-[2.5rem] p-6 sm:p-10 border border-slate-100">
+            <div className="bg-slate-50 rounded-[2.5rem] p-6 sm:p-10 border border-slate-200 shadow-md">
               <h3 className="text-2xl font-black text-slate-900 tracking-tight flex items-center gap-4 mb-12">
                 <Calendar className="w-8 h-8 text-[#004191]" />
                 {t.gradSchedule1Title}
@@ -227,7 +227,7 @@ const Admission: React.FC<AdmissionProps> = ({ type, t, lang }) => {
             </div>
 
             {/* Schedule 2 */}
-            <div className="bg-slate-50 rounded-[2.5rem] p-6 sm:p-10 border border-slate-100">
+            <div className="bg-slate-50 rounded-[2.5rem] p-6 sm:p-10 border border-slate-200 shadow-md">
               <h3 className="text-2xl font-black text-slate-900 tracking-tight flex items-center gap-4 mb-12 whitespace-pre-line">
                 <Calendar className="w-8 h-8 text-[#004191]" />
                 {t.gradSchedule2Title}
@@ -270,7 +270,7 @@ const Admission: React.FC<AdmissionProps> = ({ type, t, lang }) => {
             </div>
 
             {/* Advisor Info */}
-            <div className="bg-white rounded-[2.5rem] p-6 sm:p-10 border border-slate-100 shadow-sm">
+            <div className="bg-white rounded-[2.5rem] p-6 sm:p-10 border border-slate-200 shadow-md">
               <h3 className="text-2xl font-black text-slate-900 tracking-tight mb-12">
                 {t.advisorTitle}
               </h3>

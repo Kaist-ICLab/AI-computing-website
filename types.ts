@@ -20,6 +20,10 @@ export interface EducationTranslation {
   title: string;
   courseTitle: string;
   reqTitle: string;
+  reqDesc: string;
+  reqNotice: string;
+  ugSubtitle: string;
+  gradSubtitle: string;
   ug: {
     sections: ReqSection[];
   };

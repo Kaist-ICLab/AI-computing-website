@@ -195,6 +195,10 @@ export const translations: Record<"ko" | "en", TranslationContent> = {
       title: "교육 과정",
       courseTitle: "교과목 안내",
       reqTitle: "이수 요건",
+      reqDesc: "학위 이수를 위한 지침 및 기준입니다.",
+      reqNotice: "* 아래 이수요건은 잠정적이며 변경될 수 있습니다.",
+      ugSubtitle: "2025학년도 이후 입학생 전공 이수요건",
+      gradSubtitle: "2026학년도 이후 입학생 이수요건",
       ug: {
         sections: [
           {
@@ -509,6 +513,10 @@ export const translations: Record<"ko" | "en", TranslationContent> = {
       title: "Education",
       courseTitle: "Course Guide",
       reqTitle: "Graduation Requirements",
+      reqDesc: "Guidelines and criteria for completing your degree program.",
+      reqNotice: "* The requirements below are tentative and subject to change.",
+      ugSubtitle: "Major Course Requirements for Admitted in 2025 and after",
+      gradSubtitle: "Completion Requirements for Admitted in 2026 and after",
       ug: {
         sections: [
           {

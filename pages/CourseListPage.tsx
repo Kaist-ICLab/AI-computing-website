@@ -116,7 +116,7 @@ const CourseListPage: React.FC = () => {
         <span className="w-2 h-8 bg-[#004191] rounded-full"></span>
         {title}
       </h2>
-      <div className="border border-slate-200 rounded-3xl overflow-hidden shadow-xl shadow-slate-200/30 bg-white">
+      <div className="border border-slate-200 rounded-3xl overflow-hidden shadow-md bg-white">
         <div className="overflow-x-auto">
           <table className="min-w-full">
             <thead className="bg-slate-50 border-b border-slate-200">
