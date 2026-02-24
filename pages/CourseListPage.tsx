@@ -173,7 +173,7 @@ const CourseListPage: React.FC = () => {
           {education.courseTitle}
         </h1>
         <p className="text-slate-500 leading-relaxed font-bold text-xs uppercase tracking-widest whitespace-pre-line max-w-5xl">
-          Advanced Curriculum for AI-Native Leaders
+          {education.courseSubtitle}
         </p>
       </div>
 

@@ -7,7 +7,8 @@ export type Page =
   | "admission-ug"
   | "admission-grad"
   | "education-courses"
-  | "education-reqs";
+  | "education-reqs"
+  | "notice";
 
 export interface ReqSection {
   title: string;
@@ -19,6 +20,7 @@ export interface ReqSection {
 export interface EducationTranslation {
   title: string;
   courseTitle: string;
+  courseSubtitle: string;
   reqTitle: string;
   reqDesc: string;
   reqNotice: string;
@@ -85,5 +87,7 @@ export interface TranslationContent {
   education: EducationTranslation;
   common: {
     footerNote: string;
+    noticeTitle: string;
+    noticeSubtitle: string;
   };
 }

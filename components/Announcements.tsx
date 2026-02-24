@@ -19,12 +19,14 @@ const Announcements: React.FC<{ title: string }> = ({ title }) => {
   return (
     <section className="py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center mb-20">
-          <h2 className="text-4xl sm:text-5xl font-black text-slate-900 tracking-tighter uppercase">{title}</h2>
-          <button className="text-[10px] font-black text-[#004191] uppercase tracking-[0.3em] border-b-2 border-[#004191] pb-1 hover:text-sky-600 hover:border-sky-600 transition-all">
-            {lang === 'ko' ? '전체보기' : 'View All Posts'}
-          </button>
-        </div>
+        {title && (
+          <div className="flex justify-between items-center mb-20">
+            <h2 className="text-4xl sm:text-5xl font-black text-slate-900 tracking-tighter uppercase">{title}</h2>
+            <button className="text-[10px] font-black text-[#004191] uppercase tracking-[0.3em] border-b-2 border-[#004191] pb-1 hover:text-sky-600 hover:border-sky-600 transition-all">
+              {lang === 'ko' ? '전체보기' : 'View All Posts'}
+            </button>
+          </div>
+        )}
 
         <div className="border-t-2 border-slate-900">
           {dummyNews.map((news, i) => (

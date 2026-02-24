@@ -9,6 +9,7 @@ import PeoplePage from "./pages/PeoplePage";
 import AdmissionPage from "./pages/AdmissionPage";
 import CourseListPage from "./pages/CourseListPage";
 import RequirementsPage from "./pages/RequirementsPage";
+import NoticePage from "./pages/NoticePage";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 
@@ -58,6 +59,7 @@ const AppContent: React.FC = () => {
             <Route path="/admission-grad" element={<AdmissionPage type="grad" />} />
             <Route path="/education-courses" element={<CourseListPage />} />
             <Route path="/education-reqs" element={<RequirementsPage />} />
+            <Route path="/notice" element={<NoticePage />} />
           </Routes>
         </main>
         <Footer />

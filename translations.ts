@@ -194,6 +194,7 @@ export const translations: Record<"ko" | "en", TranslationContent> = {
     education: {
       title: "교육 과정",
       courseTitle: "교과목 안내",
+      courseSubtitle: "AI-Native 리더를 위한 심화 교육과정",
       reqTitle: "이수 요건",
       reqDesc: "학위 이수를 위한 지침 및 기준입니다.",
       reqNotice: "* 아래 이수요건은 잠정적이며 변경될 수 있습니다.",
@@ -316,6 +317,8 @@ export const translations: Record<"ko" | "en", TranslationContent> = {
     common: {
       footerNote:
         "본 정보는 학과 운영 사정에 따라 변경될 수 있으니 공지사항을 상시 확인하시기 바랍니다.",
+      noticeTitle: "공지",
+      noticeSubtitle: "학과 공지사항 및 업데이트",
     },
   },
   en: {
@@ -512,6 +515,7 @@ export const translations: Record<"ko" | "en", TranslationContent> = {
     education: {
       title: "Education",
       courseTitle: "Course Guide",
+      courseSubtitle: "Advanced Curriculum for AI-Native Leaders",
       reqTitle: "Graduation Requirements",
       reqDesc: "Guidelines and criteria for completing your degree program.",
       reqNotice: "* The requirements below are tentative and subject to change.",
@@ -655,6 +659,8 @@ export const translations: Record<"ko" | "en", TranslationContent> = {
     common: {
       footerNote:
         "Information may change depending on department circumstances. Please check notices regularly.",
+      noticeTitle: "Notice",
+      noticeSubtitle: "DEPARTMENT ANNOUNCEMENTS & UPDATES",
     },
   },
 };
