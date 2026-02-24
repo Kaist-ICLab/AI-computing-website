@@ -16,7 +16,7 @@ const Admission: React.FC<AdmissionProps> = ({ type, t, lang }) => {
       url: "https://admission.kaist.ac.kr/home",
       icon: (
         <svg
-          className="w-8 h-8 text-[#004191]"
+          className="w-8 h-8 text-[#004191] group-hover:text-white transition-colors"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -48,13 +48,13 @@ const Admission: React.FC<AdmissionProps> = ({ type, t, lang }) => {
   ];
 
   return (
-    <section className="py-24 bg-white text-slate-900 relative">
+    <section className="pt-8 pb-12 bg-white text-slate-900 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="mb-24 max-w-3xl">
-          <h2 className="text-3xl sm:text-5xl font-black mb-8 tracking-tighter text-slate-900">
+        <div className="mb-16 max-w-6xl mx-auto flex flex-col items-center text-center gap-8">
+          <h2 className="text-4xl sm:text-5xl font-black tracking-tighter text-[#004191]">
             {type === "ug" ? t.ugTitle : t.gradTitle}
           </h2>
-          <p className="text-slate-600 leading-relaxed font-medium text-lg mb-10 whitespace-pre-line">
+          <p className="text-slate-500 leading-relaxed font-bold text-xs uppercase tracking-widest whitespace-pre-line max-w-5xl">
             {type === "ug" ? t.ugDesc : t.gradDesc}
           </p>
           {type === "grad" && (
@@ -73,41 +73,37 @@ const Admission: React.FC<AdmissionProps> = ({ type, t, lang }) => {
         </div>
 
         {type === "ug" ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {ugLinks.map((link, idx) => (
               <a
                 key={idx}
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`group bg-white border border-slate-200 rounded-[2rem] p-8 sm:p-10 transition-all hover:shadow-2xl hover:shadow-slate-200/50 hover:border-blue-200 flex ${idx === 0 ? "md:col-span-2 flex-row items-center justify-between" : "flex-col items-start"}`}
+                className={`group bg-white border border-slate-200 rounded-3xl p-6 sm:p-10 transition-all duration-300 hover:shadow-xl hover:border-[#004191] hover:-translate-y-1 flex flex-col items-center text-center animate-in fade-in slide-in-from-bottom-4 fill-mode-both duration-700 ${idx === 0 ? "md:col-span-2 md:flex-row md:text-left md:items-center" : "min-h-[220px]"}`}
+                style={{ animationDelay: `${idx * 150}ms` }}
               >
-                <div
-                  className={`flex gap-8 ${idx === 0 ? "items-center" : "flex-col items-start mb-8"}`}
-                >
-                  {link.icon && (
-                    <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center group-hover:bg-blue-100 transition-colors shrink-0">
+                {link.icon && idx === 0 && (
+                  <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center group-hover:bg-[#004191] transition-colors shrink-0 mb-6 md:mb-0 md:mr-8">
+                    <div className="group-hover:text-white transition-colors">
                       {link.icon}
                     </div>
-                  )}
-                  <div>
-                    <h3
-                      className={`${idx === 0 ? "text-2xl" : "text-xl"} font-black text-slate-900 mb-2 group-hover:text-[#004191] transition-colors`}
-                    >
-                      {link.title}
-                    </h3>
-                    <p className="text-slate-500 font-medium text-sm leading-relaxed whitespace-pre-line">
-                      {link.desc}
-                    </p>
                   </div>
+                )}
+
+                <div className="flex-1">
+                  <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-[#004191] transition-colors whitespace-pre-line">
+                    {link.title}
+                  </h3>
+                  <p className="text-slate-500 text-sm leading-relaxed px-4 md:px-0">
+                    {link.desc}
+                  </p>
                 </div>
 
-                <div
-                  className={`flex items-center text-[#004191] font-black text-[10px] uppercase tracking-widest shrink-0 ${idx === 0 ? "ml-4" : "mt-auto"}`}
-                >
+                <div className="mt-8 md:mt-0 flex items-center text-[#004191] font-bold text-base transition-transform group-hover:translate-x-1">
                   {t.readMore}
                   <svg
-                    className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform"
+                    className="w-4 h-4 ml-2"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
