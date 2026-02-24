@@ -59,7 +59,11 @@ const Admission: React.FC<AdmissionProps> = ({ type, t, lang }) => {
           </p>
           {type === "grad" && (
             <a
-              href="https://gradapply.kaist.ac.kr"
+              href={
+                lang === "en"
+                  ? "https://admission.kaist.ac.kr/intl-graduate"
+                  : "https://gradapply.kaist.ac.kr"
+              }
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center bg-[#004191] text-white px-10 py-5 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-blue-800 transition-all shadow-xl shadow-blue-900/20"
@@ -119,7 +123,7 @@ const Admission: React.FC<AdmissionProps> = ({ type, t, lang }) => {
               </a>
             ))}
           </div>
-        ) : (
+        ) : (type === "grad" && lang === "en") ? null : (
           <div className="space-y-16">
             {/* Eligibility */}
             <div className="bg-white rounded-[2.5rem] p-6 sm:p-10 border border-slate-100 shadow-sm">

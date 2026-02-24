@@ -373,7 +373,7 @@ export const translations: Record<"ko" | "en", TranslationContent> = {
         "KAIST undergraduate students are admitted without declaring a major and enter as undeclared students. At the end of the second semester, they choose their major, which may include AI Computing among other disciplines. More detailed information about this process is available on the KAIST Admissions Office website.",
       gradTitle: "Graduate Admission",
       gradDesc:
-        "Recruiting for Master's, Ph.D., M.S.-Ph.D. Integrated, and B.S.-M.S.-Ph.D. Integrated programs.",
+        "The Department of AI Computing will begin accepting international graduate students in Spring 2027. For general information, please refer to the KAIST Graduate Admissions website:",
       gradSchedule1Title:
         "2026 Fall Semester Admission Timeline for New Students",
       gradSchedule1Items: [
