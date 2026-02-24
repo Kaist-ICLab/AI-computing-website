@@ -27,11 +27,14 @@ Zoom 링크도 나중에 공지가 될 예정입니다.
 포스터 제작중인데요 나중에 업데이트가 되면 알려드리겠습니다.`}
             </div>
             <div className="mt-12 flex justify-center">
-              <img
-                src="/images/admission_session_poster.png"
-                alt="Admission Information Session Poster"
-                className="max-w-full md:max-w-2xl rounded-2xl shadow-lg border border-slate-100"
-              />
+              <picture>
+                <source srcSet="/images/admission_session_poster.webp" type="image/webp" />
+                <img
+                  src="/images/admission_session_poster.png"
+                  alt="Admission Information Session Poster"
+                  className="max-w-full md:max-w-2xl rounded-2xl shadow-lg border border-slate-100"
+                />
+              </picture>
             </div>
           </div>
         </div>
