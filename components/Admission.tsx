@@ -120,9 +120,67 @@ const Admission: React.FC<AdmissionProps> = ({ type, t, lang }) => {
             ))}
           </div>
         ) : (
-          <div className="space-y-24">
+          <div className="space-y-16">
+            {/* Eligibility */}
+            <div className="bg-white rounded-[2.5rem] p-6 sm:p-10 border border-slate-100 shadow-sm">
+              <h3 className="text-2xl font-black text-slate-900 tracking-tight mb-12">
+                {t.eligibilityTitle}
+              </h3>
+              <div className="overflow-x-auto">
+                <table className="min-w-full">
+                  <thead>
+                    <tr className="border-b-2 border-slate-200">
+                      <th className="px-6 py-6 text-left text-[14px] font-black text-slate-900 uppercase tracking-widest w-1/3">
+                        {lang === "ko" ? "과정" : "Course"}
+                      </th>
+                      <th className="px-6 py-6 text-left text-[14px] font-black text-slate-900 uppercase tracking-widest">
+                        {lang === "ko" ? "지원 자격" : "Criteria"}
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className="divide-y divide-slate-100">
+                    {t.eligibility.map((item: any, idx: number) => (
+                      <tr
+                        key={idx}
+                        className="hover:bg-slate-50 transition-colors"
+                      >
+                        <td className="px-6 py-8 text-sm font-black text-slate-900">
+                          {item.course}
+                        </td>
+                        <td className="px-6 py-8 text-sm text-slate-600 font-medium whitespace-pre-line leading-relaxed">
+                          {item.criteria}
+                        </td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            {/* Categories */}
+            <div className="bg-slate-900 rounded-[2.5rem] p-6 sm:p-10 text-white">
+              <h3 className="text-2xl font-black text-white tracking-tight mb-12">
+                {t.categoriesTitle}
+              </h3>
+              <div className="grid sm:grid-cols-3 gap-8">
+                {t.categories.map((item: any, idx: number) => (
+                  <div
+                    key={idx}
+                    className="bg-white/5 border border-white/10 p-8 rounded-3xl"
+                  >
+                    <h4 className="text-blue-400 font-black text-xs uppercase tracking-widest mb-4">
+                      {item.type}
+                    </h4>
+                    <p className="text-white/70 text-sm font-medium leading-relaxed whitespace-pre-line">
+                      {item.desc}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
             {/* Schedule 1 */}
-            <div className="bg-slate-50 rounded-[2.5rem] p-8 sm:p-16 border border-slate-100">
+            <div className="bg-slate-50 rounded-[2.5rem] p-6 sm:p-10 border border-slate-100">
               <h3 className="text-2xl font-black text-slate-900 tracking-tight flex items-center gap-4 mb-12">
                 <Calendar className="w-8 h-8 text-[#004191]" />
                 {t.gradSchedule1Title}
@@ -165,7 +223,7 @@ const Admission: React.FC<AdmissionProps> = ({ type, t, lang }) => {
             </div>
 
             {/* Schedule 2 */}
-            <div className="bg-slate-50 rounded-[2.5rem] p-8 sm:p-16 border border-slate-100">
+            <div className="bg-slate-50 rounded-[2.5rem] p-6 sm:p-10 border border-slate-100">
               <h3 className="text-2xl font-black text-slate-900 tracking-tight flex items-center gap-4 mb-12 whitespace-pre-line">
                 <Calendar className="w-8 h-8 text-[#004191]" />
                 {t.gradSchedule2Title}
@@ -208,7 +266,7 @@ const Admission: React.FC<AdmissionProps> = ({ type, t, lang }) => {
             </div>
 
             {/* Advisor Info */}
-            <div className="bg-white rounded-[2.5rem] p-8 sm:p-16 border border-slate-100 shadow-sm">
+            <div className="bg-white rounded-[2.5rem] p-6 sm:p-10 border border-slate-100 shadow-sm">
               <h3 className="text-2xl font-black text-slate-900 tracking-tight mb-12">
                 {t.advisorTitle}
               </h3>
@@ -257,63 +315,7 @@ const Admission: React.FC<AdmissionProps> = ({ type, t, lang }) => {
               </div>
             </div>
 
-            {/* Eligibility */}
-            <div className="bg-white rounded-[2.5rem] p-8 sm:p-16 border border-slate-100 shadow-sm">
-              <h3 className="text-2xl font-black text-slate-900 tracking-tight mb-12">
-                {t.eligibilityTitle}
-              </h3>
-              <div className="overflow-x-auto">
-                <table className="min-w-full">
-                  <thead>
-                    <tr className="border-b-2 border-slate-200">
-                      <th className="px-6 py-6 text-left text-[14px] font-black text-slate-900 uppercase tracking-widest w-1/3">
-                        {lang === "ko" ? "과정" : "Course"}
-                      </th>
-                      <th className="px-6 py-6 text-left text-[14px] font-black text-slate-900 uppercase tracking-widest">
-                        {lang === "ko" ? "지원 자격" : "Criteria"}
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-slate-100">
-                    {t.eligibility.map((item: any, idx: number) => (
-                      <tr
-                        key={idx}
-                        className="hover:bg-slate-50 transition-colors"
-                      >
-                        <td className="px-6 py-8 text-sm font-black text-slate-900">
-                          {item.course}
-                        </td>
-                        <td className="px-6 py-8 text-sm text-slate-600 font-medium whitespace-pre-line leading-relaxed">
-                          {item.criteria}
-                        </td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-            </div>
 
-            {/* Categories */}
-            <div className="bg-slate-900 rounded-[2.5rem] p-8 sm:p-16 text-white">
-              <h3 className="text-2xl font-black text-white tracking-tight mb-12">
-                {t.categoriesTitle}
-              </h3>
-              <div className="grid sm:grid-cols-3 gap-8">
-                {t.categories.map((item: any, idx: number) => (
-                  <div
-                    key={idx}
-                    className="bg-white/5 border border-white/10 p-8 rounded-3xl"
-                  >
-                    <h4 className="text-blue-400 font-black text-xs uppercase tracking-widest mb-4">
-                      {item.type}
-                    </h4>
-                    <p className="text-white/70 text-sm font-medium leading-relaxed whitespace-pre-line">
-                      {item.desc}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         )}
       </div>

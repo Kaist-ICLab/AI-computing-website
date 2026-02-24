@@ -73,11 +73,7 @@ export const translations: Record<"ko" | "en", TranslationContent> = {
           timeline: "2026. 05. 14(목) 14:00 이후",
           method: "KAIST 입시시스템 (https://gradapply.kaist.ac.kr 합격자발표)",
         },
-        // {
-        //   category: "프로그래밍 시험(석사과정)",
-        //   timeline: "2026. 05. 16(토) 14:00",
-        //   method: "전산학부의 프로그래밍 시험과 동일함",
-        // },
+
         {
           category: "2단계 전형(면접)",
           timeline: "2026. 05. 16(토) ~ 05. 26(화)",
@@ -392,11 +388,7 @@ export const translations: Record<"ko" | "en", TranslationContent> = {
           timeline: "2026. 05. 14(Thu) 14:00+",
           method: "Portal Notice (https://gradapply.kaist.ac.kr)",
         },
-        {
-          category: "Programming Exam (M.S.)",
-          timeline: "2026. 05. 16(Sat) 14:00",
-          method: "Jointly held with School of Computing",
-        },
+
         {
           category: "2nd Stage (Interview)",
           timeline: "2026. 05. 16(Sat) ~ 05. 26(Tue)",
