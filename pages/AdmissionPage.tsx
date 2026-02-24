@@ -1,12 +1,11 @@
-import React from "react";
-import { Language } from "../types";
+import React, { useContext } from "react";
+import { LanguageContext } from "../App";
 import Admission from "../components/Admission";
 
 const AdmissionPage: React.FC<{
   type: "ug" | "grad";
-  t: any;
-  lang: Language;
-}> = ({ type, t, lang }) => {
+}> = ({ type }) => {
+  const { lang, t } = useContext(LanguageContext);
   return (
     <div className="pt-24">
       {/* <div className="bg-slate-50 border-b border-slate-100 py-20 text-center">
@@ -17,7 +16,7 @@ const AdmissionPage: React.FC<{
           {type === "ug" ? "Undergraduate Admission" : "Graduate Admission"}
         </p>
       </div> */}
-      <Admission type={type} t={t} lang={lang} />
+      <Admission type={type} t={t.admission} lang={lang} />
     </div>
   );
 };
