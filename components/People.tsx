@@ -49,8 +49,8 @@ const People: React.FC<{ lang: Language; title: string }> = ({
 }) => {
   return (
     <section className="pt-8 pb-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg-white">
-      <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
-        <div>
+      <div className="flex flex-col items-center text-center mb-16 gap-8">
+        <div className="max-w-2xl">
           <h2 className="text-4xl sm:text-5xl font-black text-[#004191] tracking-tighter">
             {lang === "ko" ? "교수진" : "Faculty"}
           </h2>
@@ -70,7 +70,7 @@ const People: React.FC<{ lang: Language; title: string }> = ({
           </h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-16">
             {fullTimeFaculty.map((member) => (
-              <div key={member.ko} className="group cursor-pointer">
+              <div key={member.ko} className="group">
                 <div
                   className={`aspect-[4/5] bg-slate-50 rounded-2xl mb-6 flex items-end justify-center overflow-hidden border border-slate-100 group-hover:border-[#004191] transition-all relative ${member.isChair ? "ring-2 ring-blue-500/20" : ""}`}
                 >
@@ -113,7 +113,7 @@ const People: React.FC<{ lang: Language; title: string }> = ({
           </h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-16">
             {jointFaculty.map((member) => (
-              <div key={member.ko} className="group cursor-pointer">
+              <div key={member.ko} className="group">
                 <div
                   className="aspect-[4/5] bg-slate-50 rounded-2xl mb-6 flex items-end justify-center overflow-hidden border border-slate-100 group-hover:border-[#004191] transition-all relative"
                 >
