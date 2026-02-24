@@ -85,13 +85,9 @@ const Admission: React.FC<AdmissionProps> = ({ type, t, lang }) => {
                 <div
                   className={`flex gap-8 ${idx === 0 ? "items-center" : "flex-col items-start mb-8"}`}
                 >
-                  {link.icon ? (
+                  {link.icon && (
                     <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center group-hover:bg-blue-100 transition-colors shrink-0">
                       {link.icon}
-                    </div>
-                  ) : (
-                    <div className="w-16 h-16 bg-slate-50 rounded-full flex items-center justify-center group-hover:bg-slate-100 transition-colors shrink-0">
-                      <div className="w-2 h-2 bg-slate-300 rounded-full" />
                     </div>
                   )}
                   <div>
