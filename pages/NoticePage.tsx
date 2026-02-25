@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import { LanguageContext } from '../App';
+import React, { useContext } from "react";
+import { LanguageContext } from "../App";
 
 const NoticePage: React.FC = () => {
   const { lang, t } = useContext(LanguageContext);
@@ -19,16 +19,19 @@ const NoticePage: React.FC = () => {
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
         <div className="bg-white rounded-[2.5rem] shadow-md border border-slate-200 p-8 sm:p-16 animate-in fade-in slide-in-from-bottom-4 duration-500">
           <div className="text-slate-700 leading-relaxed">
-            <h2 className="text-2xl font-bold text-slate-900 mb-4">입시설명회</h2>
+            <h2 className="text-2xl font-bold text-slate-900 mb-4">
+              입시설명회
+            </h2>
             <div className="font-medium whitespace-pre-line text-[15px]">
               {`26.3.20 (금) 1:00PM (전산학부 끝나고 바로 이어서 합니다) 
-Zoom 링크도 나중에 공지가 될 예정입니다. 
-
-포스터 제작중인데요 나중에 업데이트가 되면 알려드리겠습니다.`}
+Zoom 링크도 나중에 공지가 될 예정입니다.`}
             </div>
             <div className="mt-12 flex justify-center">
               <picture>
-                <source srcSet="/images/admission_session_poster.webp" type="image/webp" />
+                <source
+                  srcSet="/images/admission_session_poster.webp"
+                  type="image/webp"
+                />
                 <img
                   src="/images/admission_session_poster.png"
                   alt="Admission Information Session Poster"
