@@ -9,11 +9,16 @@ interface FacultyMember {
 }
 
 const fullTimeFaculty: FacultyMember[] = [
-  { ko: "이의진", en: "Uichin Lee", isChair: true, img: "/images/uichinlee.webp" },
+  {
+    ko: "이의진",
+    en: "Uichin Lee",
+    isChair: true,
+    img: "/images/uichinlee.webp",
+  },
   { ko: "성민혁", en: "Minhyuk Sung", img: "/images/minhyuksung.webp" },
   { ko: "안성진", en: "Sungjin Ahn", img: "/images/sungjinahn.webp" },
   { ko: "홍승훈", en: "Seunghoon Hong", img: "/images/seunghoonhong.webp" },
-  { ko: "황지영", en: "Jiyoung Hwang", img: "/images/jiyounghwang.webp" },
+  { ko: "황지영", en: "Jiyoung Whang", img: "/images/jiyounghwang.webp" },
 ];
 
 const jointFaculty: FacultyMember[] = [
@@ -29,9 +34,13 @@ const jointFaculty: FacultyMember[] = [
   { ko: "박대형", en: "Daehyung Park", img: "/images/daehyungpark.webp" },
   { ko: "박종세", en: "Jongse Park", img: "/images/jongsepark.webp" },
   { ko: "박진아", en: "Jinah Park", img: "/images/jinahpark.webp" },
-  { ko: "백종문", en: "Jong-Moon Baik", img: "/images/jongmoonbaik.webp" },
+  { ko: "백종문", en: "Jongmoon Baik", img: "/images/jongmoonbaik.webp" },
   { ko: "손수엘", en: "Sooel Son", img: "/images/sooelson.webp" },
-  { ko: "시어링조셉", en: "Joseph J. Seering", img: "/images/josephjseering.webp" },
+  {
+    ko: "시어링조셉",
+    en: "Joseph J. Seering",
+    img: "/images/josephjseering.webp",
+  },
   { ko: "송준화", en: "Junehwa Song", img: "/images/junehwasong.webp" },
   { ko: "오태현", en: "Tae-Hyun Oh", img: "/images/taehyunoh.webp" },
   { ko: "오혜연", en: "Alice Oh", img: "/images/aliceoh.webp" },
@@ -87,8 +96,9 @@ const People: React.FC<{ lang: Language; title: string }> = ({
                   <div className="absolute top-4 right-4 w-2 h-2 bg-[#004191] rounded-full scale-0 group-hover:scale-100 transition-transform"></div>
                 </div>
                 <p
-                  className={`font-black text-slate-900 mb-1 min-h-[28px] ${lang === "ko" ? "text-lg" : "text-base"
-                    }`}
+                  className={`font-black text-slate-900 mb-1 min-h-[28px] ${
+                    lang === "ko" ? "text-lg" : "text-base"
+                  }`}
                 >
                   {lang === "ko" ? member.ko : member.en}
                 </p>
@@ -113,10 +123,8 @@ const People: React.FC<{ lang: Language; title: string }> = ({
           </h3>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-16">
             {jointFaculty.map((member) => (
-              <div key={member.ko} className="group">
-                <div
-                  className="aspect-[4/5] bg-slate-50 rounded-2xl mb-6 flex items-end justify-center overflow-hidden border border-slate-100 group-hover:border-[#004191] transition-all relative"
-                >
+              <div key={member.ko} className="group cursor-pointer">
+                <div className="aspect-[4/5] bg-slate-50 rounded-2xl mb-6 flex items-end justify-center overflow-hidden border border-slate-100 group-hover:border-[#004191] transition-all relative">
                   <img
                     src={member.img}
                     alt={lang === "ko" ? member.ko : member.en}
@@ -125,8 +133,9 @@ const People: React.FC<{ lang: Language; title: string }> = ({
                   <div className="absolute top-4 right-4 w-2 h-2 bg-[#004191] rounded-full scale-0 group-hover:scale-100 transition-transform"></div>
                 </div>
                 <p
-                  className={`font-black text-slate-900 mb-1 min-h-[28px] ${lang === "ko" ? "text-lg" : "text-base"
-                    }`}
+                  className={`font-black text-slate-900 mb-1 min-h-[28px] ${
+                    lang === "ko" ? "text-lg" : "text-base"
+                  }`}
                 >
                   {lang === "ko" ? member.ko : member.en}
                 </p>
