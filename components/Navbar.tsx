@@ -183,7 +183,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
             <button
               onClick={() => setLang(lang === "en" ? "ko" : "en")}
               className={`text-[10px] font-bold border rounded px-2 py-1 transition-all ${!showDarkNavbar
-                ? "text-gray-400 hover:text-[#002380] border-gray-200"
+                ? "text-gray-400 border-gray-200 hover:text-[#002380]"
                 : "text-white border-white/40 hover:bg-white/10"
                 }`}
             >
