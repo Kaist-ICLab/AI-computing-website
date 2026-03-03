@@ -21,7 +21,7 @@ const RequirementsPage: React.FC = () => {
               <h3 className="text-lg font-black text-slate-800 tracking-tight flex items-center gap-4">
                 {section.title}
                 {section.credits && (
-                  <span className="text-[10px] text-blue-600 bg-blue-50 px-3 py-1 rounded-full uppercase tracking-widest border border-blue-100">
+                  <span className="text-[10px] text-blue-600 bg-blue-50 px-4 py-0 rounded-full uppercase tracking-wide border border-blue-100">
                     {section.credits}
                   </span>
                 )}
@@ -46,39 +46,38 @@ const RequirementsPage: React.FC = () => {
   );
 
   return (
-    <div className="pt-32 pb-12 min-h-screen">
-      {/* Header */}
-      <div className="mb-8 max-w-6xl mx-auto flex flex-col items-center text-center gap-8">
-        <h1 className="text-4xl sm:text-5xl font-black tracking-tighter text-[#004191]">
+    <div className="pt-24 pb-36 min-h-screen">
+      <div className="bg-slate-50 border-b border-slate-100 py-16 text-center mb-16">
+        <h1 className="text-4xl md:text-5xl font-black text-slate-900 mb-4">
           {education.reqTitle}
         </h1>
-        <div className="text-slate-500 leading-relaxed font-bold text-xs uppercase tracking-widest whitespace-pre-line max-w-5xl flex flex-col gap-2">
-          <p>{education.reqDesc}</p>
-          <p className="italic text-slate-400 normal-case tracking-normal">
-            {education.reqNotice}
-          </p>
-        </div>
+        <p className="text-slate-500 font-bold uppercase tracking-[0.3em] text-xs">
+          Guidelines and criteria for degree completion
+        </p>
       </div>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Level Toggle */}
-        <div className="flex justify-center mb-16">
-          <div className="bg-slate-200/50 p-1.5 rounded-3xl flex shadow-inner">
+        <div className="flex flex-col items-center mb-16">
+          <div className="bg-slate-200/50 p-1.5 rounded-[20px] flex shadow-inner mb-4">
             <button
               onClick={() => setReqType('ug')}
-              className={`px-12 py-4 rounded-2xl text-xs font-black uppercase tracking-widest transition-all ${reqType === 'ug' ? 'bg-white text-blue-900 shadow-md scale-105' : 'text-slate-500 hover:text-slate-800'
+              className={`px-12 py-4 rounded-[16px] text-sm font-black uppercase tracking-widest transition-all ${reqType === 'ug' ? 'bg-white text-blue-900 shadow-md scale-100' : 'text-slate-500 hover:text-slate-800 scale-95'
                 }`}
             >
               {lang === 'ko' ? '학사 과정' : 'Undergraduate'}
             </button>
             <button
               onClick={() => setReqType('grad')}
-              className={`px-12 py-4 rounded-2xl text-xs font-black uppercase tracking-widest transition-all ${reqType === 'grad' ? 'bg-white text-blue-900 shadow-md scale-105' : 'text-slate-500 hover:text-slate-800'
+              className={`px-12 py-4 rounded-[16px] text-sm font-black uppercase tracking-widest transition-all ${reqType === 'grad' ? 'bg-white text-blue-900 shadow-md scale-100' : 'text-slate-500 hover:text-slate-800 scale-95'
                 }`}
             >
               {lang === 'ko' ? '대학원 과정' : 'Graduate'}
             </button>
           </div>
+          <p className="italic text-slate-400 text-xs normal-case tracking-normal text-center">
+            {education.reqNotice}
+          </p>
         </div>
 
         {/* Content */}

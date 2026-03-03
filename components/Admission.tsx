@@ -48,15 +48,15 @@ const Admission: React.FC<AdmissionProps> = ({ type, t, lang }) => {
   ];
 
   return (
-    <section className="pt-8 pb-12 bg-white text-slate-900 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="mb-16 max-w-6xl mx-auto flex flex-col items-center text-center gap-8">
-          <h2 className="text-4xl sm:text-5xl font-black tracking-tighter text-[#004191]">
-            {type === "ug" ? t.ugTitle : t.gradTitle}
-          </h2>
-          <p className="text-slate-500 leading-relaxed font-bold text-xs uppercase tracking-widest whitespace-pre-line max-w-5xl">
-            {type === "ug" ? t.ugDesc : t.gradDesc}
-          </p>
+    <section className="pt-16 pb-32 bg-white text-slate-900 relative">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="mb-16 max-w-6xl mx-auto flex flex-col items-center text-center gap-16">
+          <div className="flex items-stretch w-full">
+            <div className="w-1.5 bg-[#004191] rounded-full mr-5" />
+            <p className="max-w-5xl text-left text-slate-600 leading-relaxed font-normal text-lg tracking-normal whitespace-pre-line">
+              {type === "ug" ? t.ugDesc : t.gradDesc}
+            </p>
+          </div>
           {type === "grad" && (
             <a
               href={
