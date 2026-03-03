@@ -167,13 +167,13 @@ const CourseListPage: React.FC = () => {
   );
 
   return (
-    <div className="pt-32 pb-8">
-      <div className="mb-16 max-w-6xl mx-auto flex flex-col items-center text-center gap-8">
-        <h1 className="text-4xl sm:text-5xl font-black tracking-tighter text-[#004191]">
+    <div className="pt-24 pb-36">
+      <div className="bg-slate-50 border-b border-slate-100 py-16 text-center mb-16">
+        <h1 className="text-4xl md:text-5xl font-black text-slate-900 mb-4">
           {education.courseTitle}
         </h1>
-        <p className="text-slate-500 leading-relaxed font-bold text-xs uppercase tracking-widest whitespace-pre-line max-w-5xl">
-          {education.courseSubtitle}
+        <p className="text-slate-500 font-bold uppercase tracking-[0.3em] text-xs">
+          Advanced Curriculum for AI-Native Leaders
         </p>
       </div>
 

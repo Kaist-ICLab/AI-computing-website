@@ -119,7 +119,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
               <img
                 src="https://images.seeklogo.com/logo-png/40/2/kaist-korea-advanced-institute-of-science-and-tech-logo-png_seeklogo-402926.png"
                 alt="KAIST"
-                className={`h-20 md:h-32 w-auto transition-all duration-300 ${logoFilter}`}
+                className={`h-20 md:h-28 w-auto transition-all duration-300 ${logoFilter} pt-1`}
               />
               <div className="flex flex-col items-start leading-none">
                 <span

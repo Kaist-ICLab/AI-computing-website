@@ -56,7 +56,7 @@ export const translations: Record<"ko" | "en", TranslationContent> = {
       title: "입학 안내",
       ugTitle: "학사과정 입학 안내",
       ugDesc:
-        "KAIST 학부생은 전공선택 없이 무학과로 입학을 하고 있습니다. \n무학과 입학 후 2학기 때 AI컴퓨팅을 포함한 전공을 선택하고 있습니다. \n이에 대한 자세한 설명은 KAIST 입학처 홈페이지에서 제공하고 있습니다.",
+        "KAIST 학부생은 전공선택 없이 무학과로 입학하며, \n무학과 입학 후 2학기 때 AI컴퓨팅을 포함한 전공을 선택할 수 있습니다. \n자세한 설명은 KAIST 입학처 홈페이지에서 확인하세요.",
       gradTitle: "대학원과정 입학 안내",
       gradDesc:
         "석사과정, 박사과정, (KAIST석사재학생) 석박사 통합과정, \n(KAIST학사재학생) 학·석박통합연계과정 신입생을 모집합니다.",
@@ -377,10 +377,10 @@ export const translations: Record<"ko" | "en", TranslationContent> = {
       title: "Admission",
       ugTitle: "Undergraduate Admission",
       ugDesc:
-        "KAIST undergraduate students are admitted without declaring a major and enter as undeclared students. At the end of the second semester, they choose their major, which may include AI Computing among other disciplines. More detailed information about this process is available on the KAIST Admissions Office website.",
+        "KAIST undergraduate students are admitted without declaring a major. \nAt the end of the second semester, they choose their major, which may include AI Computing among other disciplines. \nMore detailed information is available on the KAIST Admissions Office website.",
       gradTitle: "Graduate Admission",
       gradDesc:
-        "The Department of AI Computing will begin accepting international graduate students in Spring 2027. For general information, please refer to the KAIST Graduate Admissions website:",
+        "The Department of AI Computing will begin accepting international graduate students in Spring 2027. \nFor general information, please refer to the KAIST Graduate Admissions website:",
       gradSchedule1Title:
         "2026 Fall Semester Admission Timeline for New Students",
       gradSchedule1Items: [

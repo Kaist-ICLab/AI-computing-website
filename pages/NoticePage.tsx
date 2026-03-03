@@ -5,15 +5,14 @@ const NoticePage: React.FC = () => {
   const { lang, t } = useContext(LanguageContext);
 
   return (
-    <div className="pt-32">
-      {/* Header */}
-      <div className="mb-20 max-w-6xl mx-auto flex flex-col items-center text-center gap-8 px-4">
-        <h1 className="text-4xl sm:text-5xl font-black tracking-tighter text-[#004191]">
+    <div className="pt-24 pb-36">
+      <div className="bg-slate-50 border-b border-slate-100 py-16 text-center mb-16">
+        <h1 className="text-4xl md:text-5xl font-black text-slate-900 mb-4">
           {t.common.noticeTitle}
         </h1>
-        <div className="text-slate-500 leading-relaxed font-bold text-xs uppercase tracking-widest whitespace-pre-line max-w-5xl flex flex-col gap-2">
-          <p>{t.common.noticeSubtitle}</p>
-        </div>
+        <p className="text-slate-500 font-bold uppercase tracking-[0.3em] text-xs">
+          Department Announcements & Updates
+        </p>
       </div>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">

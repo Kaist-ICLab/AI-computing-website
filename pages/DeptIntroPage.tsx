@@ -9,7 +9,7 @@ const DeptIntroPage: React.FC = () => {
   return (
     <div className="pt-24 min-h-screen bg-white">
       <div className="bg-slate-50 border-b border-slate-100 py-16 text-center">
-        <h1 className="text-4xl sm:text-5xl font-black text-slate-900 tracking-tighter uppercase mb-4">
+        <h1 className="text-4xl md:text-5xl font-black text-slate-900 mb-4">
           {lang === 'ko' ? '학과 소개' : 'Department Introduction'}
         </h1>
         <p className="text-slate-500 font-bold uppercase tracking-[0.3em] text-xs">
