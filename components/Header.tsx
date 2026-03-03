@@ -58,7 +58,8 @@ const Header: React.FC<HeaderProps> = ({ t, onNext }) => {
             className="bg-[#002380]/90 hover:bg-[#002380] px-8 py-3 rounded-md text-sm font-medium transition-all shadow-lg hover:shadow-[0_0_20px_rgba(255,255,255,0.25)] flex items-center justify-center gap-3 text-white"
           >
             {t.cta}
-            <ArrowDown className="w-4 h-4" />
+            {/* <ArrowDown className="w-4 h-4" /> */}
+            <ArrowDown className="w-3.5 h-3.5 group-hover:translate-y-1 transition-transform" />
           </button>
 
           <a
