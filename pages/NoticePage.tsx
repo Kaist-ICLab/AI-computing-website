@@ -15,7 +15,7 @@ const NoticePage: React.FC = () => {
         </p>
       </div>
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
         <div className="bg-white rounded-[2.5rem] shadow-md border border-slate-200 p-8 sm:p-16 animate-in fade-in slide-in-from-bottom-4 duration-500">
           <div className="text-slate-700 leading-relaxed">
             <h2 className="text-2xl font-bold text-slate-900 mb-4">
