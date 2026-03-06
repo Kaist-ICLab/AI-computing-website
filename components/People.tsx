@@ -60,7 +60,14 @@ const People: React.FC<{ lang: Language; title: string }> = ({
   title,
 }) => {
   return (
-    <section className="pt-24 pb-52 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 bg-white">
+    <section className="pt-16 pb-52 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 bg-white">
+      <div className="mb-8">
+        <p className="italic text-slate-400 text-sm normal-case tracking-normal text-left">
+          {lang === "ko"
+            ? "* 아래 교수진 목록은 잠정적으로 구성된 것이며, 추후 확정될 예정입니다."
+            : "* The faculty list below is tentative and will be finalized at a later stage."}
+        </p>
+      </div>
       <div className="space-y-16">
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-x-28 gap-y-28">
           {fullTimeFaculty.map((member) => (
