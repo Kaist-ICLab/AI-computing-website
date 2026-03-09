@@ -7,7 +7,6 @@ const Announcements: React.FC<{ title: string }> = ({ title }) => {
   const navigate = useNavigate();
   const dummyNews = [
     {
-      date: '2024.05.15',
       title: lang === 'ko' ? '2026학년도 가을학기 입시설명회 안내' : '2026 Fall Admission Information Session',
       category: lang === 'ko' ? '학사' : 'Academic'
     }
@@ -42,7 +41,9 @@ const Announcements: React.FC<{ title: string }> = ({ title }) => {
                 </h4>
               </div>
               <div className="flex items-center gap-10">
-                <span className="text-slate-400 font-bold text-sm tracking-tighter">{news.date}</span>
+                <span className="text-slate-400 font-bold text-sm tracking-tighter group-hover:text-[#004191] transition-all">
+                  {lang === 'ko' ? '더보기' : 'Read More'}
+                </span>
                 <svg className="w-5 h-5 text-slate-300 group-hover:text-[#004191] group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
               </div>
             </div>
