@@ -38,6 +38,16 @@ Zoom 링크도 나중에 공지가 될 예정입니다.`}
                 />
               </picture>
             </div>
+
+            <div className="mt-8 flex justify-center">
+              <a
+                href="public/files/AI_Computing_Introduction_20260311.pdf"
+                download
+                className="inline-flex gap-2 px-6 py-3 bg-[#4a5568] text-white rounded-lg font-semibold hover:bg-[#2d3748] transition-colors"
+              >
+                입시설명회 자료 다운로드
+              </a>
+            </div>
           </div>
         </div>
       </div>
