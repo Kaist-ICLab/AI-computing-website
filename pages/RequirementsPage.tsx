@@ -75,19 +75,6 @@ const RequirementsPage: React.FC = () => {
       </div>
 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Download Link */}
-        <div className="flex justify-center">
-          <a
-            href="/files/AI_Computing_Introduction_20260311.pdf"
-            download
-            className="inline-flex items-center gap-1 px-3 py-1.5 mb-4 text-sm bg-gray-100 text-gray-700 rounded-md hover:bg-gray-200 transition-colors"
-          >
-            {lang === "ko"
-              ? "AI 컴퓨팅학과 소개서 다운로드"
-              : "Download AI Computing Brochure"}
-          </a>
-        </div>
-
         {/* Level Toggle */}
         <div className="flex flex-col items-center mb-16">
           <div className="bg-slate-200/50 p-1.5 rounded-[20px] flex shadow-inner mb-4">

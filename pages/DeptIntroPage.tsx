@@ -1,7 +1,6 @@
-
-import React, { useContext } from 'react';
-import { LanguageContext } from '../App';
-import { BookOpen } from 'lucide-react';
+import React, { useContext } from "react";
+import { LanguageContext } from "../App";
+import { BookOpen } from "lucide-react";
 
 const DeptIntroPage: React.FC = () => {
   const { lang, t } = useContext(LanguageContext);
@@ -10,7 +9,7 @@ const DeptIntroPage: React.FC = () => {
     <div className="pt-24 min-h-screen bg-white">
       <div className="bg-slate-50 border-b border-slate-100 py-16 text-center">
         <h1 className="text-4xl md:text-5xl font-black text-slate-900 mb-4">
-          {lang === 'ko' ? '학과 소개' : 'Department Introduction'}
+          {lang === "ko" ? "학과 소개" : "Department Introduction"}
         </h1>
         <p className="text-slate-500 font-bold uppercase tracking-[0.3em] text-xs">
           Building the Future of AI-Native Leaders
@@ -18,27 +17,52 @@ const DeptIntroPage: React.FC = () => {
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div id="dept-overview" className="animate-in fade-in duration-500 scroll-mt-32">
+        <div
+          id="dept-overview"
+          className="animate-in fade-in duration-500 scroll-mt-32"
+        >
           <div className="mb-20">
             <div className="flex items-center gap-3 mb-6">
               <BookOpen className="w-6 h-6 text-blue-600" />
-              <h2 className="text-3xl font-black text-slate-900">{intro.deptTitle}</h2>
+              <h2 className="text-3xl font-black text-slate-900">
+                {intro.deptTitle}
+              </h2>
             </div>
             <p className="text-xl text-slate-600 leading-relaxed font-medium">
               {intro.deptContent}
             </p>
+            <div className="mt-4">
+              <a
+                href="/files/AI_Computing_Introduction_20260311.pdf"
+                download
+                className="inline-flex items-center gap-1 text-slate-500 font-medium underline underline-offset-4 hover:text-blue-600 transition-colors"
+              >
+                {lang === "ko"
+                  ? "AI 컴퓨팅학과 소개서 다운로드"
+                  : "Download AI Computing Brochure"}
+              </a>
+            </div>
           </div>
 
           <div className="grid gap-8">
-            <h3 className="text-xs font-black text-slate-400 uppercase tracking-[0.4em] mb-4">{intro.objectivesTitle}</h3>
+            <h3 className="text-xs font-black text-slate-400 uppercase tracking-[0.4em] mb-4">
+              {intro.objectivesTitle}
+            </h3>
             {intro.objectives.map((obj: any, idx: number) => (
-              <div key={idx} className="flex gap-6 p-8 bg-slate-50 rounded-2xl border border-slate-100 hover:border-blue-200 transition-colors">
+              <div
+                key={idx}
+                className="flex gap-6 p-8 bg-slate-50 rounded-2xl border border-slate-100 hover:border-blue-200 transition-colors"
+              >
                 <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-blue-600 font-black shrink-0">
                   {idx + 1}
                 </div>
                 <div>
-                  <h4 className="text-lg font-black text-slate-900 mb-2 uppercase tracking-tight">{obj.title}</h4>
-                  <p className="text-slate-500 font-medium leading-relaxed">{obj.desc}</p>
+                  <h4 className="text-lg font-black text-slate-900 mb-2 uppercase tracking-tight">
+                    {obj.title}
+                  </h4>
+                  <p className="text-slate-500 font-medium leading-relaxed">
+                    {obj.desc}
+                  </p>
                 </div>
               </div>
             ))}
