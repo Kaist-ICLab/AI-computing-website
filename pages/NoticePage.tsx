@@ -19,7 +19,7 @@ const NoticePage: React.FC = () => {
         <div className="bg-white rounded-[2.5rem] shadow-md border border-slate-200 p-8 sm:p-16 animate-in fade-in slide-in-from-bottom-4 duration-500">
           <div className="text-slate-700 leading-relaxed">
             <h2 className="text-2xl font-bold text-slate-900 mb-4">
-              입시설명회
+              2026학년도 가을학기 입시설명회 안내
             </h2>
             <div className="font-medium whitespace-pre-line text-[15px]">
               {`26.3.20 (금) 1:00PM (전산학부 끝나고 바로 이어서 합니다) 
@@ -45,7 +45,7 @@ Zoom 링크도 나중에 공지가 될 예정입니다.`}
                 download
                 className="inline-flex gap-2 px-6 py-3 bg-[#4a5568] text-white rounded-lg font-semibold hover:bg-[#2d3748] transition-colors"
               >
-                입시설명회 자료 다운로드
+                {lang === 'ko' ? '입시설명회 자료 다운로드' : 'Download Admission Session Materials'}
               </a>
             </div>
           </div>

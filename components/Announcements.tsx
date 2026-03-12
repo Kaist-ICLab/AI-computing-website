@@ -5,9 +5,9 @@ import { LanguageContext } from '../App';
 const Announcements: React.FC<{ title: string }> = ({ title }) => {
   const { lang } = useContext(LanguageContext);
   const navigate = useNavigate();
-  const dummyNews = [
+  const allNews = [
     {
-      title: lang === 'ko' ? '2026학년도 가을학기 입시설명회 안내' : '2026 Fall Admission Information Session',
+      title: '2026학년도 가을학기 입시설명회 안내',
       category: lang === 'ko' ? '학사' : 'Academic'
     }
   ];
@@ -28,7 +28,7 @@ const Announcements: React.FC<{ title: string }> = ({ title }) => {
         )}
 
         <div className="border-t-2 border-slate-900">
-          {dummyNews.map((news, i) => (
+          {allNews.map((news, i) => (
             <div
               key={i}
               onClick={() => navigate('/notice')}
