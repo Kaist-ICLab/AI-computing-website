@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { LanguageContext } from "../App";
-import { Language } from "../types";
 
 const courses = [
   {
@@ -167,7 +166,7 @@ const CourseListPage: React.FC = () => {
   );
 
   return (
-    <div className="pt-24 pb-36">
+    <div className="pt-24 pb-16">
       <div className="bg-slate-50 border-b border-slate-100 py-16 text-center mb-16">
         <h1 className="text-4xl md:text-5xl font-black text-slate-900 mb-4">
           {education.courseTitle}

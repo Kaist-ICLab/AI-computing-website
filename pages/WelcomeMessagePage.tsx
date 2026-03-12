@@ -16,7 +16,7 @@ const WelcomeMessagePage: React.FC = () => {
         </p>
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
         <div className="animate-in fade-in duration-500">
 
           <div className="flex items-center gap-4 mb-14 text-blue-600">

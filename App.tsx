@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { HashRouter, Routes, Route, useLocation } from "react-router-dom";
-import { Language, Page } from "./types";
+import { Language } from "./types";
 import { translations } from "./translations";
 import Home from "./pages/Home";
 import WelcomeMessagePage from "./pages/WelcomeMessagePage";

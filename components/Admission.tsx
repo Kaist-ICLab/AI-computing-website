@@ -48,7 +48,7 @@ const Admission: React.FC<AdmissionProps> = ({ type, t, lang }) => {
   ];
 
   return (
-    <section className="pt-16 pb-32 bg-white text-slate-900 relative">
+    <section className="pt-16 pb-16 bg-white text-slate-900 relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="mb-16 max-w-6xl mx-auto flex flex-col items-center text-center gap-16">
           <div className="flex items-stretch w-full">

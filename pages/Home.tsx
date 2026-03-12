@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { LanguageContext } from '../App';
 import Header from '../components/Header';
 import IntroDiagram from '@/components/IntroDiagram';
 import Announcements from '../components/Announcements';
+import EcosystemDiagram from '../components/diagrams/EcosystemDiagram';
+import FullStackDiagram from '../components/diagrams/FullStackDiagram';
 
 const Home: React.FC = () => {
-  const { lang, t } = useContext(LanguageContext);
-  // const navigate = useNavigate();
+  const { t } = useContext(LanguageContext);
   const handleScrollToDiagram = () => {
     const section = document.getElementById("intro-diagram");
     if (section) {
@@ -26,6 +26,10 @@ const Home: React.FC = () => {
 
       <div id="intro-diagram" className="scroll-mt-24">
         <IntroDiagram />
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-0 space-y-20">
+          <EcosystemDiagram />
+          <FullStackDiagram />
+        </div>
       </div>
 
       <div id="announcements-summary" className="scroll-mt-20">

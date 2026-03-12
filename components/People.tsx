@@ -60,7 +60,7 @@ const People: React.FC<{ lang: Language; title: string }> = ({
   title,
 }) => {
   return (
-    <section className="pt-16 pb-52 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 bg-white">
+    <section className="pt-16 pb-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 bg-white">
       <div className="mb-8">
         <p className="italic text-slate-400 text-sm normal-case tracking-normal text-left">
           {lang === "ko"
@@ -95,9 +95,8 @@ const People: React.FC<{ lang: Language; title: string }> = ({
                   <div className="absolute top-3 right-3 w-2 h-2 bg-[#004191] rounded-full scale-0 group-hover:scale-100 transition-transform"></div>
                 </div>
                 <p
-                  className={`font-bold text-slate-900 mb-1 min-h-[28px] ${
-                    lang === "ko" ? "text-lg" : "text-base"
-                  }`}
+                  className={`font-bold text-slate-900 mb-1 min-h-[28px] ${lang === "ko" ? "text-lg" : "text-base"
+                    }`}
                 >
                   {lang === "ko" ? member.ko : member.en}
                 </p>
@@ -134,9 +133,8 @@ const People: React.FC<{ lang: Language; title: string }> = ({
                   <div className="absolute top-3 right-3 w-2 h-2 bg-[#004191] rounded-full scale-0 group-hover:scale-100 transition-transform"></div>
                 </div>
                 <p
-                  className={`font-bold text-slate-900 mb-1 min-h-[28px] ${
-                    lang === "ko" ? "text-lg" : "text-base"
-                  }`}
+                  className={`font-bold text-slate-900 mb-1 min-h-[28px] ${lang === "ko" ? "text-lg" : "text-base"
+                    }`}
                 >
                   {lang === "ko" ? member.ko : member.en}
                 </p>

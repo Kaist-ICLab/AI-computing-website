@@ -5,7 +5,7 @@ const NoticePage: React.FC = () => {
   const { lang, t } = useContext(LanguageContext);
 
   return (
-    <div className="pt-24 pb-36">
+    <div className="pt-24 pb-16">
       <div className="bg-slate-50 border-b border-slate-100 py-16 text-center mb-16">
         <h1 className="text-4xl md:text-5xl font-black text-slate-900 mb-4">
           {t.common.noticeTitle}
@@ -15,7 +15,7 @@ const NoticePage: React.FC = () => {
         </p>
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-[2.5rem] shadow-md border border-slate-200 p-8 sm:p-16 animate-in fade-in slide-in-from-bottom-4 duration-500">
           <div className="text-slate-700 leading-relaxed">
             <h2 className="text-2xl font-bold text-slate-900 mb-4">

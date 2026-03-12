@@ -64,7 +64,7 @@ const RequirementsPage: React.FC = () => {
   );
 
   return (
-    <div className="pt-24 pb-36 min-h-screen">
+    <div className="pt-24 pb-16 min-h-screen">
       <div className="bg-slate-50 border-b border-slate-100 py-16 text-center mb-16">
         <h1 className="text-4xl md:text-5xl font-black text-slate-900 mb-4">
           {education.reqTitle}
@@ -80,21 +80,19 @@ const RequirementsPage: React.FC = () => {
           <div className="bg-slate-200/50 p-1.5 rounded-[20px] flex shadow-inner mb-4">
             <button
               onClick={() => setReqType("ug")}
-              className={`px-12 py-4 rounded-[16px] text-sm font-black uppercase tracking-widest transition-all ${
-                reqType === "ug"
-                  ? "bg-white text-blue-900 shadow-md scale-100"
-                  : "text-slate-500 hover:text-slate-800 scale-95"
-              }`}
+              className={`px-12 py-4 rounded-[16px] text-sm font-black uppercase tracking-widest transition-all ${reqType === "ug"
+                ? "bg-white text-blue-900 shadow-md scale-100"
+                : "text-slate-500 hover:text-slate-800 scale-95"
+                }`}
             >
               {lang === "ko" ? "학사 과정" : "Undergraduate"}
             </button>
             <button
               onClick={() => setReqType("grad")}
-              className={`px-12 py-4 rounded-[16px] text-sm font-black uppercase tracking-widest transition-all ${
-                reqType === "grad"
-                  ? "bg-white text-blue-900 shadow-md scale-100"
-                  : "text-slate-500 hover:text-slate-800 scale-95"
-              }`}
+              className={`px-12 py-4 rounded-[16px] text-sm font-black uppercase tracking-widest transition-all ${reqType === "grad"
+                ? "bg-white text-blue-900 shadow-md scale-100"
+                : "text-slate-500 hover:text-slate-800 scale-95"
+                }`}
             >
               {lang === "ko" ? "대학원 과정" : "Graduate"}
             </button>

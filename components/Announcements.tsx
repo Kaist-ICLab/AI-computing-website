@@ -13,7 +13,7 @@ const Announcements: React.FC<{ title: string }> = ({ title }) => {
   ];
 
   return (
-    <section className="pt-32 pb-32 bg-white">
+    <section className="pt-12 pb-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {title && (
           <div className="flex justify-between items-center mb-20">

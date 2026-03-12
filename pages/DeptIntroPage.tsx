@@ -2,6 +2,10 @@ import React, { useContext } from "react";
 import { LanguageContext } from "../App";
 import { BookOpen } from "lucide-react";
 
+import TalentDiagram from "../components/diagrams/TalentDiagram";
+import TechPyramidDiagram from "../components/diagrams/TechPyramidDiagram";
+import DesignHierarchyDiagram from "../components/diagrams/DesignHierarchyDiagram";
+
 const DeptIntroPage: React.FC = () => {
   const { lang, t } = useContext(LanguageContext);
   const intro = t.intro;
@@ -16,7 +20,7 @@ const DeptIntroPage: React.FC = () => {
         </p>
       </div>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
         <div
           id="dept-overview"
           className="animate-in fade-in duration-500 scroll-mt-32"
@@ -28,19 +32,29 @@ const DeptIntroPage: React.FC = () => {
                 {intro.deptTitle}
               </h2>
             </div>
-            <p className="text-xl text-slate-600 leading-relaxed font-medium">
-              {intro.deptContent}
-            </p>
-            <div className="mt-4">
-              <a
-                href="/files/AI_Computing_Introduction_20260311.pdf"
-                download
-                className="inline-flex items-center gap-1 text-slate-500 font-medium underline underline-offset-4 hover:text-blue-600 transition-colors"
-              >
-                {lang === "ko"
-                  ? "AI 컴퓨팅학과 소개서 다운로드"
-                  : "Download AI Computing Brochure"}
-              </a>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-16">
+              <div>
+                <p className="text-xl text-slate-600 leading-relaxed font-medium mb-6">
+                  {intro.deptContent}
+                </p>
+                <div className="mt-4">
+                  <a
+                    href="/files/AI_Computing_Introduction_20260311.pdf"
+                    download
+                    className="inline-flex items-center gap-1 text-slate-500 font-medium underline underline-offset-4 hover:text-blue-600 transition-colors"
+                  >
+                    {lang === "ko"
+                      ? "AI 컴퓨팅학과 소개서 다운로드"
+                      : "Download AI Computing Brochure"}
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-20 mt-10">
+              <TalentDiagram />
+              <TechPyramidDiagram />
+              <DesignHierarchyDiagram />
             </div>
           </div>
 
