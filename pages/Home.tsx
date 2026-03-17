@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import IntroDiagram from '@/components/IntroDiagram';
 import Announcements from '../components/Announcements';
 import EcosystemDiagram from '../components/diagrams/EcosystemDiagram';
-import FullStackDiagram from '../components/diagrams/FullStackDiagram';
+
 
 const Home: React.FC = () => {
   const { t } = useContext(LanguageContext);
@@ -28,7 +28,7 @@ const Home: React.FC = () => {
         <IntroDiagram />
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-0 space-y-20">
           <EcosystemDiagram />
-          <FullStackDiagram />
+
         </div>
       </div>
 
