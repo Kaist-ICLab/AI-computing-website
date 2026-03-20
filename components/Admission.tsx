@@ -50,7 +50,7 @@ const Admission: React.FC<AdmissionProps> = ({ type, t, lang }) => {
   return (
     <section className="pt-16 pb-16 bg-white text-slate-900 relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="mb-16 max-w-6xl mx-auto flex flex-col items-center text-center gap-16">
+        <div className="mb-8 max-w-6xl mx-auto flex flex-col items-start gap-6">
           <div className="flex items-stretch w-full">
             <div className="w-1.5 bg-[#004191] rounded-full mr-5" />
             <p className="max-w-5xl text-left text-slate-600 leading-relaxed font-normal text-lg tracking-normal whitespace-pre-line">
@@ -58,72 +58,96 @@ const Admission: React.FC<AdmissionProps> = ({ type, t, lang }) => {
             </p>
           </div>
           {type === "grad" && (
-            <a
-              href={
-                lang === "en"
-                  ? "https://admission.kaist.ac.kr/intl-graduate"
-                  : "https://gradapply.kaist.ac.kr"
-              }
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center bg-[#004191] text-white px-10 py-5 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-blue-800 transition-all shadow-xl shadow-blue-900/20"
-            >
-              {lang === "ko"
-                ? "입학처 홈페이지 바로가기"
-                : "Go to Admissions Portal"}{" "}
-              <ExternalLink className="w-4 h-4 ml-3" />
-            </a>
+            <div className="w-full flex flex-col gap-4">
+              <a
+                href="/files/AI_Computing_Grad_Info_Session_20260320.pdf"
+                download
+                className="inline-flex items-center gap-1 text-slate-500 font-medium underline underline-offset-4 hover:text-blue-600 transition-colors"
+              >
+                {lang === "ko"
+                  ? "AI 컴퓨팅학과 대학원 과정 소개서 다운로드"
+                  : "Download AI Computing Brochure"}
+              </a>
+              <div className="flex justify-center">
+                <a
+                  href={
+                    lang === "en"
+                      ? "https://admission.kaist.ac.kr/intl-graduate"
+                      : "https://gradapply.kaist.ac.kr"
+                  }
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center bg-[#004191] text-white px-10 py-5 rounded-2xl font-black text-xs uppercase tracking-widest hover:bg-blue-800 transition-all shadow-xl shadow-blue-900/20"
+                >
+                  {lang === "ko"
+                    ? "입학처 홈페이지 바로가기"
+                    : "Go to Admissions Portal"}{" "}
+                  <ExternalLink className="w-4 h-4 ml-3" />
+                </a>
+              </div>
+            </div>
           )}
         </div>
 
         {type === "ug" ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {ugLinks.map((link, idx) => (
-              <a
-                key={idx}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`group bg-white border border-slate-200 rounded-3xl p-6 sm:p-10 transition-all duration-300 hover:shadow-xl hover:border-[#004191] hover:-translate-y-1 flex flex-col items-center text-center animate-in fade-in slide-in-from-bottom-4 fill-mode-both duration-700 ${idx === 0 ? "md:col-span-2 md:flex-row md:text-left md:items-center" : "min-h-[220px]"}`}
-                style={{ animationDelay: `${idx * 150}ms` }}
-              >
-                {link.icon && idx === 0 && (
-                  <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center group-hover:bg-[#004191] transition-colors shrink-0 mb-6 md:mb-0 md:mr-8">
-                    <div className="group-hover:text-white transition-colors">
-                      {link.icon}
+          <div className="space-y-8">
+            <a
+              href="/files/AI_Computing_Introduction_20260311.pdf"
+              download
+              className="inline-flex items-center gap-1 text-slate-500 font-medium underline underline-offset-4 hover:text-blue-600 transition-colors"
+            >
+              {lang === "ko"
+                ? "AI 컴퓨팅학과 학사과정 소개서 다운로드"
+                : "Download AI Computing Department Introduction"}
+            </a>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {ugLinks.map((link, idx) => (
+                <a
+                  key={idx}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`group bg-white border border-slate-200 rounded-3xl p-6 sm:p-10 transition-all duration-300 hover:shadow-xl hover:border-[#004191] hover:-translate-y-1 flex flex-col items-center text-center animate-in fade-in slide-in-from-bottom-4 fill-mode-both duration-700 ${idx === 0 ? "md:col-span-2 md:flex-row md:text-left md:items-center" : "min-h-[220px]"}`}
+                  style={{ animationDelay: `${idx * 150}ms` }}
+                >
+                  {link.icon && idx === 0 && (
+                    <div className="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center group-hover:bg-[#004191] transition-colors shrink-0 mb-6 md:mb-0 md:mr-8">
+                      <div className="group-hover:text-white transition-colors">
+                        {link.icon}
+                      </div>
                     </div>
+                  )}
+
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-[#004191] transition-colors whitespace-pre-line">
+                      {link.title}
+                    </h3>
+                    <p className="text-slate-500 text-sm leading-relaxed px-4 md:px-0">
+                      {link.desc}
+                    </p>
                   </div>
-                )}
 
-                <div className="flex-1">
-                  <h3 className="text-xl font-bold text-slate-900 mb-2 group-hover:text-[#004191] transition-colors whitespace-pre-line">
-                    {link.title}
-                  </h3>
-                  <p className="text-slate-500 text-sm leading-relaxed px-4 md:px-0">
-                    {link.desc}
-                  </p>
-                </div>
-
-                <div className="mt-8 md:mt-0 flex items-center text-[#004191] font-bold text-base transition-transform group-hover:translate-x-1">
-                  {t.readMore}
-                  <svg
-                    className="w-4 h-4 ml-2"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M17 8l4 4m0 0l-4 4m4-4H3"
-                    />
-                  </svg>
-                </div>
-              </a>
-            ))}
+                  <div className="mt-8 md:mt-0 flex items-center text-[#004191] font-bold text-base transition-transform group-hover:translate-x-1">
+                    {t.readMore}
+                    <svg
+                      className="w-4 h-4 ml-2"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M17 8l4 4m0 0l-4 4m4-4H3"
+                      />
+                    </svg>
+                  </div>
+                </a>
+              ))}
+            </div>
           </div>
-        ) : (type === "grad" && lang === "en") ? null : (
+        ) : type === "grad" && lang === "en" ? null : (
           <div className="space-y-16">
             {/* Eligibility */}
             <div className="bg-white rounded-[2.5rem] p-6 sm:p-10 border border-slate-200 shadow-md">
@@ -318,8 +342,6 @@ const Admission: React.FC<AdmissionProps> = ({ type, t, lang }) => {
                 </table>
               </div>
             </div>
-
-
           </div>
         )}
       </div>

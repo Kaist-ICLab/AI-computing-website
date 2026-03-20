@@ -37,17 +37,6 @@ const DeptIntroPage: React.FC = () => {
                 <p className="text-xl text-slate-600 leading-relaxed font-medium mb-6">
                   {intro.deptContent}
                 </p>
-                <div className="mt-4">
-                  <a
-                    href="/files/AI_Computing_Introduction_20260311.pdf"
-                    download
-                    className="inline-flex items-center gap-1 text-slate-500 font-medium underline underline-offset-4 hover:text-blue-600 transition-colors"
-                  >
-                    {lang === "ko"
-                      ? "AI 컴퓨팅학과 소개서 다운로드"
-                      : "Download AI Computing Brochure"}
-                  </a>
-                </div>
               </div>
             </div>
 
