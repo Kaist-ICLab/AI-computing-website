@@ -17,7 +17,7 @@ const DesignHierarchyDiagram: React.FC = () => {
       </div>
 
       <div className="relative overflow-hidden flex justify-center py-6">
-        <svg width="100%" height="auto" viewBox="0 0 1080 700" className="max-w-4xl">
+        <svg width="100%" height="auto" viewBox="0 0 1080 700" className="max-w-5xl">
           <defs>
             <linearGradient id="ap1" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" style={{ stopColor: '#d1d5db' }} /><stop offset="100%" style={{ stopColor: '#e5e7eb' }} />
@@ -44,24 +44,30 @@ const DesignHierarchyDiagram: React.FC = () => {
           </defs>
 
           {/* Left labels */}
-          <text x="42" y="65" fill="#9ca3af" fontSize="12" fontWeight="500">{lang === 'ko' ? 'AI 응용 설계' : 'AI App Design'}</text>
-          <line x1="65" y1="76" x2="65" y2="170" stroke="#d1d5db" strokeWidth="1.2" strokeDasharray="4,3" />
-          <polygon points="65,74 61,82 69,82" fill="#d1d5db" />
-          <polygon points="65,172 61,164 69,164" fill="#d1d5db" />
+          <text x="75" y="105" fill="#9ca3af" fontSize="12" fontWeight="500" textAnchor="middle" transform="rotate(-90 75 105)">
+            {lang === 'ko' ? 'AI 응용 설계' : 'AI App Design'}
+          </text>
+          <line x1="95" y1="44" x2="95" y2="168" stroke="#d1d5db" strokeWidth="1.2" strokeDasharray="4,3"
+          />
+          <polygon points="95,40 91,48 99,48" fill="#d1d5db" />
+          <polygon points="95,170 91,162 99,162" fill="#d1d5db" />
 
-          <text x="22" y="235" fill="#0891b2" fontSize="13" fontWeight="700">{lang === 'ko' ? 'AI Core 설계' : 'AI Core Design'}</text>
-          <line x1="65" y1="248" x2="65" y2="500" stroke="#0891b2" strokeWidth="2" strokeDasharray="4,3" />
-          <polygon points="65,246 61,254 69,254" fill="#0891b2" />
-          <polygon points="65,502 61,494 69,494" fill="#0891b2" />
+          <text x="75" y="360" fill="#0891b2" fontSize="13" fontWeight="700" textAnchor="middle" transform="rotate(-90 75 360)">
+            {lang === 'ko' ? 'AI Core 설계' : 'AI Core Design'}
+          </text>
+          <line x1="95" y1="209" x2="95" y2="506" stroke="#0891b2" strokeWidth="2" strokeDasharray="4,3" />
+          <polygon points="95,205 91,213 99,213" fill="#0891b2" />
+          <polygon points="95,520 91,512 99,512" fill="#0891b2" />
 
-          <text x="20" y="555" fill="#164e63" fontSize="13" fontWeight="700">{lang === 'ko' ? 'AI 인프라 설계' : 'AI Infra Design'}</text>
-          <line x1="65" y1="568" x2="65" y2="660" stroke="#164e63" strokeWidth="2" strokeDasharray="4,3" />
-          <polygon points="65,566 61,574 69,574" fill="#164e63" />
-          <polygon points="65,662 61,654 69,654" fill="#164e63" />
+          <text x="75" y="587" fill="#164e63" fontSize="13" fontWeight="700" textAnchor="middle" transform="rotate(-90 75 587)">
+            {lang === 'ko' ? 'AI 인프라 설계' : 'AI Infra Design'}
+          </text>
+          <line x1="95" y1="549" x2="95" y2="626" stroke="#164e63" strokeWidth="2" strokeDasharray="4,3" />
+          <polygon points="95,545 91,553 99,553" fill="#164e63" />
+          <polygon points="95,630 91,622 99,622" fill="#164e63" />
 
           {/* Focus area highlight */}
-          <rect x="100" y="200" width="550" height="330" rx="16" fill="#f0fdfa" stroke="#99f6e4" strokeWidth="1" opacity="0.5" />
-          <rect x="92" y="215" width="4" height="300" rx="2" fill="#0891b2" />
+          <rect x="130" y="200" width="600" height="335" rx="16" fill="#f0fdfa" stroke="#99f6e4" strokeWidth="1" opacity="0.5" />
 
           {/* Application layers */}
           <polygon points="430,40 495,90 365,90" fill="url(#ap1)" stroke="white" strokeWidth="2" filter="url(#shadow)" />
@@ -117,24 +123,25 @@ const DesignHierarchyDiagram: React.FC = () => {
             <React.Fragment key={idx}>
               <polygon points={layer.p} fill={layer.color} stroke="white" strokeWidth="2" filter="url(#shadow)" />
               <text x="430" y={layer.y} textAnchor="middle" fill="white" fontSize="14" fontWeight="700">{layer.title}</text>
-              <line x1={layer.p.split(' ')[1].split(',')[0]} y1={layer.ly} x2="700" y2={layer.ly} stroke="#0891b2" strokeWidth="1" strokeDasharray="4,4" />
+              <line x1={layer.p.split(' ')[1].split(',')[0]} y1={layer.ly} x2="750" y2={layer.ly} stroke="#0891b2" strokeWidth="1" strokeDasharray="4,4" />
               <circle cx={layer.p.split(' ')[1].split(',')[0]} cy={layer.ly} r="3" fill="#0891b2" />
-              <text x={715} y={layer.ly - 6} fill="#0e7490" fontSize="13" fontWeight="600">{layer.label1}</text>
-              <text x={715} y={layer.ly + 12} fill="#475569" fontSize="12">{layer.label2}</text>
+              <circle cx="750" cy={layer.ly} r="3" fill="#0891b2" />
+              <text x={770} y={layer.ly - 6} fill="#0e7490" fontSize="13" fontWeight="600">{layer.label1}</text>
+              <text x={770} y={layer.ly + 12} fill="#475569" fontSize="12">{layer.label2}</text>
             </React.Fragment>
           ))}
 
           {/* App side annotations */}
-          <line x1="495" y1="72" x2="700" y2="72" stroke="#d1d5db" strokeWidth="1" strokeDasharray="4,4" />
-          <text x="715" y="68" fill="#9ca3af" fontSize="12">{lang === 'ko' ? 'Prompt 설계, UX' : 'Prompt Design, UX'}</text>
-          <text x="715" y="84" fill="#9ca3af" fontSize="11">{lang === 'ko' ? '챗봇, 대화형 인터페이스' : 'Chatbots, Interactive'}</text>
+          <line x1="495" y1="72" x2="750" y2="72" stroke="#d1d5db" strokeWidth="1" strokeDasharray="4,4" />
+          <text x="770" y="68" fill="#9ca3af" fontSize="12">{lang === 'ko' ? 'Prompt 설계, UX' : 'Prompt Design, UX'}</text>
+          <text x="770" y="84" fill="#9ca3af" fontSize="11">{lang === 'ko' ? '챗봇, 대화형 인터페이스' : 'Chatbots, Interactive'}</text>
 
-          <line x1="535" y1="140" x2="700" y2="140" stroke="#d1d5db" strokeWidth="1" strokeDasharray="4,4" />
-          <text x="715" y="136" fill="#9ca3af" fontSize="12">{lang === 'ko' ? '에이전트 워크플로우' : 'Agent Workflow'}</text>
-          <text x="715" y="152" fill="#9ca3af" fontSize="11">{lang === 'ko' ? 'RAG, Tool Use, 오케스트레이션' : 'RAG, Tool Use, Orchestration'}</text>
+          <line x1="535" y1="140" x2="750" y2="140" stroke="#d1d5db" strokeWidth="1" strokeDasharray="4,4" />
+          <text x="770" y="136" fill="#9ca3af" fontSize="12">{lang === 'ko' ? '에이전트 워크플로우' : 'Agent Workflow'}</text>
+          <text x="770" y="152" fill="#9ca3af" fontSize="11">{lang === 'ko' ? 'RAG, Tool Use, 오케스트레이션' : 'RAG, Tool Use, Orchestration'}</text>
 
-          <rect x="700" y="670" width="14" height="14" rx="3" fill="#0891b2" />
-          <text x="720" y="682" fill="#334155" fontSize="12" fontWeight="500">{lang === 'ko' ? 'Core 설계 역량 (학과 핵심 교육)' : 'Core Design (Core Curriculum)'}</text>
+          <rect x="680" y="670" width="14" height="14" rx="3" fill="#0891b2" />
+          <text x="700" y="682" fill="#334155" fontSize="12" fontWeight="500">{lang === 'ko' ? 'Core 설계 역량 (학과 핵심 교육)' : 'Core Design (Core Curriculum)'}</text>
           <rect x="910" y="670" width="14" height="14" rx="3" fill="#d1d5db" />
           <text x="930" y="682" fill="#9ca3af" fontSize="12">
             {lang === 'ko' ? '응용 설계' : 'Application Design'}

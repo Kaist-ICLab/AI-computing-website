@@ -15,7 +15,7 @@ const TechPyramidDiagram: React.FC = () => {
 			</div>
 
 			<div className="relative overflow-hidden flex justify-center py-10">
-				<svg width="100%" height="auto" viewBox="0 0 1080 740" className="max-w-4xl">
+				<svg width="100%" height="auto" viewBox="0 0 1080 740" className="max-w-5xl">
 					<defs>
 						<linearGradient id="c1" x1="0%" y1="0%" x2="100%" y2="0%">
 							<stop offset="0%" style={{ stopColor: '#0f172a' }} /><stop offset="100%" style={{ stopColor: '#1e3a5f' }} />
@@ -44,13 +44,13 @@ const TechPyramidDiagram: React.FC = () => {
 					</defs>
 
 					{/* FOCUS AREA bracket on the right */}
-					<rect x="15" y="260" width="3" height="410" rx="1.5" fill="#3b82f6" />
-					<text x="12" y="468" fill="#1e40af" fontSize="13" fontWeight="700" transform="rotate(-90, 12, 468)" letterSpacing="2">
+					<rect x="65" y="265" width="3" height="415" rx="1.5" fill="#3b82f6" />
+					<text x="45" y="465" fill="#1e40af" fontSize="15" fontWeight="700" textAnchor="middle" transform="rotate(-90, 45, 465)" letterSpacing="2">
 						{lang === 'ko' ? 'AI 핵심 기술 및 파운데이션' : 'AI CORE & FOUNDATION'}
 					</text>
 
 					{/* Focus area background highlight */}
-					<rect x="100" y="255" width="580" height="420" rx="16" fill="#f0f4ff" stroke="#dbeafe" strokeWidth="1" opacity="0.6" />
+					<rect x="110" y="255" width="620" height="430" rx="16" fill="#f0f4ff" stroke="#dbeafe" strokeWidth="1" opacity="0.6" />
 
 					{/* Application layers */}
 					<polygon points="420,50 490,100 350,100" fill="url(#a1)" stroke="white" strokeWidth="2" filter="url(#shadow)" />
@@ -62,7 +62,9 @@ const TechPyramidDiagram: React.FC = () => {
 					{/* Divider */}
 					<line x1="250" y1="230" x2="590" y2="230" stroke="#3b82f6" strokeWidth="2" strokeDasharray="6,4" />
 					<rect x="350" y="218" width="140" height="24" rx="12" fill="#3b82f6" />
-					<text x="420" y="235" textAnchor="middle" fill="white" fontSize="10" fontWeight="700" letterSpacing="1">CORE BEGINS ▼</text>
+					<text x="420" y="235" textAnchor="middle" fill="white" fontSize="10" fontWeight="700" letterSpacing="1">
+						{lang === 'ko' ? '핵심 설계 시작 ▼' : 'CORE BEGINS ▼'}
+					</text>
 
 					{/* Core layers */}
 					{[
@@ -105,19 +107,19 @@ const TechPyramidDiagram: React.FC = () => {
 						<React.Fragment key={idx}>
 							<polygon points={layer.p} fill={layer.grad} stroke="white" strokeWidth="2" filter="url(#shadow)" />
 							<text x="420" y={layer.y} textAnchor="middle" fill="white" fontSize="14" fontWeight="700">{layer.title}</text>
-							<line x1={layer.p.split(' ')[1].split(',')[0]} y1={layer.ly} x2="710" y2={layer.ly} stroke="#3b82f6" strokeWidth="1" strokeDasharray="4,4" />
+							<line x1={layer.p.split(' ')[1].split(',')[0]} y1={layer.ly} x2="750" y2={layer.ly} stroke="#3b82f6" strokeWidth="1" strokeDasharray="4,4" />
 							<circle cx={layer.p.split(' ')[1].split(',')[0]} cy={layer.ly} r="3" fill="#3b82f6" />
-							<circle cx="710" cy={layer.ly} r="3" fill="#3b82f6" />
-							<text x="730" y={layer.ly - 7} fill="#1e3a8a" fontSize="14" fontWeight="600">{layer.label1}</text>
-							<text x="730" y={layer.ly + 13} fill="#475569" fontSize="13">{layer.label2}</text>
+							<circle cx="750" cy={layer.ly} r="3" fill="#3b82f6" />
+							<text x="770" y={layer.ly - 7} fill="#1e3a8a" fontSize="14" fontWeight="600">{layer.label1}</text>
+							<text x="770" y={layer.ly + 13} fill="#475569" fontSize="13">{layer.label2}</text>
 						</React.Fragment>
 					))}
 
 					{/* Legend */}
-					<rect x="730" y="700" width="14" height="14" rx="3" fill="#1d4ed8" />
-					<text x="750" y="712" fill="#334155" fontSize="12">{lang === 'ko' ? 'AI Core & Foundation (학과 핵심 교육 영역)' : 'AI Core & Foundation (Core Curriculum)'}</text>
-					<rect x="910" y="700" width="14" height="14" rx="3" fill="#cbd5e1" />
-					<text x="930" y="712" fill="#94a3b8" fontSize="12">
+					<rect x="700" y="720" width="14" height="14" rx="3" fill="#1d4ed8" />
+					<text x="720" y="732" fill="#334155" fontSize="12" fontWeight="500">{lang === 'ko' ? 'AI Core & Foundation (학과 핵심 교육 영역)' : 'AI Core & Foundation (Core Curriculum)'}</text>
+					<rect x="980" y="720" width="14" height="14" rx="3" fill="#cbd5e1" />
+					<text x="1000" y="732" fill="#94a3b8" fontSize="12" fontWeight="500">
 						{lang === 'ko' ? '응용 기술' : 'Application'}
 					</text>
 				</svg>
