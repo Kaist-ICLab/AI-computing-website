@@ -37,7 +37,6 @@ const jointFaculty: FacultyMember[] = [
   { ko: "박대형", en: "Daehyung Park", img: "/images/daehyungpark.webp", website: "https://rirolab.kaist.ac.kr" },
   { ko: "박종세", en: "Jongse Park", img: "/images/jongsepark.webp", website: "http://casys.kaist.ac.kr" },
   { ko: "박진아", en: "Jinah Park", img: "/images/jinahpark.webp", website: "http://cgv.kaist.ac.kr" },
-  { ko: "백종문", en: "Jongmoon Baik", img: "/images/jongmoonbaik.webp", website: "http://spiral.kaist.ac.kr" },
   { ko: "손수엘", en: "Sooel Son", img: "/images/sooelson.webp", website: "https://wsp-lab.github.io" },
   {
     ko: "시어링조셉",
