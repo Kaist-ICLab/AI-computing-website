@@ -46,7 +46,7 @@ const TalentDiagram: React.FC = () => {
           <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
             <div className="bg-slate-900 text-blue-300 px-5 py-2 rounded-full text-[10px] font-bold tracking-[0.15em] flex items-center gap-2 whitespace-nowrap">
               <div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
-              {lang === 'ko' ? 'AI 핵심 역량 체계' : 'Full Stack AI Competency'}
+              {lang === 'ko' ? '풀스택 AI 역량' : 'Full-Stack AI Competency'}
               <div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
             </div>
           </div>

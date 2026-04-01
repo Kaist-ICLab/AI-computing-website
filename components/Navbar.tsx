@@ -227,7 +227,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                   className="group flex items-center space-x-4 text-left w-fit p-2 rounded-xl hover:bg-slate-50 transition-all"
                 >
                   <span className="w-1.5 h-1.5 bg-slate-300 group-hover:bg-[#002380] rounded-full transition-colors" />
-                  <span className="text-sm font-medium text-slate-600 group-hover:text-[#002380] transition-colors">
+                  <span className="text-[15px] font-semibold text-slate-600 group-hover:text-[#002380] transition-colors">
                     {sub.label}
                   </span>
                 </Link>
@@ -261,7 +261,7 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
                       key={idx}
                       to={sub.path}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="block text-gray-600 hover:text-[#002380] transition-colors text-left w-full"
+                      className="block text-[15px] text-gray-600 hover:text-[#002380] transition-colors text-left w-full pl-2"
                     >
                       {sub.label}
                     </Link>

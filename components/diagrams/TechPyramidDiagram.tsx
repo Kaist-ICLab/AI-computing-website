@@ -33,10 +33,10 @@ const TechPyramidDiagram: React.FC = () => {
 							<stop offset="0%" style={{ stopColor: '#3b82f6' }} /><stop offset="100%" style={{ stopColor: '#60a5fa' }} />
 						</linearGradient>
 						<linearGradient id="a1" x1="0%" y1="0%" x2="100%" y2="0%">
-							<stop offset="0%" style={{ stopColor: '#cbd5e1' }} /><stop offset="100%" style={{ stopColor: '#e2e8f0' }} />
+							<stop offset="0%" style={{ stopColor: '#eff6ff' }} /><stop offset="100%" style={{ stopColor: '#dbeafe' }} />
 						</linearGradient>
 						<linearGradient id="a2" x1="0%" y1="0%" x2="100%" y2="0%">
-							<stop offset="0%" style={{ stopColor: '#94a3b8' }} /><stop offset="100%" style={{ stopColor: '#cbd5e1' }} />
+							<stop offset="0%" style={{ stopColor: '#bfdbfe' }} /><stop offset="100%" style={{ stopColor: '#93c5fd' }} />
 						</linearGradient>
 						<filter id="shadow">
 							<feDropShadow dx="0" dy="2" stdDeviation="4" floodOpacity="0.08" />
@@ -49,59 +49,50 @@ const TechPyramidDiagram: React.FC = () => {
 						{lang === 'ko' ? 'AI 핵심 기술 및 파운데이션' : 'AI CORE & FOUNDATION'}
 					</text>
 
-					{/* Focus area background highlight */}
-					<rect x="110" y="255" width="620" height="430" rx="16" fill="#f0f4ff" stroke="#dbeafe" strokeWidth="1" opacity="0.6" />
 
 					{/* Application layers */}
-					<polygon points="420,50 490,100 350,100" fill="url(#a1)" stroke="white" strokeWidth="2" filter="url(#shadow)" />
-					<text x="420" y="88" textAnchor="middle" fill="#94a3b8" fontSize="12" fontWeight="600">{lang === 'ko' ? '인간중심 AI' : 'Human-Centered AI'}</text>
+					<polygon points="420,40 670,120 170,120" fill="url(#a1)" stroke="white" strokeWidth="2" filter="url(#shadow)" />
+					<text x="420" y="98" textAnchor="middle" fill="#60a5fa" fontSize="14" fontWeight="700">{lang === 'ko' ? '인간중심 AI' : 'Human-Centered AI'}</text>
 
-					<polygon points="420,105 530,190 310,190" fill="url(#a2)" stroke="white" strokeWidth="2" filter="url(#shadow)" />
-					<text x="420" y="160" textAnchor="middle" fill="#64748b" fontSize="13" fontWeight="600">{lang === 'ko' ? 'AI 도메인 응용' : 'AI Domain App'}</text>
-
-					{/* Divider */}
-					<line x1="250" y1="230" x2="590" y2="230" stroke="#3b82f6" strokeWidth="2" strokeDasharray="6,4" />
-					<rect x="350" y="218" width="140" height="24" rx="12" fill="#3b82f6" />
-					<text x="420" y="235" textAnchor="middle" fill="white" fontSize="10" fontWeight="700" letterSpacing="1">
-						{lang === 'ko' ? '핵심 설계 시작 ▼' : 'CORE BEGINS ▼'}
-					</text>
+					<polygon points="420,125 670,205 170,205" fill="url(#a2)" stroke="white" strokeWidth="2" filter="url(#shadow)" />
+					<text x="420" y="183" textAnchor="middle" fill="#3b82f6" fontSize="14" fontWeight="700">{lang === 'ko' ? 'AI 도메인 응용' : 'AI Domain App'}</text>
 
 					{/* Core layers */}
 					{[
 						{
-							p: "420,260 570,340 270,340", grad: "url(#c5)",
+							p: "420,230 670,310 170,310", grad: "url(#c5)",
 							title: lang === 'ko' ? "차세대 AI 핵심 기술" : "Next-Gen AI Tech",
 							label1: lang === 'ko' ? "LLM, 생성형 AI, 에이전틱 AI" : "LLM, Generative, Agentic AI",
 							label2: lang === 'ko' ? "멀티모달, World Model" : "Multimodal, World Model",
-							y: 312, ly: 305
+							y: 288, ly: 280
 						},
 						{
-							p: "420,345 610,425 230,425", grad: "url(#c4)",
+							p: "420,315 670,395 170,395", grad: "url(#c4)",
 							title: lang === 'ko' ? "AI 시스템·운영 기술" : "AI Systems & Ops",
 							label1: lang === 'ko' ? "MLOps, 분산학습, 모델 서빙" : "MLOps, Dist ML, Serving",
 							label2: lang === 'ko' ? "AI 클러스터, 데이터 파이프라인" : "AI Cluster, Data Pipeline",
-							y: 398, ly: 390
+							y: 373, ly: 365
 						},
 						{
-							p: "420,430 650,510 190,510", grad: "url(#c3)",
+							p: "420,400 670,480 170,480", grad: "url(#c3)",
 							title: lang === 'ko' ? "AI 원천 알고리즘·이론" : "Core AI Algo & Theory",
 							label1: lang === 'ko' ? "딥러닝, 강화학습, 최적화" : "DL, RL, Optimization",
 							label2: lang === 'ko' ? "확률 모델, 표현 학습, 학습 이론" : "Prob Model, Rep Learning",
-							y: 483, ly: 475
+							y: 458, ly: 450
 						},
 						{
-							p: "420,515 690,595 150,595", grad: "url(#c2)",
+							p: "420,485 670,565 170,565", grad: "url(#c2)",
 							title: lang === 'ko' ? "AI 컴퓨팅 인프라" : "AI Computing Infra",
 							label1: lang === 'ko' ? "GPU/TPU/NPU, AI 가속기" : "GPU/TPU/NPU, AI Accel",
 							label2: lang === 'ko' ? "HPC, 클라우드, AI 컴파일러" : "HPC, Cloud, AI Compiler",
-							y: 568, ly: 560
+							y: 543, ly: 535
 						},
 						{
-							p: "420,600 720,680 120,680", grad: "url(#c1)",
+							p: "420,570 670,650 170,650", grad: "url(#c1)",
 							title: lang === 'ko' ? "수학·통계 기초 역량" : "Math & Stat Basis",
 							label1: lang === 'ko' ? "선형대수, 확률·통계, 미적분" : "Linear Algebra, Stat, Calc",
 							label2: lang === 'ko' ? "정보이론, 최적화 이론" : "Info Theory, Optimization",
-							y: 652, ly: 645
+							y: 628, ly: 620
 						}
 					].map((layer, idx) => (
 						<React.Fragment key={idx}>
@@ -110,16 +101,16 @@ const TechPyramidDiagram: React.FC = () => {
 							<line x1={layer.p.split(' ')[1].split(',')[0]} y1={layer.ly} x2="750" y2={layer.ly} stroke="#3b82f6" strokeWidth="1" strokeDasharray="4,4" />
 							<circle cx={layer.p.split(' ')[1].split(',')[0]} cy={layer.ly} r="3" fill="#3b82f6" />
 							<circle cx="750" cy={layer.ly} r="3" fill="#3b82f6" />
-							<text x="770" y={layer.ly - 7} fill="#1e3a8a" fontSize="14" fontWeight="600">{layer.label1}</text>
-							<text x="770" y={layer.ly + 13} fill="#475569" fontSize="13">{layer.label2}</text>
+							<text x="770" y={layer.ly - 7} fill="#1e3a8a" fontSize="13" fontWeight="600">{layer.label1}</text>
+							<text x="770" y={layer.ly + 13} fill="#475569" fontSize="12">{layer.label2}</text>
 						</React.Fragment>
 					))}
 
 					{/* Legend */}
 					<rect x="700" y="720" width="14" height="14" rx="3" fill="#1d4ed8" />
 					<text x="720" y="732" fill="#334155" fontSize="12" fontWeight="500">{lang === 'ko' ? 'AI Core & Foundation (학과 핵심 교육 영역)' : 'AI Core & Foundation (Core Curriculum)'}</text>
-					<rect x="980" y="720" width="14" height="14" rx="3" fill="#cbd5e1" />
-					<text x="1000" y="732" fill="#94a3b8" fontSize="12" fontWeight="500">
+					<rect x="980" y="720" width="14" height="14" rx="3" fill="#bfdbfe" />
+					<text x="1000" y="732" fill="#3b82f6" fontSize="12" fontWeight="500">
 						{lang === 'ko' ? '응용 기술' : 'Application'}
 					</text>
 				</svg>
