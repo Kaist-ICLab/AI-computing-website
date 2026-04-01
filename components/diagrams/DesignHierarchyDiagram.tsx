@@ -46,92 +46,93 @@ const DesignHierarchyDiagram: React.FC = () => {
           </defs>
 
           {/* Left labels */}
-          <text x="75" y="105" fill="#0ea5e9" fontSize="12" fontWeight="500" textAnchor="middle" transform="rotate(-90 75 105)">
+          <text x="75" y="120" fill="#0ea5e9" fontSize="12" fontWeight="500" textAnchor="middle" transform="rotate(-90 75 120)">
             {lang === 'ko' ? 'AI 응용 설계' : 'AI App Design'}
           </text>
-          <line x1="95" y1="44" x2="95" y2="168" stroke="#bae6fd" strokeWidth="1.2" strokeDasharray="4,3"
+          <line x1="95" y1="44" x2="95" y2="196" stroke="#bae6fd" strokeWidth="1.2" strokeDasharray="4,3"
           />
           <polygon points="95,40 91,48 99,48" fill="#bae6fd" />
-          <polygon points="95,170 91,162 99,162" fill="#bae6fd" />
+          <polygon points="95,200 91,192 99,192" fill="#bae6fd" />
 
           <text x="75" y="360" fill="#1e40af" fontSize="13" fontWeight="700" textAnchor="middle" transform="rotate(-90 75 360)">
             {lang === 'ko' ? 'AI Core 설계' : 'AI Core Design'}
           </text>
-          <line x1="95" y1="209" x2="95" y2="506" stroke="#3b82f6" strokeWidth="2" strokeDasharray="4,3" />
-          <polygon points="95,205 91,213 99,213" fill="#3b82f6" />
+          <line x1="95" y1="204" x2="95" y2="516" stroke="#3b82f6" strokeWidth="2" strokeDasharray="4,3" />
+          <polygon points="95,200 91,208 99,208" fill="#3b82f6" />
           <polygon points="95,520 91,512 99,512" fill="#3b82f6" />
 
-          <text x="75" y="587" fill="#164e63" fontSize="13" fontWeight="700" textAnchor="middle" transform="rotate(-90 75 587)">
+          <text x="75" y="560" fill="#164e63" fontSize="13" fontWeight="700" textAnchor="middle" transform="rotate(-90 75 560)">
             {lang === 'ko' ? 'AI 인프라 설계' : 'AI Infra Design'}
           </text>
-          <line x1="95" y1="549" x2="95" y2="626" stroke="#164e63" strokeWidth="2" strokeDasharray="4,3" />
-          <polygon points="95,545 91,553 99,553" fill="#164e63" />
-          <polygon points="95,630 91,622 99,622" fill="#164e63" />
+          <line x1="95" y1="524" x2="95" y2="596" stroke="#164e63" strokeWidth="1.5" strokeDasharray="3,2" />
+          <polygon points="95,520 91,528 99,528" fill="#164e63" />
+          <polygon points="95,600 91,592 99,592" fill="#164e63" />
 
 
           {/* Application layers */}
           <polygon points="430,40 680,120 180,120" fill="url(#ap1)" stroke="white" strokeWidth="2" filter="url(#shadow)" />
           <text x="430" y="98" textAnchor="middle" fill="#22d3ee" fontSize="14" fontWeight="700">{lang === 'ko' ? '자연어 인터페이스' : 'NLP Interface'}</text>
-          <polygon points="430,125 680,205 180,205" fill="url(#ap2)" stroke="white" strokeWidth="2" filter="url(#shadow)" />
-          <text x="430" y="183" textAnchor="middle" fill="#06b6d4" fontSize="14" fontWeight="700">{lang === 'ko' ? 'AI 에이전트 응용' : 'AI Agent App'}</text>
+          <polygon points="430,120 680,200 180,200" fill="url(#ap2)" stroke="white" strokeWidth="2" filter="url(#shadow)" />
+          <text x="430" y="178" textAnchor="middle" fill="#06b6d4" fontSize="14" fontWeight="700">{lang === 'ko' ? 'AI 에이전트 응용' : 'AI Agent App'}</text>
 
           {/* Core layers with labels */}
           {[
             {
-              p: "430,230 680,310 180,310", color: "url(#cp1)",
+              p: "430,200 680,280 180,280", color: "url(#cp1)",
               title: lang === 'ko' ? "AI 모델 아키텍처 설계" : "AI Model Architecture",
               label1: lang === 'ko' ? "Transformer, Diffusion," : "Transformer, Diffusion,",
               label2: lang === 'ko' ? "SSM, 새로운 아키텍처 창조" : "SSM, New Architectures",
-              y: 288, ly: 280
+              y: 258, ly: 240
             },
             {
-              p: "430,315 680,395 180,395", color: "url(#cp2)",
+              p: "430,280 680,360 180,360", color: "url(#cp2)",
               title: lang === 'ko' ? "AI 학습·추론 시스템 설계" : "AI Training/Inference Sys",
               label1: lang === 'ko' ? "분산학습, 학습 최적화," : "Dist. Training, Opt,",
               label2: lang === 'ko' ? "추론 엔진, 모델 경량화" : "Inference, Compression",
-              y: 373, ly: 365
+              y: 338, ly: 320
             },
             {
-              p: "430,400 680,480 180,480", color: "url(#cp3)",
+              p: "430,360 680,440 180,440", color: "url(#cp3)",
               title: lang === 'ko' ? "AI 플랫폼·프레임워크 설계" : "AI Platform/Framework",
               label1: lang === 'ko' ? "PyTorch 내부 설계, CUDA," : "PyTorch Internals, CUDA,",
               label2: lang === 'ko' ? "AI 컴파일러, Runtime 최적화" : "AI Compiler, Runtime Opt",
-              y: 458, ly: 450
+              y: 418, ly: 400
             },
             {
-              p: "430,485 680,565 180,565", color: "url(#cp4)",
+              p: "430,440 680,520 180,520", color: "url(#cp4)",
               title: lang === 'ko' ? "AI 컴퓨팅 아키텍처 설계" : "AI Computing Architecture",
               label1: lang === 'ko' ? "GPU/NPU 아키텍처," : "GPU/NPU Architecture,",
               label2: lang === 'ko' ? "메모리 계층, 병렬처리 설계" : "Memory, Parallel Design",
-              y: 543, ly: 535
+              y: 498, ly: 480
             },
             {
-              p: "430,570 680,650 180,650", color: "url(#cp5)",
+              p: "430,520 680,600 180,600", color: "url(#cp5)",
               title: lang === 'ko' ? "AI 하드웨어·가속기 설계" : "AI Hardware/Accelerator",
               label1: lang === 'ko' ? "AI 전용 칩, 가속기 설계," : "AI Custom Chips, Accel,",
               label2: lang === 'ko' ? "데이터센터 인프라" : "Data Center Infra",
-              y: 628, ly: 620
+              y: 578, ly: 560
             }
-          ].map((layer, idx) => (
-            <React.Fragment key={idx}>
-              <polygon points={layer.p} fill={layer.color} stroke="white" strokeWidth="2" filter="url(#shadow)" />
-              <text x="430" y={layer.y} textAnchor="middle" fill="white" fontSize="14" fontWeight="700">{layer.title}</text>
-              <line x1={layer.p.split(' ')[1].split(',')[0]} y1={layer.ly} x2="750" y2={layer.ly} stroke="#0891b2" strokeWidth="1" strokeDasharray="4,4" />
-              <circle cx={layer.p.split(' ')[1].split(',')[0]} cy={layer.ly} r="3" fill="#0891b2" />
-              <circle cx="750" cy={layer.ly} r="3" fill="#0891b2" />
-              <text x={770} y={layer.ly - 6} fill="#0e7490" fontSize="13" fontWeight="600">{layer.label1}</text>
-              <text x={770} y={layer.ly + 12} fill="#475569" fontSize="12">{layer.label2}</text>
-            </React.Fragment>
-          ))}
+          ]
+            .map((layer, idx) => (
+              <React.Fragment key={idx}>
+                <polygon points={layer.p} fill={layer.color} stroke="white" strokeWidth="2" filter="url(#shadow)" />
+                <text x="430" y={layer.y} textAnchor="middle" fill="white" fontSize="14" fontWeight="700">{layer.title}</text>
+                <line x1={layer.p.split(' ')[1].split(',')[0]} y1={layer.ly} x2="750" y2={layer.ly} stroke="#0891b2" strokeWidth="1" strokeDasharray="4,4" />
+                <circle cx={layer.p.split(' ')[1].split(',')[0]} cy={layer.ly} r="3" fill="#0891b2" />
+                <circle cx="750" cy={layer.ly} r="3" fill="#0891b2" />
+                <text x={770} y={layer.ly - 6} fill="#0e7490" fontSize="13" fontWeight="600">{layer.label1}</text>
+                <text x={770} y={layer.ly + 12} fill="#475569" fontSize="12">{layer.label2}</text>
+              </React.Fragment>
+            ))}
 
           {/* App side annotations */}
-          <line x1="680" y1="92" x2="750" y2="92" stroke="#a5f3fc" strokeWidth="1" strokeDasharray="4,3" />
-          <text x="770" y="88" fill="#0891b2" fontSize="12">{lang === 'ko' ? 'Prompt 설계, UX' : 'Prompt Design, UX'}</text>
-          <text x="770" y="104" fill="#64748b" fontSize="11">{lang === 'ko' ? '챗봇, 대화형 인터페이스' : 'Chatbots, Interactive'}</text>
+          <line x1="680" y1="80" x2="750" y2="80" stroke="#a5f3fc" strokeWidth="1" strokeDasharray="4,3" />
+          <text x="770" y="76" fill="#0891b2" fontSize="12">{lang === 'ko' ? 'Prompt 설계, UX' : 'Prompt Design, UX'}</text>
+          <text x="770" y="92" fill="#64748b" fontSize="11">{lang === 'ko' ? '챗봇, 대화형 인터페이스' : 'Chatbots, Interactive'}</text>
 
-          <line x1="680" y1="172" x2="750" y2="172" stroke="#a5f3fc" strokeWidth="1" strokeDasharray="4,3" />
-          <text x="770" y="168" fill="#0891b2" fontSize="12">{lang === 'ko' ? '에이전트 워크플로우' : 'Agent Workflow'}</text>
-          <text x="770" y="184" fill="#64748b" fontSize="11">{lang === 'ko' ? 'RAG, Tool Use, 오케스트레이션' : 'RAG, Tool Use, Orchestration'}</text>
+          <line x1="680" y1="160" x2="750" y2="160" stroke="#a5f3fc" strokeWidth="1" strokeDasharray="4,3" />
+          <text x="770" y="156" fill="#0891b2" fontSize="12">{lang === 'ko' ? '에이전트 워크플로우' : 'Agent Workflow'}</text>
+          <text x="770" y="172" fill="#64748b" fontSize="11">{lang === 'ko' ? 'RAG, Tool Use, 오케스트레이션' : 'RAG, Tool Use, Orchestration'}</text>
 
           <rect x="680" y="670" width="14" height="14" rx="3" fill="#0891b2" />
           <text x="700" y="682" fill="#334155" fontSize="12" fontWeight="500">{lang === 'ko' ? 'Core 설계 역량 (학과 핵심 교육)' : 'Core Design (Core Curriculum)'}</text>

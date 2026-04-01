@@ -44,8 +44,8 @@ const TechPyramidDiagram: React.FC = () => {
 					</defs>
 
 					{/* FOCUS AREA bracket on the right */}
-					<rect x="65" y="265" width="3" height="415" rx="1.5" fill="#3b82f6" />
-					<text x="45" y="465" fill="#1e40af" fontSize="15" fontWeight="700" textAnchor="middle" transform="rotate(-90, 45, 465)" letterSpacing="2">
+					<rect x="65" y="200" width="3" height="400" rx="1.5" fill="#3b82f6" />
+					<text x="45" y="400" fill="#1e40af" fontSize="15" fontWeight="700" textAnchor="middle" transform="rotate(-90, 45, 400)" letterSpacing="2">
 						{lang === 'ko' ? 'AI 핵심 기술 및 파운데이션' : 'AI CORE & FOUNDATION'}
 					</text>
 
@@ -54,45 +54,45 @@ const TechPyramidDiagram: React.FC = () => {
 					<polygon points="420,40 670,120 170,120" fill="url(#a1)" stroke="white" strokeWidth="2" filter="url(#shadow)" />
 					<text x="420" y="98" textAnchor="middle" fill="#60a5fa" fontSize="14" fontWeight="700">{lang === 'ko' ? '인간중심 AI' : 'Human-Centered AI'}</text>
 
-					<polygon points="420,125 670,205 170,205" fill="url(#a2)" stroke="white" strokeWidth="2" filter="url(#shadow)" />
-					<text x="420" y="183" textAnchor="middle" fill="#3b82f6" fontSize="14" fontWeight="700">{lang === 'ko' ? 'AI 도메인 응용' : 'AI Domain App'}</text>
+					<polygon points="420,120 670,200 170,200" fill="url(#a2)" stroke="white" strokeWidth="2" filter="url(#shadow)" />
+					<text x="420" y="178" textAnchor="middle" fill="#3b82f6" fontSize="14" fontWeight="700">{lang === 'ko' ? 'AI 도메인 응용' : 'AI Domain App'}</text>
 
 					{/* Core layers */}
 					{[
 						{
-							p: "420,230 670,310 170,310", grad: "url(#c5)",
+							p: "420,200 670,280 170,280", grad: "url(#c5)",
 							title: lang === 'ko' ? "차세대 AI 핵심 기술" : "Next-Gen AI Tech",
 							label1: lang === 'ko' ? "LLM, 생성형 AI, 에이전틱 AI" : "LLM, Generative, Agentic AI",
 							label2: lang === 'ko' ? "멀티모달, World Model" : "Multimodal, World Model",
-							y: 288, ly: 280
+							y: 258, ly: 240
 						},
 						{
-							p: "420,315 670,395 170,395", grad: "url(#c4)",
+							p: "420,280 670,360 170,360", grad: "url(#c4)",
 							title: lang === 'ko' ? "AI 시스템·운영 기술" : "AI Systems & Ops",
 							label1: lang === 'ko' ? "MLOps, 분산학습, 모델 서빙" : "MLOps, Dist ML, Serving",
 							label2: lang === 'ko' ? "AI 클러스터, 데이터 파이프라인" : "AI Cluster, Data Pipeline",
-							y: 373, ly: 365
+							y: 338, ly: 320
 						},
 						{
-							p: "420,400 670,480 170,480", grad: "url(#c3)",
+							p: "420,360 670,440 170,440", grad: "url(#c3)",
 							title: lang === 'ko' ? "AI 원천 알고리즘·이론" : "Core AI Algo & Theory",
 							label1: lang === 'ko' ? "딥러닝, 강화학습, 최적화" : "DL, RL, Optimization",
 							label2: lang === 'ko' ? "확률 모델, 표현 학습, 학습 이론" : "Prob Model, Rep Learning",
-							y: 458, ly: 450
+							y: 418, ly: 400
 						},
 						{
-							p: "420,485 670,565 170,565", grad: "url(#c2)",
+							p: "420,440 670,520 170,520", grad: "url(#c2)",
 							title: lang === 'ko' ? "AI 컴퓨팅 인프라" : "AI Computing Infra",
 							label1: lang === 'ko' ? "GPU/TPU/NPU, AI 가속기" : "GPU/TPU/NPU, AI Accel",
 							label2: lang === 'ko' ? "HPC, 클라우드, AI 컴파일러" : "HPC, Cloud, AI Compiler",
-							y: 543, ly: 535
+							y: 498, ly: 480
 						},
 						{
-							p: "420,570 670,650 170,650", grad: "url(#c1)",
+							p: "420,520 670,600 170,600", grad: "url(#c1)",
 							title: lang === 'ko' ? "수학·통계 기초 역량" : "Math & Stat Basis",
 							label1: lang === 'ko' ? "선형대수, 확률·통계, 미적분" : "Linear Algebra, Stat, Calc",
 							label2: lang === 'ko' ? "정보이론, 최적화 이론" : "Info Theory, Optimization",
-							y: 628, ly: 620
+							y: 578, ly: 560
 						}
 					].map((layer, idx) => (
 						<React.Fragment key={idx}>
