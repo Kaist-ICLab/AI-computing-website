@@ -12,7 +12,7 @@ const PeoplePage: React.FC = () => {
           {lang === 'ko' ? '교수진' : 'Faculty'}
         </h1>
         <p className="text-slate-500 font-bold uppercase tracking-[0.3em] text-xs">
-          Global Leading Faculty of 29 Members
+          Global Leading Faculty of 30 Members
         </p>
       </div>
       <People lang={lang} title={title} />
