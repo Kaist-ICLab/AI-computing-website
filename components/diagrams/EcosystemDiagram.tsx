@@ -114,11 +114,16 @@ const EcosystemDiagram: React.FC = () => {
         <text x="800" y="600" textAnchor="middle" fill="white" fontSize="13" fontWeight="600">{lang === 'ko' ? 'AI 핵심 시스템' : 'Core AI System'}</text>
         <text x="800" y="616" textAnchor="middle" fill="rgba(255,255,255,0.8)" fontSize="12" fontWeight="500">{lang === 'ko' ? '설계 역량' : 'Design'}</text>
 
-        <text x="900" y="520" fill="#0e7490" fontSize="16" fontWeight="700">{lang === 'ko' ? 'AI 핵심 인프라·시스템' : 'Core AI Infra'}</text>
+        <text x="900" y="520" fill="#0e7490" fontSize="16" fontWeight="700">{lang === 'ko' ? 'AI 핵심 시스템·서비스' : 'Core AI Services'}</text>
         <text x="900" y="542" fill="#0e7490" fontSize="16" fontWeight="700">{lang === 'ko' ? '설계 및 운영 역량 강화' : '& System Design'}</text>
-        <text x="900" y="566" fill="#64748b" fontSize="13">
-          {lang === 'ko' ? 'AI 핵심 시스템 경쟁력' : 'Core AI System Competitiveness'}
-        </text>
+        {lang === 'ko' ? (
+          <text x="900" y="566" fill="#64748b" fontSize="13">AI 시스템 및 서비스 경쟁력</text>
+        ) : (
+          <>
+            <text x="900" y="566" fill="#64748b" fontSize="13">AI System &amp; Service</text>
+            <text x="900" y="583" fill="#64748b" fontSize="13">Competitiveness</text>
+          </>
+        )}
 
         {/* Bottom tagline */}
         <rect x="340" y="695" width="400" height="36" rx="18" fill="#f0f4ff" stroke="#dbeafe" strokeWidth="1" />

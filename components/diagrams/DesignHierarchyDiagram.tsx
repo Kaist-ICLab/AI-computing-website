@@ -4,16 +4,18 @@ import { LanguageContext } from '../../App';
 const DesignHierarchyDiagram: React.FC = () => {
   const { lang } = useContext(LanguageContext);
   return (
-    <div className="w-full bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-slate-300 font-sans">
+    <div className="w-full bg-white rounded-3xl p-2 md:py-12 md:pl-12 md:pr-6 shadow-xl font-sans">
       <div className="text-3xl font-bold text-slate-900 mb-2">
-        {lang === 'ko' ? 'AI 시스템 설계 계층 — ' : 'AI System Design Hierarchy — '}
-        <span className="text-blue-500">Core</span>
-        {lang === 'ko' ? ' 설계 역량 중심' : ' Core Design Focus'}
+        {lang === 'ko' ? '인간중심 AI 컴퓨팅 시스템 설계 계층 — ' : 'Human-Centered AI Computing Design Layers'}
+        <br />
+        {lang === 'ko' ? '' : '— '}
+        <span className="text-blue-500">Full Stack</span>
+        {lang === 'ko' ? ' 설계 역량' : ' Design Competency'}
       </div>
       <div className="text-sm text-slate-500 mb-10 leading-relaxed">
         {lang === 'ko'
-          ? 'AI 컴퓨팅학과가 집중하는 설계 계층: 모델부터 인프라까지, AI의 핵심 엔진을 설계하는 능력'
-          : 'The design layers the Dept. of AI Computing focuses on: from models to infrastructure, the ability to design AI\'s core engine.'}
+          ? 'AI 컴퓨팅 학과는 인프라, Core 설계, AI응용으로 이어지는 Full Stack을 다루는 능력 배양 중심'
+          : 'AI Computing Department focuses on cultivating full-stack capabilities spanning infrastructure, core design, and AI applications.'}
       </div>
 
       <div className="relative overflow-hidden flex justify-center py-6">

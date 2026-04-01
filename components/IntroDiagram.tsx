@@ -140,13 +140,13 @@ const IntroDiagram: React.FC = () => {
           </div>
           <h3 className="text-xl md:text-2xl font-bold mb-3">
             {lang === "ko"
-              ? "AI를 활용하는 인재가 아닌, AI를 만드는 인재"
-              : "Not Just AI Users, But AI Creators"}
+              ? "인간 중심 AI 컴퓨팅"
+              : "Human-Centered AI Computing"}
           </h3>
           <p className="max-w-3xl mx-auto text-sm text-blue-100">
             {lang === "ko"
-              ? "기존 전산학 중심 교육에서 한 단계 나아가, AI에 집중된 전용 교육과정을 통해 급변하는 AI 기술 환경에 선도적으로 대응합니다."
-              : "Beyond traditional computer science–centered education, we proactively respond to the rapidly evolving AI landscape through a dedicated AI-focused curriculum."}
+              ? "기존 전산학 중심 교육에서 한 단계 나아가, AI에 집중된 전용 교육과정을 통해 인간 중심 AI 컴퓨팅 실현에 선도적으로 대응합니다."
+              : "Going beyond traditional computer science–centered education, we pioneer the realization of human-centered AI computing through a dedicated AI-focused curriculum."}
           </p>
         </div>
 

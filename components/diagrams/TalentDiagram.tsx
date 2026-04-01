@@ -12,7 +12,7 @@ const TalentDiagram: React.FC = () => {
       </div>
       <div className="text-sm text-slate-500 mb-10 leading-relaxed">
         {lang === 'ko'
-          ? 'AI를 단순 활용하는 수준을 넘어, AI의 핵심 원리를 이해하고 새로운 AI를 설계·구축할 수 있는 인재'
+          ? 'AI를 단순 활용하는 수준을 넘어, AI의 핵심 원리를 이해하고 새로운 AI를 설계·구축·응용할 수 있는 인재'
           : 'Talents who go beyond simple AI usage to understand core principles and design/build new AI systems'}
       </div>
 
@@ -22,13 +22,15 @@ const TalentDiagram: React.FC = () => {
           "원천 알고리즘 설계력",
           "AI 시스템 구축 역량",
           "창의적 문제 해결력",
-          "급변하는 AI 기술에 유연한 적응력"
+          "급변하는 AI 기술에 유연한 적응력",
+          "인간 중심적 창의적 AI 응용"
         ] : [
           "Deep Math/Theory",
           "Core Algo Design",
           "AI System Engineering",
           "Creative Problem Solving",
-          "Adaptive Tech Agility"
+          "Adaptive Tech Agility",
+          "Human-Centered Creative AI Application"
         ]).map((text, i) => (
           <div key={i} className="flex items-center gap-3 bg-slate-900 text-white px-5 py-3 rounded-full text-sm font-medium whitespace-nowrap">
             <div className="w-6 h-6 rounded-full bg-blue-500 flex items-center justify-center text-[10px] font-black shrink-0">
@@ -44,7 +46,7 @@ const TalentDiagram: React.FC = () => {
           <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10">
             <div className="bg-slate-900 text-blue-300 px-5 py-2 rounded-full text-[10px] font-bold tracking-[0.15em] flex items-center gap-2 whitespace-nowrap">
               <div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
-              {lang === 'ko' ? 'AI 핵심 기술 및 파운데이션' : 'AI CORE & FOUNDATION'}
+              {lang === 'ko' ? 'AI 핵심 역량 체계' : 'Full Stack AI Competency'}
               <div className="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
             </div>
           </div>
@@ -96,6 +98,24 @@ const TalentDiagram: React.FC = () => {
             <div className="text-lg font-bold leading-tight">{lang === 'ko' ? <>AI 시스템<br />핵심 설계</> : <>AI System<br />Core Design</>}</div>
             <div className="text-xs opacity-70 leading-relaxed">
               {lang === 'ko' ? <>AI 프레임워크 설계<br />분산학습·MLOps<br />AI 컴퓨팅 인프라</> : <>Framework Design<br />Distributed ML, MLOps<br />AI Computing Infra</>}
+            </div>
+          </div>
+
+          {/* Pillar 4 */}
+          <div className="flex-1 min-w-[200px] bg-gradient-to-br from-blue-500 to-cyan-400 rounded-2xl p-8 flex flex-col items-center gap-4 text-center text-white">
+            <div className="w-14 h-14 rounded-full bg-white/10 flex items-center justify-center border border-white/20">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+                <circle cx="14" cy="10" r="5" fill="none" stroke="white" strokeWidth="1.2" />
+                <path d="M8 10 C8 10 6 14 6 18" stroke="rgba(255,255,255,0.6)" strokeWidth="1" />
+                <path d="M20 10 C20 10 22 14 22 18" stroke="rgba(255,255,255,0.6)" strokeWidth="1" />
+                <path d="M6 18 Q14 22 22 18" fill="none" stroke="white" strokeWidth="1.2" />
+                <circle cx="14" cy="10" r="2" fill="#bfdbfe" />
+                <rect x="11" y="18" width="6" height="3" rx="1" fill="rgba(255,255,255,0.4)" />
+              </svg>
+            </div>
+            <div className="text-lg font-bold leading-tight">{lang === 'ko' ? <>인간-AI<br />상호작용</> : <>Human-AI<br />Interaction</>}</div>
+            <div className="text-xs opacity-70 leading-relaxed">
+              {lang === 'ko' ? <>AI UI/UX,<br />XAI, 윤리·공정성,<br />신뢰성</> : <>AI UI/UX,<br />XAI, Ethics & Fairness,<br />Trustworthiness</>}
             </div>
           </div>
         </div>
