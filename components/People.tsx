@@ -46,7 +46,7 @@ const jointFaculty: FacultyMember[] = [
   { ko: "손수엘", en: "Sooel Son", img: "/images/sooelson.webp", website: "https://wsp-lab.github.io" },
   {
     ko: "시어링조셉",
-    en: "Joseph J. Seering",
+    en: "Joseph Seering",
     img: "/images/josephjseering.webp",
     website: "https://cstlab.org"
   },
