@@ -25,7 +25,7 @@ const NoticePage: React.FC = () => {
             <div className="font-medium whitespace-pre-line text-[15px]">
               {`26.3.20 (금) 1:00PM (전산학부 끝나고 바로 이어서 합니다) `}
             </div>
-                                    <div className="mt-5 flex justify-center">
+                                    {/* <div className="mt-5 flex justify-center">
               <a
                 href="/files/AI_Computing_Grad_Info_Session_20260320.pdf"
                 download
@@ -35,16 +35,12 @@ const NoticePage: React.FC = () => {
                   ? "입시설명회 자료 다운로드"
                   : "Download Admission Session Materials"}
               </a>
-            </div>
+            </div> */}
             <div className="mt-5 flex justify-center">
               <picture>
-                <source
-                  srcSet="/images/admission_session_poster.webp"
-                  type="image/webp"
-                />
                 <img
-                  src="/images/admission_session_poster.png"
-                  alt="Admission Information Session Poster"
+                  src="/images/AI컴퓨팅학과_0526_포스터.png"
+                  alt="Information Session Poster"
                   className="max-w-full md:max-w-2xl rounded-2xl shadow-lg border border-slate-100"
                 />
               </picture>
