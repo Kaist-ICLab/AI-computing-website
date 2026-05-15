@@ -7,7 +7,7 @@ const Announcements: React.FC<{ title: string }> = ({ title }) => {
   const navigate = useNavigate();
   const allNews = [
     {
-      title: '2026학년도 가을학기 입시설명회 안내',
+      title: lang === 'ko' ? '2026 AI컴퓨팅학과 학과설명회' : '2026 AI Computing Department Information Session',
       category: lang === 'ko' ? '학사' : 'Academic'
     }
   ];
