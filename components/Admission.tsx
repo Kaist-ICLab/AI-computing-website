@@ -92,7 +92,7 @@ const Admission: React.FC<AdmissionProps> = ({ type, t, lang }) => {
         {type === "ug" ? (
           <div className="space-y-8">
             <a
-              href="/files/AI_Computing_Introduction_20260311.pdf"
+              href="/files/AI_Computing_Introduction_20260526.pdf"
               download
               className="inline-flex items-center gap-1 text-slate-500 font-medium underline underline-offset-4 hover:text-blue-600 transition-colors"
             >
