@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { LanguageContext } from "../App";
 
 const NoticePage: React.FC = () => {
-  const { lang, t } = useContext(LanguageContext);
+  const { t } = useContext(LanguageContext);
 
   return (
     <div className="pt-24 pb-16">
@@ -35,6 +35,17 @@ const NoticePage: React.FC = () => {
               <li>
                 <span className="font-semibold">장소:</span> 정보전자공학동
                 Krafton 빌딩 (E3-5) 210호
+              </li>
+              <li>
+                <span className="font-semibold">자료:</span>{" "}
+                <a
+                  href="/files/AI_Computing_Introduction_20260526.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-800 underline"
+                >
+                  AI_Computing_Introduction_20260526.pdf
+                </a>
               </li>
               <li>
                 <span className="font-semibold">사전 신청:</span> 5월 22일
