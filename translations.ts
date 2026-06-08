@@ -12,7 +12,7 @@ export const translations: Record<"ko" | "en", TranslationContent> = {
     },
     hero: {
       title: "AI 컴퓨팅학과",
-      subtitle: "AI를 창조하고 시스템을 설계하는 AI-Native 리더를 육성합니다.",
+      subtitle: "미래 AI 핵심 알고리즘과 컴퓨팅 기술을 선도할 AI-Native 인재를 양성합니다.",
       cta: "소개 바로가기",
     },
     intro: {
@@ -333,7 +333,7 @@ export const translations: Record<"ko" | "en", TranslationContent> = {
     hero: {
       title: "AI Computing",
       subtitle:
-        "Nurturing AI-Native leaders who create AI and design advanced systems.",
+        "Cultivating AI-native talent to lead the future of AI algorithms and computing technologies.",
       cta: "Learn More",
     },
     intro: {
