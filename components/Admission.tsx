@@ -60,7 +60,7 @@ const Admission: React.FC<AdmissionProps> = ({ type, t, lang }) => {
           {type === "grad" && (
             <div className="w-full flex flex-col gap-4">
               <a
-                href="/files/AI_Computing_Grad_Info_Session_20260320.pdf"
+                href="/files/AI_Computing_Grad_Info_Session_20260619.pdf"
                 download
                 className="inline-flex items-center gap-1 text-slate-500 font-medium underline underline-offset-4 hover:text-blue-600 transition-colors"
               >

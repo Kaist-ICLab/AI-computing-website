@@ -37,7 +37,7 @@ const NoticePage: React.FC = () => {
               <li>
                 <span className="font-semibold">자료:</span>{" "}
                 <a
-                  href="/files/0619.pdf"
+                  href="/files/AI_Computing_Grad_Info_Session_20260619.pdf"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-600 hover:text-blue-800 underline"
