@@ -58,7 +58,14 @@ const AppContent: React.FC = () => {
       <div className="min-h-screen bg-white flex flex-col">
         <Navbar isScrolled={isScrolled} />
         <main className="flex-grow">
-          <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="w-8 h-8 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></div></div>}>
+          <Suspense fallback={
+            <div className="min-h-screen flex flex-col items-center justify-center gap-4">
+              <div className="w-8 h-8 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
+              <span className="text-slate-500 font-bold text-sm animate-pulse">
+                {lang === "ko" ? "로딩 중..." : "Loading..."}
+              </span>
+            </div>
+          }>
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/welcome-message" element={<WelcomeMessagePage />} />
