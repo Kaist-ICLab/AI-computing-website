@@ -34,7 +34,10 @@ const ScrollToTop = () => {
 };
 
 const AppContent: React.FC = () => {
-  const [lang, setLang] = useState<Language>("ko");
+  const [lang, setLang] = useState<Language>(() => {
+    const saved = localStorage.getItem("lang");
+    return (saved === "en" || saved === "ko") ? saved : "ko";
+  });
   const [isScrolled, setIsScrolled] = useState(false);
   const t = translations[lang];
 
@@ -43,6 +46,10 @@ const AppContent: React.FC = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem("lang", lang);
+  }, [lang]);
 
   return (
     <LanguageContext.Provider value={{ lang, setLang, t }}>
