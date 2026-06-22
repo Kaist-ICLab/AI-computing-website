@@ -1,6 +1,6 @@
 import React, { useState, useRef, use } from "react";
-import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
-import { Globe, Menu, X } from "lucide-react";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { Menu, X } from "lucide-react";
 import { LanguageContext } from "../App";
 
 interface NavbarProps {
@@ -21,7 +21,6 @@ const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const navContainerRef = useRef<HTMLDivElement>(null);
   const location = useLocation();
-  const navigate = useNavigate();
 
   const navItems: NavItem[] = [
     {

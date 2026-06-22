@@ -3,8 +3,7 @@ import { LanguageContext } from "../App";
 import People from "../components/People";
 
 const PeoplePage: React.FC = () => {
-  const { lang, t } = use(LanguageContext);
-  const title = t.nav.people;
+  const { lang } = use(LanguageContext);
   return (
     <div className="pt-24">
       <div className="bg-slate-50 border-b border-slate-100 py-16 text-center">
@@ -15,7 +14,7 @@ const PeoplePage: React.FC = () => {
           Global Leading Faculty of 30 Members
         </p>
       </div>
-      <People lang={lang} title={title} />
+      <People lang={lang} />
     </div>
   );
 };

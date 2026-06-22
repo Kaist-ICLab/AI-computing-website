@@ -61,9 +61,8 @@ const jointFaculty: FacultyMember[] = [
   { ko: "한준", en: "Jun Han", img: "/images/junhan.webp", website: "https://www.cyphy.kaist.ac.kr" },
 ];
 
-const People: React.FC<{ lang: Language; title: string }> = ({
+const People: React.FC<{ lang: Language }> = ({
   lang,
-  title,
 }) => {
   return (
     <section className="pt-16 pb-16 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 bg-white">

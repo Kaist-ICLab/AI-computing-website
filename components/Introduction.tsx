@@ -1,13 +1,11 @@
 
 import React from 'react';
-import { Language } from '../types';
 
 interface IntroductionProps {
   t: any;
-  lang: Language;
 }
 
-const Introduction: React.FC<IntroductionProps> = ({ t, lang }) => {
+const Introduction: React.FC<IntroductionProps> = ({ t }) => {
   return (
     <section className="py-32 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
