@@ -1,17 +1,18 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { HashRouter, Routes, Route, useLocation } from "react-router-dom";
 import { Language } from "./types";
 import { translations } from "./translations";
-import Home from "./pages/Home";
-import WelcomeMessagePage from "./pages/WelcomeMessagePage";
-import DeptIntroPage from "./pages/DeptIntroPage";
-import PeoplePage from "./pages/PeoplePage";
-import AdmissionPage from "./pages/AdmissionPage";
-import CourseListPage from "./pages/CourseListPage";
-import RequirementsPage from "./pages/RequirementsPage";
-import NoticePage from "./pages/NoticePage";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+
+const Home = React.lazy(() => import("./pages/Home"));
+const WelcomeMessagePage = React.lazy(() => import("./pages/WelcomeMessagePage"));
+const DeptIntroPage = React.lazy(() => import("./pages/DeptIntroPage"));
+const PeoplePage = React.lazy(() => import("./pages/PeoplePage"));
+const AdmissionPage = React.lazy(() => import("./pages/AdmissionPage"));
+const CourseListPage = React.lazy(() => import("./pages/CourseListPage"));
+const RequirementsPage = React.lazy(() => import("./pages/RequirementsPage"));
+const NoticePage = React.lazy(() => import("./pages/NoticePage"));
 
 interface LanguageContextType {
   lang: Language;
@@ -57,17 +58,19 @@ const AppContent: React.FC = () => {
       <div className="min-h-screen bg-white flex flex-col">
         <Navbar isScrolled={isScrolled} />
         <main className="flex-grow">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/welcome-message" element={<WelcomeMessagePage />} />
-            <Route path="/dept-intro" element={<DeptIntroPage />} />
-            <Route path="/people" element={<PeoplePage />} />
-            <Route path="/admission-ug" element={<AdmissionPage type="ug" />} />
-            <Route path="/admission-grad" element={<AdmissionPage type="grad" />} />
-            <Route path="/education-courses" element={<CourseListPage />} />
-            <Route path="/education-reqs" element={<RequirementsPage />} />
-            <Route path="/notice" element={<NoticePage />} />
-          </Routes>
+          <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="w-8 h-8 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></div></div>}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/welcome-message" element={<WelcomeMessagePage />} />
+              <Route path="/dept-intro" element={<DeptIntroPage />} />
+              <Route path="/people" element={<PeoplePage />} />
+              <Route path="/admission-ug" element={<AdmissionPage type="ug" />} />
+              <Route path="/admission-grad" element={<AdmissionPage type="grad" />} />
+              <Route path="/education-courses" element={<CourseListPage />} />
+              <Route path="/education-reqs" element={<RequirementsPage />} />
+              <Route path="/notice" element={<NoticePage />} />
+            </Routes>
+          </Suspense>
         </main>
         <Footer />
       </div>
