@@ -1,8 +1,10 @@
 import React, { use } from "react";
 import { LanguageContext } from "../App";
+import { currentNotice } from "../noticeConfig";
 
 const NoticePage: React.FC = () => {
-  const { t } = use(LanguageContext);
+  const { t, lang } = use(LanguageContext);
+  const notice = lang === "ko" ? currentNotice.ko : currentNotice.en;
 
   return (
     <div className="pt-24 pb-16">
@@ -19,55 +21,54 @@ const NoticePage: React.FC = () => {
         <div className="bg-white rounded-[2.5rem] shadow-md border border-slate-200 p-8 sm:p-16 animate-in fade-in slide-in-from-bottom-4 duration-500">
           <div className="text-slate-700 leading-relaxed">
             <h2 className="text-2xl font-bold text-slate-900 mb-6">
-              2026 AI컴퓨팅학과 대학원 설명회
+              {notice.title}
             </h2>
 
             <p className="text-[15px] mb-6">
-              AI컴퓨팅학과 대학원 설명회가 진행됩니다.
+              {notice.subtitle}
             </p>
 
             <ul className="text-[15px] mb-6 space-y-2 list-disc list-inside">
               <li>
-                <span className="font-semibold">일시:</span> 6월 19일 오후 12시
+                <span className="font-semibold">{lang === "ko" ? "일시:" : "Date:"}</span> {notice.date}
               </li>
               <li>
-                <span className="font-semibold">장소:</span> N1 김병호김삼열
-                IT융합빌딩 201호
+                <span className="font-semibold">{lang === "ko" ? "장소:" : "Location:"}</span> {notice.location}
               </li>
               <li>
-                <span className="font-semibold">자료:</span>{" "}
+                <span className="font-semibold">{lang === "ko" ? "자료:" : "Materials:"}</span>{" "}
                 <a
-                  href="/files/AI_Computing_Grad_Info_Session_20260619.pdf"
+                  href={currentNotice.link}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-600 hover:text-blue-800 underline"
                 >
-                  입시 설명회 자료 다운로드
+                  {lang === "ko" ? "입시 설명회 자료 다운로드" : "Download Admission Session Materials"}
                 </a>
               </li>
               <li>
-                <span className="font-semibold">사전 신청:</span> 6월 23일까지
+                <span className="font-semibold">{lang === "ko" ? "사전 신청:" : "Registration:"}</span> {notice.registrationDeadline}
                 <br />
                 <a
-                  href="https://forms.gle/a1Q7c8BLxtdP7p1d7"
+                  href={currentNotice.registrationLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="ml-6 text-blue-600 hover:text-blue-800 underline break-all"
                 >
-                  https://forms.gle/a1Q7c8BLxtdP7p1d7
+                  {currentNotice.registrationLink}
                 </a>
               </li>
             </ul>
 
             <p className="text-[15px] mt-3 font-medium">
-              많은 관심과 참여 바랍니다.
+              {lang === "ko" ? "많은 관심과 참여 바랍니다." : "We look forward to your interest and participation."}
             </p>
 
             <div className="mt-10 flex justify-center">
               <picture>
                 <img
-                  src="/images/admission_session_260608.jpg"
-                  alt="대학원 설명회 포스터"
+                  src={currentNotice.imageSrc}
+                  alt={lang === "ko" ? "대학원 설명회 포스터" : "Graduate Admission Session Poster"}
                   className="max-w-full md:max-w-2xl rounded-2xl shadow-lg border border-slate-100"
                 />
               </picture>
@@ -80,3 +81,4 @@ const NoticePage: React.FC = () => {
 };
 
 export default NoticePage;
+

@@ -4,6 +4,7 @@ import { Language } from "./types";
 import { translations } from "./translations";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import PopupNotice from "./components/PopupNotice";
 
 const Home = React.lazy(() => import("./pages/Home"));
 const WelcomeMessagePage = React.lazy(() => import("./pages/WelcomeMessagePage"));
@@ -58,6 +59,7 @@ const AppContent: React.FC = () => {
       <ScrollToTop />
       <div className="min-h-screen bg-white flex flex-col">
         <Navbar isScrolled={isScrolled} />
+        <PopupNotice />
         <main className="flex-grow">
           <Suspense fallback={
             <div className="min-h-screen flex flex-col items-center justify-center gap-4">
