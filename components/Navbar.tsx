@@ -1,4 +1,4 @@
-import React, { useState, useRef, useContext } from "react";
+import React, { useState, useRef, use } from "react";
 import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import { Globe, Menu, X } from "lucide-react";
 import { LanguageContext } from "../App";
@@ -15,7 +15,7 @@ interface NavItem {
 }
 
 const Navbar: React.FC<NavbarProps> = ({ isScrolled }) => {
-  const { lang, setLang, t } = useContext(LanguageContext);
+  const { lang, setLang, t } = use(LanguageContext);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [dropdownLeft, setDropdownLeft] = useState<number | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);

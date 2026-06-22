@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { use } from 'react';
 import { LanguageContext } from '../App';
 import Header from '../components/Header';
 import IntroDiagram from '@/components/IntroDiagram';
@@ -7,7 +7,7 @@ import EcosystemDiagram from '../components/diagrams/EcosystemDiagram';
 
 
 const Home: React.FC = () => {
-  const { t } = useContext(LanguageContext);
+  const { t } = use(LanguageContext);
   const handleScrollToDiagram = () => {
     const section = document.getElementById("intro-diagram");
     if (section) {

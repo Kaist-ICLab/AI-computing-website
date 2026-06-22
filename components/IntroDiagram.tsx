@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
+import React, { use } from "react";
 import { LanguageContext } from "../App";
 
 const IntroDiagram: React.FC = () => {
-  const { lang } = useContext(LanguageContext);
+  const { lang } = use(LanguageContext);
 
   const layers = [
     {

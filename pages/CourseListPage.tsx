@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { use } from "react";
 import { LanguageContext } from "../App";
 
 const courses = [
@@ -104,7 +104,7 @@ const courses = [
 ];
 
 const CourseListPage: React.FC = () => {
-  const { lang, t } = useContext(LanguageContext);
+  const { lang, t } = use(LanguageContext);
   const education = t.education;
   const ugCourses = courses.filter((c) => c.level !== "5000-level+");
   const gradCourses = courses.filter((c) => c.level === "5000-level+");

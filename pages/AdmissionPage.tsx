@@ -1,11 +1,11 @@
-import React, { useContext } from "react";
+import React, { use } from "react";
 import { LanguageContext } from "../App";
 import Admission from "../components/Admission";
 
 const AdmissionPage: React.FC<{
   type: "ug" | "grad";
 }> = ({ type }) => {
-  const { lang, t } = useContext(LanguageContext);
+  const { lang, t } = use(LanguageContext);
   return (
     <div className="pt-24">
       <div className="bg-slate-50 border-b border-slate-100 py-16 text-center">

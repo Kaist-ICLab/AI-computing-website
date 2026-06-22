@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
+import React, { use } from "react";
 import { LanguageContext } from "../App";
 import People from "../components/People";
 
 const PeoplePage: React.FC = () => {
-  const { lang, t } = useContext(LanguageContext);
+  const { lang, t } = use(LanguageContext);
   const title = t.nav.people;
   return (
     <div className="pt-24">

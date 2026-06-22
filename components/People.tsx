@@ -84,7 +84,7 @@ const People: React.FC<{ lang: Language; title: string }> = ({
               rel="noopener noreferrer"
               className="group block"
             >
-              <div key={member.ko} className="group">
+              <div className="group">
                 <div
                   className={`aspect-[4/5] bg-slate-50 rounded-2xl mb-4 flex items-end justify-center overflow-hidden border border-slate-100 group-hover:border-[#004191] transition-all relative ${member.isChair ? "ring-2 ring-blue-500/20" : ""}`}
                 >
@@ -129,7 +129,7 @@ const People: React.FC<{ lang: Language; title: string }> = ({
               rel="noopener noreferrer"
               className="group block"
             >
-              <div key={member.ko} className="group cursor-pointer">
+              <div className="group cursor-pointer">
                 <div className="aspect-[4/5] bg-slate-50 rounded-2xl mb-4 flex items-end justify-center overflow-hidden border border-slate-100 group-hover:border-[#004191] transition-all relative">
                   <img
                     src={member.img}

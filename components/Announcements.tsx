@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
+import React, { use } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { LanguageContext } from '../App';
 
 const Announcements: React.FC<{ title: string }> = ({ title }) => {
-  const { lang } = useContext(LanguageContext);
+  const { lang } = use(LanguageContext);
   const navigate = useNavigate();
   const allNews = [
     {

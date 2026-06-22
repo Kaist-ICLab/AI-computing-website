@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
+import React, { use } from "react";
 import { LanguageContext } from "../App";
 
 const Footer: React.FC = () => {
-  const { lang } = useContext(LanguageContext);
+  const { lang } = use(LanguageContext);
   return (
     <footer className="bg-[#2b333c] text-white py-4 text-xs sm:text-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

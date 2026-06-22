@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { use } from "react";
 import { LanguageContext } from "../App";
 import { BookOpen } from "lucide-react";
 
@@ -7,7 +7,7 @@ import TechPyramidDiagram from "../components/diagrams/TechPyramidDiagram";
 import DesignHierarchyDiagram from "../components/diagrams/DesignHierarchyDiagram";
 
 const DeptIntroPage: React.FC = () => {
-  const { lang, t } = useContext(LanguageContext);
+  const { lang, t } = use(LanguageContext);
   const intro = t.intro;
   return (
     <div className="pt-24 min-h-screen bg-white">

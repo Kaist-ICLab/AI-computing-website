@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
+import React, { use } from "react";
 import { LanguageContext } from "../App";
 
 const NoticePage: React.FC = () => {
-  const { t } = useContext(LanguageContext);
+  const { t } = use(LanguageContext);
 
   return (
     <div className="pt-24 pb-16">

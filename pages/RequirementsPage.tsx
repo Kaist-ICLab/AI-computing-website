@@ -1,9 +1,9 @@
-import React, { useState, useContext } from "react";
+import React, { useState, use } from "react";
 import { ReqSection } from "../types";
 import { LanguageContext } from "../App";
 
 const RequirementsPage: React.FC = () => {
-  const { lang, t } = useContext(LanguageContext);
+  const { lang, t } = use(LanguageContext);
   const [reqType, setReqType] = useState<"ug" | "grad">("ug");
   const education = t.education;
 

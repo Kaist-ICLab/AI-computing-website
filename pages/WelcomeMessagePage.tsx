@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
+import React, { use } from "react";
 import { LanguageContext } from "../App";
 import { Quote } from "lucide-react";
 
 const WelcomeMessagePage: React.FC = () => {
-  const { lang, t } = useContext(LanguageContext);
+  const { lang, t } = use(LanguageContext);
 
   return (
     <div className="pt-24 min-h-screen bg-white">
