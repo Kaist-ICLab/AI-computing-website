@@ -50,6 +50,7 @@ const AppContent: React.FC = () => {
 
   useEffect(() => {
     localStorage.setItem("lang", lang);
+    document.documentElement.lang = lang;
   }, [lang]);
 
   return (
