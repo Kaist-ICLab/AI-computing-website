@@ -7,8 +7,19 @@ import { currentNotice } from "../noticeConfig";
 const PopupNotice: React.FC = () => {
   const { lang } = use(LanguageContext);
   const [isVisible, setIsVisible] = useState(false);
+  const [hasLoaded, setHasLoaded] = useState(document.readyState === 'complete');
 
   const notice = lang === "ko" ? currentNotice.ko : currentNotice.en;
+
+  useEffect(() => {
+    if (document.readyState === 'complete') {
+      setHasLoaded(true);
+    } else {
+      const handleLoad = () => setHasLoaded(true);
+      window.addEventListener("load", handleLoad);
+      return () => window.removeEventListener("load", handleLoad);
+    }
+  }, []);
 
   useEffect(() => {
     // Don't show if notice is disabled
@@ -37,12 +48,12 @@ const PopupNotice: React.FC = () => {
     localStorage.setItem("hideNoticeUntil", hideUntil.toString());
   };
 
-  if (!isVisible) return null;
+  if (!isVisible || !hasLoaded) return null;
 
   return (
-    <div className="fixed top-24 right-4 z-50 w-80 bg-white text-slate-900 rounded-2xl shadow-2xl overflow-hidden border border-slate-200/50 flex flex-col">
+    <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:left-auto md:right-8 md:translate-x-0 z-50 w-80 max-w-[calc(100vw-2rem)] max-h-[90vh] overflow-y-auto bg-white text-slate-900 rounded-2xl shadow-2xl border border-slate-200/50 flex flex-col animate-in fade-in zoom-in-95 duration-500">
       {/* Notice Image */}
-      <div className="relative aspect-[3/4] bg-slate-100">
+      <div className="relative aspect-[3/4] bg-slate-100 shrink-0">
         <img
           src={currentNotice.imageSrc}
           alt="Notice Poster"
@@ -61,9 +72,9 @@ const PopupNotice: React.FC = () => {
       </div>
 
       {/* Notice Content */}
-      <div className="p-5 flex flex-col gap-2">
+      <div className="p-5 flex flex-col gap-2 shrink-0">
         <span className="text-[#002380] text-xs font-bold tracking-widest uppercase">
-          NOTICE
+          {lang === "ko" ? "공지사항" : "NOTICE"}
         </span>
         <h3 className="font-bold text-lg leading-tight text-slate-900">
           {notice.title}
@@ -82,7 +93,7 @@ const PopupNotice: React.FC = () => {
       </div>
 
       {/* Footer Controls */}
-      <div className="bg-slate-50 px-5 py-3 flex justify-between items-center text-xs text-slate-500 border-t border-slate-200">
+      <div className="bg-slate-50 px-5 py-3 flex justify-between items-center text-xs text-slate-500 border-t border-slate-200 shrink-0">
         <label className="flex items-center gap-2 cursor-pointer hover:text-slate-800 transition-colors">
           <input
             type="checkbox"
