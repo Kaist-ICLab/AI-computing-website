@@ -60,6 +60,7 @@ const AppContent: React.FC = () => {
       <div className="min-h-screen bg-white flex flex-col">
         <Navbar isScrolled={isScrolled} />
         <main className="flex-grow">
+<<<<<<< HEAD
           <Suspense fallback={
             <div className="min-h-screen flex flex-col items-center justify-center gap-4">
               <div className="w-8 h-8 border-4 border-blue-600 border-t-transparent rounded-full animate-spin"></div>
@@ -81,6 +82,20 @@ const AppContent: React.FC = () => {
               <Route path="/notice" element={<NoticePage />} />
             </Routes>
           </Suspense>
+=======
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/welcome-message" element={<WelcomeMessagePage />} />
+            <Route path="/dept-intro" element={<DeptIntroPage />} />
+            <Route path="/people" element={<PeoplePage />} />
+            <Route path="/admission-ug" element={<AdmissionPage type="ug" />} />
+            <Route path="/admission-grad" element={<AdmissionPage type="grad" />} />
+            <Route path="/education-courses" element={<CourseListPage />} />
+            <Route path="/education-reqs" element={<RequirementsPage />} />
+            <Route path="/notice" element={<NoticePage />} />
+            <Route path="/notice/:id" element={<NoticePage />} />
+          </Routes>
+>>>>>>> 34fd217 (faculty recruitment 공지)
         </main>
         <Footer />
       </div>

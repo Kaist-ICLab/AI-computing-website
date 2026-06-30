@@ -2,15 +2,28 @@ import React, { use } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { LanguageContext } from '../App';
 
+const allNews = [
+  {
+    id: 'faculty-recruitment',
+    titleKo: 'KAIST AI컴퓨팅학과 신임교원 초빙 공고',
+    titleEn: 'KAIST Dept. of AI Computing — Faculty Recruitment',
+    categoryKo: '채용',
+    categoryEn: 'Recruitment',
+    date: '2026.06.30',
+  },
+  {
+    id: 'grad-session-2026',
+    titleKo: '2026 AI컴퓨팅학과 대학원 설명회',
+    titleEn: '2026 AI Computing Graduate Information Session',
+    categoryKo: '행사',
+    categoryEn: 'Event',
+    date: '2026.06.08',
+  },
+];
+
 const Announcements: React.FC<{ title: string }> = ({ title }) => {
   const { lang } = use(LanguageContext);
   const navigate = useNavigate();
-  const allNews = [
-    {
-      title: lang === 'ko' ? '2026 AI컴퓨팅학과 학과설명회' : '2026 AI Computing Department Information Session',
-      category: lang === 'ko' ? '학사' : 'Academic'
-    }
-  ];
 
   return (
     <section className="pt-12 pb-16 bg-white">
@@ -28,23 +41,30 @@ const Announcements: React.FC<{ title: string }> = ({ title }) => {
         )}
 
         <div className="border-t-2 border-slate-900">
-          {allNews.map((news, i) => (
+          {allNews.map((news) => (
             <div
-              key={i}
-              onClick={() => navigate('/notice')}
-              className="py-10 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-6 group cursor-pointer"
+              key={news.id}
+              onClick={() => navigate(`/notice/${news.id}`)}
+              className="py-4 border-b border-slate-100 flex flex-col gap-3 group cursor-pointer"
             >
-              <div className="flex items-center gap-8">
-                <span className="text-[10px] font-black text-sky-500 uppercase tracking-widest w-20">{news.category}</span>
-                <h4 className="text-2xl font-bold text-slate-800 group-hover:text-[#004191] transition-all tracking-tight">
-                  {news.title}
-                </h4>
-              </div>
-              <div className="flex items-center gap-10">
-                <span className="text-slate-400 font-bold text-sm tracking-tighter group-hover:text-[#004191] transition-all">
-                  {lang === 'ko' ? '더보기' : 'Read More'}
-                </span>
-                <svg className="w-5 h-5 text-slate-300 group-hover:text-[#004191] group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+              <span className="text-xs text-slate-400 font-medium">
+                {lang === 'ko' ? '등록일' : 'Posted'}: {news.date}
+              </span>
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                <div className="flex items-center gap-8">
+                  <span className="text-[10px] font-black text-sky-500 uppercase tracking-widest w-20 shrink-0">
+                    {lang === 'ko' ? news.categoryKo : news.categoryEn}
+                  </span>
+                  <h4 className="text-2xl font-bold text-slate-800 group-hover:text-[#004191] transition-all tracking-tight">
+                    {lang === 'ko' ? news.titleKo : news.titleEn}
+                  </h4>
+                </div>
+                <div className="flex items-center gap-6 sm:shrink-0">
+                  <span className="text-slate-400 font-bold text-sm tracking-tighter group-hover:text-[#004191] transition-all">
+                    {lang === 'ko' ? '더보기' : 'Read More'}
+                  </span>
+                  <svg className="w-5 h-5 text-slate-300 group-hover:text-[#004191] group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+                </div>
               </div>
             </div>
           ))}
