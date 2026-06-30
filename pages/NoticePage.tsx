@@ -102,7 +102,7 @@ const notices: Notice[] = [
               rel="noopener noreferrer"
               className="text-blue-600 hover:text-blue-800 underline"
             >
-              0619.pdf
+              입시 설명회 자료 다운로드
             </a>
           </li>
           <li>
