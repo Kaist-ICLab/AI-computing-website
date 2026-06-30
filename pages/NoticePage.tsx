@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-import React, { use } from "react";
-=======
 import React, { useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
->>>>>>> 34fd217 (faculty recruitment 공지)
 import { LanguageContext } from "../App";
 import { currentNotice } from "../noticeConfig";
 
@@ -147,10 +143,6 @@ const categoryColors: Record<string, string> = {
 };
 
 const NoticePage: React.FC = () => {
-<<<<<<< HEAD
-  const { t, lang } = use(LanguageContext);
-  const notice = lang === "ko" ? currentNotice.ko : currentNotice.en;
-=======
   const { id } = useParams<{ id?: string }>();
   const navigate = useNavigate();
   const { lang, t } = useContext(LanguageContext);
@@ -219,69 +211,11 @@ const NoticePage: React.FC = () => {
       </div>
     );
   }
->>>>>>> 34fd217 (faculty recruitment 공지)
 
   return (
     <div className="pt-24 pb-16">
       {header}
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-<<<<<<< HEAD
-        <div className="bg-white rounded-[2.5rem] shadow-md border border-slate-200 p-8 sm:p-16 animate-in fade-in slide-in-from-bottom-4 duration-500">
-          <div className="text-slate-700 leading-relaxed">
-            <h2 className="text-2xl font-bold text-slate-900 mb-6">
-              {notice.title}
-            </h2>
-
-            <p className="text-[15px] mb-6">
-              {notice.subtitle}
-            </p>
-
-            <ul className="text-[15px] mb-6 space-y-2 list-disc list-inside">
-              <li>
-                <span className="font-semibold">{lang === "ko" ? "일시:" : "Date:"}</span> {notice.date}
-              </li>
-              <li>
-                <span className="font-semibold">{lang === "ko" ? "장소:" : "Location:"}</span> {notice.location}
-              </li>
-              <li>
-                <span className="font-semibold">{lang === "ko" ? "자료:" : "Materials:"}</span>{" "}
-                <a
-                  href={currentNotice.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-600 hover:text-blue-800 underline"
-                >
-                  {lang === "ko" ? "입시 설명회 자료 다운로드" : "Download Admission Session Materials"}
-                </a>
-              </li>
-              <li>
-                <span className="font-semibold">{lang === "ko" ? "사전 신청:" : "Registration:"}</span> {notice.registrationDeadline}
-                <br />
-                <a
-                  href={currentNotice.registrationLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="ml-6 text-blue-600 hover:text-blue-800 underline break-all"
-                >
-                  {currentNotice.registrationLink}
-                </a>
-              </li>
-            </ul>
-
-            <p className="text-[15px] mt-3 font-medium">
-              {lang === "ko" ? "많은 관심과 참여 바랍니다." : "We look forward to your interest and participation."}
-            </p>
-
-            <div className="mt-10 flex justify-center">
-              <picture>
-                <img
-                  src={currentNotice.imageSrc}
-                  alt={lang === "ko" ? "대학원 설명회 포스터" : "Graduate Admission Session Poster"}
-                  className="max-w-full md:max-w-2xl rounded-2xl shadow-lg border border-slate-100"
-                />
-              </picture>
-            </div>
-=======
         <div className="bg-white rounded-[2.5rem] shadow-md border border-slate-200 overflow-hidden animate-in fade-in slide-in-from-bottom-4 duration-500">
           <div className="hidden sm:flex items-center gap-4 px-8 py-3 bg-slate-50 border-b border-slate-200 text-xs font-bold text-slate-400 uppercase tracking-widest text-left">
             <span className="w-12 shrink-0 text-left">
@@ -341,7 +275,6 @@ const NoticePage: React.FC = () => {
                 </svg>
               </button>
             ))}
->>>>>>> 34fd217 (faculty recruitment 공지)
           </div>
         </div>
       </div>
@@ -350,4 +283,3 @@ const NoticePage: React.FC = () => {
 };
 
 export default NoticePage;
-
