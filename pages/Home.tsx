@@ -54,7 +54,7 @@ const Home: React.FC = () => {
 
           <h3 className="text-sm font-black text-slate-900 leading-snug mb-2">
             {lang === "ko"
-              ? "KAIST AI컴퓨팅학과 신임교원 초빙 공고"
+              ? "KAIST AI컴퓨팅학과 신임교원 지원 공고"
               : "KAIST AI Computing — Application for Faculty Positions"}
           </h3>
 

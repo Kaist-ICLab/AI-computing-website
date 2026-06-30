@@ -5,7 +5,7 @@ import { LanguageContext } from '../App';
 const allNews = [
   {
     id: 'faculty-recruitment',
-    titleKo: 'KAIST AI컴퓨팅학과 신임교원 초빙 공고',
+    titleKo: 'KAIST AI컴퓨팅학과 신임교원 지원 공고',
     titleEn: 'KAIST Dept. of AI Computing — Faculty Recruitment',
     categoryKo: '채용',
     categoryEn: 'Recruitment',

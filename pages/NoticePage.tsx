@@ -20,12 +20,12 @@ const notices: Notice[] = [
     date: "2026.06.30",
     category: "채용",
     categoryEn: "Recruitment",
-    title: "KAIST AI컴퓨팅학과 신임교원 초빙 공고",
+    title: "KAIST AI컴퓨팅학과 신임교원 지원 공고",
     titleEn: "KAIST Dept. of AI Computing — Application for Faculty Positions",
     content: (
       <div className="text-slate-700 leading-relaxed">
         <h2 className="text-2xl font-bold text-slate-900 mb-6">
-          KAIST AI컴퓨팅학과 신임교원 초빙 공고
+          KAIST AI컴퓨팅학과 신임교원 지원 공고
         </h2>
         <ul className="text-[15px] mb-2 space-y-2 list-disc list-inside">
           <li>
