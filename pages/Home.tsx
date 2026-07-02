@@ -46,6 +46,7 @@ const Home: React.FC = () => {
 
   return (
     <div className="flex flex-col selection:bg-blue-100 selection:text-blue-900">
+      {/* 신임교원 모집 팝업 (임시 비활성화)
       {showPopup && (
         <div className="fixed left-4 top-28 z-50 w-80 bg-white rounded-2xl shadow-xl border border-slate-200 p-5 animate-in fade-in slide-in-from-left-4 duration-300">
           <span className="inline-block text-[10px] font-black text-blue-600 uppercase tracking-widest bg-blue-50 border border-blue-200 rounded-full px-2.5 py-0.5 mb-3">
@@ -91,6 +92,7 @@ const Home: React.FC = () => {
           </div>
         </div>
       )}
+      */}
 
       <Header t={t.hero} onNext={handleScrollToDiagram} />
 

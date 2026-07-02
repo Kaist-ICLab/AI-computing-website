@@ -15,6 +15,7 @@ interface Notice {
 }
 
 const notices: Notice[] = [
+  /* 신임교원 모집 공지 (임시 비활성화)
   {
     id: "faculty-recruitment",
     date: "2026.06.30",
@@ -71,6 +72,7 @@ const notices: Notice[] = [
       </div>
     ),
   },
+  */
   {
     id: "grad-session-2026",
     date: "2026.06.08",

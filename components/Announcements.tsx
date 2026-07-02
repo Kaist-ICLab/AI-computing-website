@@ -3,14 +3,15 @@ import { useNavigate } from 'react-router-dom';
 import { LanguageContext } from '../App';
 
 const allNews = [
-  {
-    id: 'faculty-recruitment',
-    titleKo: 'KAIST AI컴퓨팅학과 신임교원 지원 공고',
-    titleEn: 'KAIST Dept. of AI Computing — Faculty Recruitment',
-    categoryKo: '채용',
-    categoryEn: 'Recruitment',
-    date: '2026.06.30',
-  },
+  // 신임교원 모집 공지 (임시 비활성화)
+  // {
+  //   id: 'faculty-recruitment',
+  //   titleKo: 'KAIST AI컴퓨팅학과 신임교원 지원 공고',
+  //   titleEn: 'KAIST Dept. of AI Computing — Faculty Recruitment',
+  //   categoryKo: '채용',
+  //   categoryEn: 'Recruitment',
+  //   date: '2026.06.30',
+  // },
   {
     id: 'grad-session-2026',
     titleKo: '2026 AI컴퓨팅학과 대학원 설명회',

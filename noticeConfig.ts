@@ -1,6 +1,6 @@
 export const currentNotice = {
   // Toggle this to false to hide the popup notice entirely
-  isActive: true,
+  isActive: false,
   
   // Image poster used in both NoticePage and PopupNotice
   imageSrc: "/images/admission_session_260608.jpg",
