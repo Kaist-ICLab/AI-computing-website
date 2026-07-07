@@ -77,9 +77,9 @@ const notices: Notice[] = [
     id: "ai-computing-study-materials",
     date: "2026.07.07",
     category: "안내",
-    categoryEn: "Notice",
+    categoryEn: "안내",
     title: "KAIST AI컴퓨팅 입시학습 자료",
-    titleEn: "KAIST AI Computing Admission Study Materials",
+    titleEn: "KAIST AI컴퓨팅 입시학습 자료",
     content: (
       <div className="text-slate-700 leading-relaxed">
         <h2 className="text-2xl font-bold text-slate-900 mb-6">
@@ -98,29 +98,6 @@ const notices: Notice[] = [
               className="text-blue-600 hover:text-blue-800 underline font-medium"
             >
               학습자료 보러가기
-            </a>
-          </li>
-        </ul>
-      </div>
-    ),
-    contentEn: (
-      <div className="text-slate-700 leading-relaxed">
-        <h2 className="text-2xl font-bold text-slate-900 mb-6">
-          KAIST AI Computing Admission Study Materials
-        </h2>
-        <p className="text-[15px] mb-6">
-          This is a supplementary study material for the master's program oral interview preparation for major courses in AI Computing. We have summarized the potential interview questions along with core keywords for each subject. Key learning contents for 4 tracks (AI Foundation &amp; Algorithms, AI+Systems, AI+Human, Computing Basics) have been selected according to the major undergraduate courses in AI Computing.
-        </p>
-        <ul className="text-[15px] mb-6 space-y-2 list-disc list-inside">
-          <li>
-            <span className="font-semibold">Material Link:</span>{" "}
-            <a
-              href="https://docs.google.com/document/d/1syWvfQH5MvD0EotDXR7pe6WLKZHRh_B0/edit?usp=sharing&ouid=100599109054626516715&rtpof=true&sd=true"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 hover:text-blue-800 underline font-medium"
-            >
-              View Study Materials (Click Here)
             </a>
           </li>
         </ul>

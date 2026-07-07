@@ -59,6 +59,7 @@ const AppContent: React.FC = () => {
   return (
     <LanguageContext.Provider value={{ lang, setLang, t }}>
       <ScrollToTop />
+      <PopupNotice />
       <div className="min-h-screen bg-white flex flex-col">
         <Navbar isScrolled={isScrolled} />
         <main className="flex-grow">

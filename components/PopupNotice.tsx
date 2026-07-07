@@ -53,23 +53,25 @@ const PopupNotice: React.FC = () => {
   return (
     <div className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 md:left-auto md:right-8 md:translate-x-0 z-50 w-80 max-w-[calc(100vw-2rem)] max-h-[90vh] overflow-y-auto bg-white text-slate-900 rounded-2xl shadow-2xl border border-slate-200/50 flex flex-col animate-in fade-in zoom-in-95 duration-500">
       {/* Notice Image */}
-      <div className="relative aspect-[3/4] bg-slate-100 shrink-0">
-        <img
-          src={currentNotice.imageSrc}
-          alt="Notice Poster"
-          className="w-full h-full object-cover"
-          onError={(e) => {
-            e.currentTarget.style.display = 'none';
-          }}
-        />
-        <button
-          onClick={handleClose}
-          className="absolute top-3 right-3 bg-white/80 hover:bg-white text-slate-900 rounded-full p-1.5 transition-colors backdrop-blur-sm shadow-sm"
-          aria-label="Close"
-        >
-          <X size={16} />
-        </button>
-      </div>
+      {currentNotice.imageSrc && (
+        <div className="relative aspect-[3/4] bg-slate-100 shrink-0">
+          <img
+            src={currentNotice.imageSrc}
+            alt="Notice Poster"
+            className="w-full h-full object-cover"
+            onError={(e) => {
+              e.currentTarget.style.display = 'none';
+            }}
+          />
+          <button
+            onClick={handleClose}
+            className="absolute top-3 right-3 bg-white/80 hover:bg-white text-slate-900 rounded-full p-1.5 transition-colors backdrop-blur-sm shadow-sm"
+            aria-label="Close"
+          >
+            <X size={16} />
+          </button>
+        </div>
+      )}
 
       {/* Notice Content */}
       <div className="p-5 flex flex-col gap-2 shrink-0">
@@ -82,7 +84,7 @@ const PopupNotice: React.FC = () => {
         <p className="text-slate-500 text-sm">
           {notice.subtitle}
         </p>
-        
+
         <Link
           to="/notice"
           onClick={handleClose}

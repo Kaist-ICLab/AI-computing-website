@@ -15,9 +15,9 @@ const allNews = [
   {
     id: 'ai-computing-study-materials',
     titleKo: 'KAIST AI컴퓨팅 입시학습 자료',
-    titleEn: 'KAIST AI Computing Admission Study Materials',
+    titleEn: 'KAIST AI컴퓨팅 입시학습 자료',
     categoryKo: '안내',
-    categoryEn: 'Notice',
+    categoryEn: '안내',
     date: '2026.07.07',
   },
   {
