@@ -13,6 +13,14 @@ const allNews = [
   //   date: '2026.06.30',
   // },
   {
+    id: 'ai-computing-study-materials',
+    titleKo: 'KAIST AI컴퓨팅 입시학습 자료',
+    titleEn: 'KAIST AI Computing Admission Study Materials',
+    categoryKo: '안내',
+    categoryEn: 'Notice',
+    date: '2026.07.07',
+  },
+  {
     id: 'grad-session-2026',
     titleKo: '2026 AI컴퓨팅학과 대학원 설명회',
     titleEn: '2026 AI Computing Graduate Information Session',

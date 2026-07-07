@@ -74,6 +74,60 @@ const notices: Notice[] = [
   },
   */
   {
+    id: "ai-computing-study-materials",
+    date: "2026.07.07",
+    category: "안내",
+    categoryEn: "Notice",
+    title: "KAIST AI컴퓨팅 입시학습 자료",
+    titleEn: "KAIST AI Computing Admission Study Materials",
+    content: (
+      <div className="text-slate-700 leading-relaxed">
+        <h2 className="text-2xl font-bold text-slate-900 mb-6">
+          KAIST AI컴퓨팅 입시학습 자료
+        </h2>
+        <p className="text-[15px] mb-6">
+          AI컴퓨팅 주요 교과목에 대한 석사과정 구술면접 준비를 위한 학습 보조자료입니다. 각 과목의 핵심 키워드와 함께 구술면접에서 나올 가능성이 있는 질문들을 교과목별로 정리하였습니다. AI컴퓨팅 학부과정 주요 과목에 맞춰서 4개 트랙 (AI Foundation &amp; Algorithms, AI+Systems, AI+Human, Computing Basics)에 대한 주요 학습 내용을 선별하였습니다.
+        </p>
+        <ul className="text-[15px] mb-6 space-y-2 list-disc list-inside">
+          <li>
+            <span className="font-semibold">자료 링크:</span>{" "}
+            <a
+              href="https://docs.google.com/document/d/1syWvfQH5MvD0EotDXR7pe6WLKZHRh_B0/edit?usp=sharing&ouid=100599109054626516715&rtpof=true&sd=true"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:text-blue-800 underline font-medium"
+            >
+              학습자료 보러가기
+            </a>
+          </li>
+        </ul>
+      </div>
+    ),
+    contentEn: (
+      <div className="text-slate-700 leading-relaxed">
+        <h2 className="text-2xl font-bold text-slate-900 mb-6">
+          KAIST AI Computing Admission Study Materials
+        </h2>
+        <p className="text-[15px] mb-6">
+          This is a supplementary study material for the master's program oral interview preparation for major courses in AI Computing. We have summarized the potential interview questions along with core keywords for each subject. Key learning contents for 4 tracks (AI Foundation &amp; Algorithms, AI+Systems, AI+Human, Computing Basics) have been selected according to the major undergraduate courses in AI Computing.
+        </p>
+        <ul className="text-[15px] mb-6 space-y-2 list-disc list-inside">
+          <li>
+            <span className="font-semibold">Material Link:</span>{" "}
+            <a
+              href="https://docs.google.com/document/d/1syWvfQH5MvD0EotDXR7pe6WLKZHRh_B0/edit?usp=sharing&ouid=100599109054626516715&rtpof=true&sd=true"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-600 hover:text-blue-800 underline font-medium"
+            >
+              View Study Materials (Click Here)
+            </a>
+          </li>
+        </ul>
+      </div>
+    ),
+  },
+  {
     id: "grad-session-2026",
     date: "2026.06.08",
     category: "행사",
@@ -140,8 +194,10 @@ const notices: Notice[] = [
 const categoryColors: Record<string, string> = {
   채용: "bg-blue-50 text-blue-700 border-blue-200",
   행사: "bg-green-50 text-green-700 border-green-200",
+  안내: "bg-purple-50 text-purple-700 border-purple-200",
   Recruitment: "bg-blue-50 text-blue-700 border-blue-200",
   Event: "bg-green-50 text-green-700 border-green-200",
+  Notice: "bg-purple-50 text-purple-700 border-purple-200",
 };
 
 const NoticePage: React.FC = () => {
@@ -193,11 +249,10 @@ const NoticePage: React.FC = () => {
 
           <div className="flex items-center gap-3 mb-4">
             <span
-              className={`text-xs font-semibold px-3 py-1 rounded-full border ${
-                categoryColors[
-                  lang === "ko" ? notice.category : notice.categoryEn
+              className={`text-xs font-semibold px-3 py-1 rounded-full border ${categoryColors[
+                lang === "ko" ? notice.category : notice.categoryEn
                 ] ?? "bg-slate-100 text-slate-600 border-slate-200"
-              }`}
+                }`}
             >
               {lang === "ko" ? notice.category : notice.categoryEn}
             </span>
@@ -246,11 +301,10 @@ const NoticePage: React.FC = () => {
                 </span>
                 <span className="w-32 shrink-0 flex items-center">
                   <span
-                    className={`text-xs font-semibold px-2.5 py-1 rounded-full border ${
-                      categoryColors[
-                        lang === "ko" ? n.category : n.categoryEn
+                    className={`text-xs font-semibold px-2.5 py-1 rounded-full border ${categoryColors[
+                      lang === "ko" ? n.category : n.categoryEn
                       ] ?? "bg-slate-100 text-slate-600 border-slate-200"
-                    }`}
+                      }`}
                   >
                     {lang === "ko" ? n.category : n.categoryEn}
                   </span>
