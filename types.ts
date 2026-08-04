@@ -10,11 +10,41 @@ export type Page =
   | "education-reqs"
   | "notice";
 
-export interface ReqSection {
+export interface ReqItem {
+  text: string;
+  note?: boolean;
+}
+
+export interface ReqGroup {
   title: string;
-  subtitle?: string;
   credits?: string;
+  items: ReqItem[];
+}
+
+export interface ReqSection {
+  label: string;
+  title: string;
+  credits?: string;
+  items?: ReqItem[];
+  groups?: ReqGroup[];
+}
+
+export interface ReqTable {
+  headers: string[];
+  rows: string[][];
+}
+
+export interface ReqTransitional {
+  title: string;
   items: string[];
+  table?: ReqTable;
+}
+
+export interface ReqDoc {
+  title: string;
+  subtitle: string;
+  sections: ReqSection[];
+  transitional: ReqTransitional;
 }
 
 export interface EducationTranslation {
@@ -26,13 +56,11 @@ export interface EducationTranslation {
   reqNotice: string;
   ugSubtitle: string;
   gradSubtitle: string;
-  ug: {
-    sections: ReqSection[];
-  };
+  ug: ReqDoc;
   grad: {
-    master: ReqSection[];
-    phd: ReqSection[];
-    integrated: ReqSection[];
+    master: ReqDoc;
+    phd: ReqDoc;
+    integrated: ReqDoc;
   };
 }
 

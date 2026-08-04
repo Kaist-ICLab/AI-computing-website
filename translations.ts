@@ -201,117 +201,331 @@ export const translations: Record<"ko" | "en", TranslationContent> = {
       ugSubtitle: "2025학년도 이후 입학생 전공 이수요건",
       gradSubtitle: "2026학년도 이후 입학생 이수요건",
       ug: {
+        title: "AI컴퓨팅학과 - 학부",
+        subtitle: "(2025학년도 이후 입학생 기준)",
         sections: [
           {
+            label: "가.",
             title: "졸업이수학점",
-            credits: "총 138학점 이상",
+            credits: "총 138학점 이상 이수",
             items: [
-              "전공 이외에 심화전공, 부전공, 복수전공, 자유융합전공, 지정융합전공 및 특별지정전공 중에서 반드시 한 가지 이상 선택하여 이수",
+              {
+                text: "전공 이외에 심화전공, 부전공, 복수전공, 자유융합전공, 지정융합전공 및 특별지정전공 중에서 반드시 한 가지 이상 선택하여 이수",
+                note: true,
+              },
             ],
           },
           {
-            title: "기초선택 이수요건",
+            label: "나.",
+            title: "기초선택",
+            credits: "9학점 이상 이수",
             items: [
-              "기초선택 교과목으로 MAS.10009 선형대수학개론을 반드시 포함하여야 함",
-              "복수전공 이수자는 선형대수학개론을 반드시 포함하여 3학점 이상 이수하여야 함",
+              { text: "MAS.10009 선형대수학개론을 반드시 포함하여 9학점 이상 이수" },
+              {
+                text: "MAS.10009 선형대수학개론은 MAS.10011 데이터과학을 위한 선형대수학으로 대체가능",
+              },
+              {
+                text: "복수전공 이수자는 선형대수학개론(MAS.10009)을 반드시 포함하여 3학점 이상 이수",
+                note: true,
+              },
             ],
           },
           {
-            title: "전공 (44학점 이상)",
-            items: [
-              "전공필수(12학점): FX.20001 AI 시대의 법·윤리·철학, AIC.20101 인공지능 개론, AIC.20102 기계학습 개론, AIC.20103 딥러닝 개론",
-              "전공선택(32학점): 전산학부 전공과목(CS 코드)을 12학점까지 인정, 개별연구는 4학점까지 인정(URP.91100 포함), 공과대학 개설 전공선택(CoE 코드)을 6학점까지 인정",
+            label: "다.",
+            title: "전공",
+            credits: "44학점 이상 이수",
+            groups: [
+              {
+                title: "전공필수",
+                credits: "9학점",
+                items: [
+                  { text: "FX.20001 AI 철학: 윤리와 법" },
+                  { text: "AIC.20000 AI 컴퓨팅개론" },
+                  {
+                    text: "다음 과목 중 한 개를 선택하여 이수: AIC.20100 기계학습, AIC.20101 딥러닝 개론, CS.30703 인공지능 개론",
+                  },
+                  {
+                    text: "AIC.20100 기계학습과 AIC.20101 딥러닝 개론의 경우, 본 학과의 전공필수요건을 충족하기 위해서는 AIC 코드의 과목을 수강해야 함(CS 코드로 수강 시 인정하지 않음)",
+                    note: true,
+                  },
+                  {
+                    text: "전공필수 과목 중 9학점 초과 이수 시, 초과된 학점은 전공선택 학점으로 인정",
+                    note: true,
+                  },
+                ],
+              },
+              {
+                title: "전공선택",
+                credits: "35학점 이상",
+                items: [
+                  { text: "전산학부 전공과목(CS 코드)을 12학점까지 전공선택으로 인정" },
+                  { text: "개별연구는 4학점까지만 전공선택으로 인정" },
+                  { text: "타 학과 개별연구와 URP.91100를 모두 인정", note: true },
+                ],
+              },
             ],
           },
           {
-            title: "연구 및 경과조치",
+            label: "라.",
+            title: "그 외 전공",
+            groups: [
+              {
+                title: "심화전공",
+                credits: "총 12학점 이상 이수",
+                items: [
+                  {
+                    text: "2단위를 제외한 본 학과 전공선택(AIC 코드)에서 12학점 이상 이수",
+                  },
+                ],
+              },
+              {
+                title: "부전공",
+                credits: "총 21학점 이상 이수",
+                items: [
+                  {
+                    text: "전공필수 교과목 9학점을 포함하여 본 학과 전공과목 21학점(AIC 코드) 이상 이수",
+                  },
+                  {
+                    text: "AI 대학 내 두 학과에서 주전공 및 부전공을 하는 경우, 부전공 학과에서는 전공필수 이수요건 중 'FX.20001 AI철학: 윤리와 법'을 전공선택 교과목 3학점 이수로 대신함",
+                  },
+                  { text: "타 학사조직 전공과목과의 중복 인정 불가", note: true },
+                ],
+              },
+              {
+                title: "복수전공",
+                credits: "총 40학점 이상 이수",
+                items: [
+                  { text: "전공필수 9학점을 포함하여 본 학과 전공과목 40학점 이상 이수" },
+                  {
+                    text: "AI 대학 내 두 학과에서 주전공 및 복수전공을 하는 경우, 복수전공 학과에서는 전공필수 이수 요건 중 'FX.20001 AI철학: 윤리와 법'을 전공선택 교과목 3학점 이수로 대신함",
+                  },
+                  {
+                    text: "전산학부 전공과목(CS 코드)을 10학점까지 전공선택으로 인정(중복 인정 과목 포함)",
+                  },
+                  {
+                    text: "전산학부의 다음 교과목에 한해 최대 6학점까지 중복 인정 가능: CS.20004 이산구조, CS.20006 데이터구조, CS.30000 알고리즘 개론, CS.30300 운영체제 및 실험, CS.30101 전산기조직",
+                    note: true,
+                  },
+                ],
+              },
+              {
+                title: "자유융합전공",
+                credits: "총 12학점 이상 이수",
+                items: [
+                  {
+                    text: "소속 학과를 제외하고 2개 이상 학사조직의 전공교과목 중 12학점 이상 이수",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            label: "마.",
+            title: "연구",
+            credits: "총 3학점 이상 이수",
             items: [
-              "졸업연구 3학점을 포함하여 3학점 이상 이수 (복수전공 이수자는 연구과목 이수 면제)",
-              "본 이수요건은 2025학년도 입학생부터 적용. 단, 2024학년도 이전 입학생이 전과 등으로 적용받는 경우 본 요건을 따를 수 있음",
+              { text: "졸업연구 3학점을 포함하여 이수" },
+              { text: "복수전공 이수자는 연구과목 이수를 면제함", note: true },
             ],
           },
         ],
+        transitional: {
+          title: "경과조치",
+          items: [
+            "가. 본 이수요건은 2025학년도 입학생부터 적용한다. 단, 2024학년도 이전 입학생이 전과, 심화전공, 부전공, 복수전공 및 특별지정전공 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
+            "나. 단, 2026학년도 봄학기 혹은 이전에 아래 과목을 이수한 경우에 한하여 다음과 같이 인정한다. 아래 전공필수 교과목은 최대 3학점까지 전공필수로 인정하며, 이를 초과하는 학점은 전공선택으로 인정한다. 전공선택은 전공선택 교과목과 전공필수 초과 인정학점을 합산하여 최대 12학점까지 인정한다.",
+          ],
+          table: {
+            headers: ["AIC 인정 과목구분", "교과목코드", "교과목명"],
+            rows: [
+              ["전공선택", "CS.20300", "시스템프로그래밍"],
+              ["전공필수", "CS.30701", "딥러닝 개론"],
+              ["전공필수", "CS.40700", "인공지능개론"],
+              ["전공선택", "CS.30704", "인간-컴퓨터 상호작용 개론"],
+              ["전공선택", "CS.40804", "컴퓨터 비전 개론"],
+              ["전공필수", "CS.30706", "기계학습"],
+              ["전공선택", "CS.30707", "강화학습 개론"],
+              ["전공선택", "CS.40701", "그래프 기계학습 및 마이닝"],
+              ["전공선택", "CS.40703", "소셜 컴퓨팅 개론"],
+              ["전공선택", "CS.40705", "자연언어처리를 위한 기계학습"],
+              ["전공선택", "CS.40709", "3차원 데이터를 위한 기계학습"],
+              ["전공선택", "CS.40805", "컴퓨터비전을 위한 기계학습"],
+              ["전공선택", "CS.40806", "웨어러블 사용자 인터페이스"],
+              ["선택(석/박사)", "CS.50605", "사물인터넷 데이터 사이언스"],
+              ["선택(석/박사)", "CS.50804", "인간과 컴퓨터 상호작용"],
+              ["선택(석/박사)", "CS.50705", "인공지능 윤리"],
+            ],
+          },
+        },
       },
       grad: {
-        master: [
-          { title: "졸업이수학점", credits: "총 33학점 이상", items: [] },
-          {
-            title: "공통필수 (3학점)",
-            items: [
-              "CC 5단위 과목 중 택1 (CC.50010 전산응용개론 제외)",
-              "CC.50001 리더십강좌 (2002년 입학생부터 반드시 이수)",
-              "CC.00020 윤리 및 안전 I",
-            ],
-          },
-          { title: "전공필수", items: ["없음"] },
-          {
-            title: "전공선택 (18학점 이상)",
-            items: [
-              "AIC/CS/IS 5단위 이상 교과목 12학점 이상 필수",
-              "타 학과 5단위 이상 및 상호인정 교과목은 6학점 이내 인정",
-              "※ 공통필수, 자유선택 과목은 선택과목으로 인정하지 않음",
-            ],
-          },
-          {
-            title: "연구 (6학점 이상)",
-            items: ["논문연구 4학점 이상", "세미나(AIC.93100) 2학점 필수"],
-          },
-          {
+        master: {
+          title: "AI컴퓨팅학과 - 석사",
+          subtitle: "(2026학년도 이후 입학생 기준)",
+          sections: [
+            { label: "가.", title: "졸업이수학점", credits: "총 33학점 이상", items: [] },
+            {
+              label: "나.",
+              title: "공통필수",
+              credits: "3학점 이상",
+              items: [
+                {
+                  text: "학교에서 지정한 공통필수(CC) 과목 중 택1 하여 이수(단, CC.50010 전산응용개론은 제외함)",
+                },
+                { text: "CC.50001 리더십강좌 이수(무학점)" },
+                { text: "CC.50002 윤리 및 안전 I 이수(무학점)" },
+              ],
+            },
+            { label: "다.", title: "전공필수", items: [{ text: "없음" }] },
+            {
+              label: "라.",
+              title: "선택",
+              credits: "18학점 이상",
+              items: [
+                {
+                  text: "본 학과(AIC 코드), 전산학부(CS 코드), 정보보호대학원(IS 코드)에서 개설하는 5단위 이상 전공과목을 12학점 이상 반드시 이수",
+                },
+                {
+                  text: "본 학과 및 타 학과 4단위 학사·대학원 상호인정 교과목과 타 학과 5단위 이상 교과목은 6학점 이내로 인정",
+                },
+                {
+                  text: "공통필수, 자유선택 과목은 선택과목으로 인정하지 않음",
+                  note: true,
+                },
+              ],
+            },
+            {
+              label: "마.",
+              title: "연구",
+              credits: "6학점 이상",
+              items: [
+                { text: "논문연구 4학점 이상 이수" },
+                {
+                  text: "세미나는 2학점을 반드시 이수하되, AI대학에서 개설한 세미나 과목으로 대체 이수 가능",
+                },
+              ],
+            },
+          ],
+          transitional: {
             title: "경과조치",
             items: [
-              "2026학년도 입학생부터 적용. 2025학년도 이전 입학생이 전과 시 본 요건 적용 가능",
+              "본 이수요건은 2026학년도 가을학기 입학생부터 적용한다. 단, 2026학년도 봄학기 이전 석사과정 입학생이 전과 등의 적용을 받는 경우, 본 이수요건을 따를 수 있다.",
             ],
           },
-        ],
-        phd: [
-          { title: "졸업이수학점", credits: "총 60학점 이상", items: [] },
-          {
-            title: "공통필수 (3학점)",
+        },
+        phd: {
+          title: "AI컴퓨팅학과 - 박사",
+          subtitle: "(2026학년도 이후 입학생 기준)",
+          sections: [
+            { label: "가.", title: "졸업이수학점", credits: "총 60학점 이상", items: [] },
+            {
+              label: "나.",
+              title: "공통필수",
+              credits: "3학점 이상",
+              items: [
+                {
+                  text: "학교에서 지정한 공통필수(CC) 과목 중 택1 하여 이수(단, CC.50010 전산응용개론은 제외함)",
+                },
+                { text: "CC.50002 윤리 및 안전 I 이수(무학점)" },
+              ],
+            },
+            { label: "다.", title: "전공필수", items: [{ text: "없음" }] },
+            {
+              label: "라.",
+              title: "선택",
+              credits: "27학점 이상",
+              items: [
+                {
+                  text: "본 학과(AIC 코드), 전산학부(CS 코드), 정보보호대학원(IS 코드)에서 개설하는 5단위 이상 전공과목을 12학점 이상 반드시 이수",
+                },
+                {
+                  text: "본 학과 및 타 학과 4단위 학사·대학원 상호인정 교과목과 타 학과 5단위 이상 교과목은 6학점 이내로 인정",
+                },
+                {
+                  text: "공통필수, 자유선택 과목은 선택과목으로 인정하지 않음",
+                  note: true,
+                },
+                {
+                  text: "석사과정에서 이수한 교과학점은 박사과정 이수학점으로 누적 가산됨",
+                  note: true,
+                },
+              ],
+            },
+            {
+              label: "마.",
+              title: "연구",
+              credits: "30학점 이상",
+              items: [
+                {
+                  text: "세미나는 2학점을 반드시 이수하되, AI대학에서 개설한 세미나 과목으로 대체 이수 가능",
+                },
+              ],
+            },
+          ],
+          transitional: {
+            title: "경과조치",
             items: [
-              "CC 5단위 과목 중 택1 (CC.50010 전산응용개론 제외)",
-              "CC.50001 리더십강좌 (2002년 입학생부터 반드시 이수)",
-              "CC.00020 윤리 및 안전 I",
+              "본 이수요건은 2026학년도 가을학기 입학생부터 적용한다. 단, 2026학년도 봄학기 이전 박사과정 입학생이 전과 등의 적용을 받는 경우, 본 이수요건을 따를 수 있다.",
             ],
           },
-          {
-            title: "전공선택 (27학점 이상)",
+        },
+        integrated: {
+          title: "AI컴퓨팅학과 - 석박사통합",
+          subtitle: "(2026학년도 이후 입학생 기준)",
+          sections: [
+            { label: "가.", title: "졸업이수학점", credits: "총 60학점 이상", items: [] },
+            {
+              label: "나.",
+              title: "공통필수",
+              credits: "3학점 이상",
+              items: [
+                {
+                  text: "학교에서 지정한 공통필수(CC) 과목 중 택1 하여 이수(단, CC.50010 전산응용개론은 제외함)",
+                },
+                { text: "CC.50001 리더십강좌 이수(무학점)" },
+                { text: "CC.50002 윤리 및 안전 I 이수(무학점)" },
+              ],
+            },
+            { label: "다.", title: "전공필수", items: [{ text: "없음" }] },
+            {
+              label: "라.",
+              title: "선택",
+              credits: "27학점 이상",
+              items: [
+                {
+                  text: "본 학과(AIC 코드), 전산학부(CS 코드), 정보보호대학원(IS 코드)에서 개설하는 5단위 이상 전공과목을 12학점 이상 반드시 이수",
+                },
+                {
+                  text: "본 학과 및 타 학과 4단위 학사·대학원 상호인정 교과목과 타 학과 5단위 이상 교과목은 6학점 이내로 인정",
+                },
+                {
+                  text: "공통필수, 자유선택 과목은 선택과목으로 인정하지 않음",
+                  note: true,
+                },
+              ],
+            },
+            {
+              label: "마.",
+              title: "연구",
+              credits: "30학점 이상",
+              items: [
+                {
+                  text: "세미나는 4학점을 반드시 이수하되, AI대학에서 개설한 세미나 과목으로 대체 이수 가능",
+                },
+                {
+                  text: "석사과정에서 이수한 교과학점 및 연구학점(세미나 과목은 2학점 이내)은 누적 가산됨",
+                  note: true,
+                },
+              ],
+            },
+          ],
+          transitional: {
+            title: "경과조치",
             items: [
-              "AIC/CS/IS 5단위 이상 교과목 18학점 이상 필수",
-              "타 학과 5단위 이상 및 상호인정 교과목은 9학점 이내 인정",
+              "본 이수요건은 2026학년도 가을학기 입학생부터 적용한다. 단, 2026학년도 봄학기 이전 석사박사통합과정 입학생이 전과 등의 적용을 받는 경우, 본 이수요건을 따를 수 있다.",
             ],
           },
-          {
-            title: "연구 (30학점 이상)",
-            items: [
-              "세미나(AIC.93100, AIC.93200) 4학점 필수",
-              "※ 석사과정에서 이수한 교과목 및 세미나(2학점 이내)는 박사과정 이수학점으로 누적 가산 가능",
-            ],
-          },
-          { title: "경과조치", items: ["2026학년도 입학생부터 적용"] },
-        ],
-        integrated: [
-          { title: "졸업이수학점", credits: "총 60학점 이상", items: [] },
-          {
-            title: "공통필수 (3학점)",
-            items: [
-              "CC 5단위 과목 중 택1 (CC.50010 전산응용개론 제외)",
-              "CC.50001 리더십강좌 (2002년 입학생부터 반드시 이수)",
-              "CC.00020 윤리 및 안전 I",
-            ],
-          },
-          {
-            title: "전공선택 (27학점 이상)",
-            items: [
-              "AIC/CS/IS 5단위 이상 교과목 18학점 이상 필수",
-              "타 학과 5단위 이상 및 상호인정 교과목은 9학점 이내 인정",
-            ],
-          },
-          {
-            title: "연구 (30학점 이상)",
-            items: ["세미나(AIC.93100, AIC.93200) 4학점 필수"],
-          },
-          { title: "경과조치", items: ["2026학년도 입학생부터 적용"] },
-        ],
+        },
       },
     },
     common: {
@@ -522,138 +736,409 @@ export const translations: Record<"ko" | "en", TranslationContent> = {
       ugSubtitle: "Major Course Requirements for Admitted in 2025 and after",
       gradSubtitle: "Completion Requirements for Admitted in 2026 and after",
       ug: {
+        title: "AI Computing - Undergraduate",
+        subtitle: "(For students admitted in 2025 or later)",
         sections: [
           {
-            title: "Credit Requirement for Graduation",
-            credits: "138+ Credits",
+            label: "A.",
+            title: "Credits Required for Graduation",
+            credits: "138+ credits",
             items: [
-              "Required to choose and complete one among Advanced Major, Double Major, Minor, Individually Designed Major, etc.",
+              {
+                text: "In addition to the major, students must select and complete at least one of: Advanced Major, Minor, Double Major, Individually Designed Major, Designated Convergence Major, or Special Designated Major",
+                note: true,
+              },
             ],
           },
           {
-            title: "Elective Basic Courses",
+            label: "B.",
+            title: "Basic Electives",
+            credits: "9+ credits",
             items: [
-              "Introduction to Linear Algebra (MAS.10009) must be included as a Basic Elective course",
-              "Double major students must complete at least 3 credits including Introduction to Linear Algebra (MAS.10009)",
+              {
+                text: "Must complete 9 or more credits, including MAS.10009 Introduction to Linear Algebra",
+              },
+              {
+                text: "MAS.10009 Introduction to Linear Algebra may be substituted with MAS.10011 Linear Algebra for Data Science",
+              },
+              {
+                text: "Double Major students must complete at least 3 credits, including Introduction to Linear Algebra (MAS.10009)",
+                note: true,
+              },
             ],
           },
           {
-            title: "Major Requirement (44+ Credits)",
-            items: [
-              "Mandatory (12 Credits): FX.20001 (Law/Ethics/Philosophy), AIC.20101 (Intro to AI), AIC.20102 (Machine Learning), AIC.20103 (Deep Learning)",
-              "Electives (32 Credits): Up to 12 credits from Computer Science major courses (CS code) recognized, up to 4 from Individual study, up to 6 from CoE code recognized",
+            label: "C.",
+            title: "Major",
+            credits: "44+ credits",
+            groups: [
+              {
+                title: "Required Major Courses",
+                credits: "9 credits",
+                items: [
+                  { text: "FX.20001 AI Philosophy: Ethics and Law" },
+                  { text: "AIC.20000 Introduction to AI Computing" },
+                  {
+                    text: "Select and complete one of the following: AIC.20100 Machine Learning, AIC.20101 Introduction to Deep Learning, CS.30703 Introduction to Artificial Intelligence",
+                  },
+                  {
+                    text: "For AIC.20100 Machine Learning and AIC.20101 Introduction to Deep Learning, the AIC-coded course must be taken to satisfy the department's required major course requirement (courses taken under the CS code are not recognized)",
+                    note: true,
+                  },
+                  {
+                    text: "Credits earned in excess of 9 credits among required major courses are recognized as major elective credits",
+                    note: true,
+                  },
+                ],
+              },
+              {
+                title: "Major Electives",
+                credits: "35+ credits",
+                items: [
+                  {
+                    text: "Up to 12 credits of Computer Science major courses (CS code) are recognized as major electives",
+                  },
+                  {
+                    text: "Individual Study courses are recognized as major electives up to 4 credits",
+                  },
+                  {
+                    text: "Individual Study courses from other departments and URP.91100 are both recognized",
+                    note: true,
+                  },
+                ],
+              },
             ],
           },
           {
-            title: "Research & Traditional Measures",
+            label: "D.",
+            title: "Other Majors",
+            groups: [
+              {
+                title: "Advanced Major",
+                credits: "12+ credits",
+                items: [
+                  {
+                    text: "Complete 12 or more credits from the department's major electives (AIC code), excluding 2-unit courses",
+                  },
+                ],
+              },
+              {
+                title: "Minor",
+                credits: "21+ credits",
+                items: [
+                  {
+                    text: "Complete 21 or more credits of the department's major courses (AIC code), including the 9 credits of required major courses",
+                  },
+                  {
+                    text: "For students pursuing a primary major and a minor in two departments within the College of AI, the minor department substitutes 'FX.20001 AI Philosophy: Ethics and Law' in the required major course requirement with 3 credits of a major elective course",
+                  },
+                  {
+                    text: "Overlapping recognition with major courses from other academic units is not allowed",
+                    note: true,
+                  },
+                ],
+              },
+              {
+                title: "Double Major",
+                credits: "40+ credits",
+                items: [
+                  {
+                    text: "Complete 40 or more credits of the department's major courses, including the 9 credits of required major courses",
+                  },
+                  {
+                    text: "For students pursuing a primary major and a double major in two departments within the College of AI, the double-major department substitutes 'FX.20001 AI Philosophy: Ethics and Law' in the required major course requirement with 3 credits of a major elective course",
+                  },
+                  {
+                    text: "Up to 10 credits of Computer Science major courses (CS code) are recognized as major electives (including cross-recognized courses)",
+                  },
+                  {
+                    text: "Up to 6 credits may be cross-recognized from the following Computer Science courses only: CS.20004 Discrete Structures, CS.20006 Data Structures, CS.30000 Introduction to Algorithms, CS.30300 Operating Systems and Lab, CS.30101 Computer Architecture",
+                    note: true,
+                  },
+                ],
+              },
+              {
+                title: "Individually Designed Major",
+                credits: "12+ credits",
+                items: [
+                  {
+                    text: "Complete 12 or more credits of major courses from two or more academic units, excluding the student's home department",
+                  },
+                ],
+              },
+            ],
+          },
+          {
+            label: "E.",
+            title: "Research",
+            credits: "3+ credits",
             items: [
-              "Research (3+ credits): Including 3 credits for B.S. Thesis (Exempt for Double Major)",
-              "Apply to all students admitted in 2025 and thereafter",
+              {
+                text: "Complete 3 or more credits, including 3 credits of Undergraduate Thesis Research",
+              },
+              {
+                text: "Double Major students are exempt from the research course requirement",
+                note: true,
+              },
             ],
           },
         ],
+        transitional: {
+          title: "Transitional Measures",
+          items: [
+            "1. These requirements apply to students admitted in 2025 and thereafter. However, students admitted before 2024 who are subject to a change of major, Advanced Major, Minor, Double Major, or Special Designated Major may follow these requirements.",
+            "2. For courses completed in or before the Spring 2026 semester, credits are recognized as follows: the required major courses listed below are recognized as required-major credits up to a maximum of 3 credits, with any credits in excess recognized as major elective credits. Major elective credits are recognized up to a maximum of 12 credits, combining major elective courses and excess required-major credits.",
+          ],
+          table: {
+            headers: ["AIC Recognition", "Course Code", "Course Title"],
+            rows: [
+              ["Major Elective", "CS.20300", "System Programming"],
+              ["Required Major", "CS.30701", "Introduction to Deep Learning"],
+              [
+                "Required Major",
+                "CS.40700",
+                "Introduction to Artificial Intelligence",
+              ],
+              [
+                "Major Elective",
+                "CS.30704",
+                "Introduction to Human-Computer Interaction",
+              ],
+              ["Major Elective", "CS.40804", "Introduction to Computer Vision"],
+              ["Required Major", "CS.30706", "Machine Learning"],
+              [
+                "Major Elective",
+                "CS.30707",
+                "Introduction to Reinforcement Learning",
+              ],
+              [
+                "Major Elective",
+                "CS.40701",
+                "Graph Machine Learning and Mining",
+              ],
+              ["Major Elective", "CS.40703", "Introduction to Social Computing"],
+              [
+                "Major Elective",
+                "CS.40705",
+                "Machine Learning for Natural Language Processing",
+              ],
+              ["Major Elective", "CS.40709", "Machine Learning for 3D Data"],
+              [
+                "Major Elective",
+                "CS.40805",
+                "Machine Learning for Computer Vision",
+              ],
+              ["Major Elective", "CS.40806", "Wearable User Interfaces"],
+              [
+                "Elective (MS/PhD)",
+                "CS.50605",
+                "Data Science for the Internet of Things",
+              ],
+              [
+                "Elective (MS/PhD)",
+                "CS.50804",
+                "Human and Computer Interaction",
+              ],
+              ["Elective (MS/PhD)", "CS.50705", "AI Ethics"],
+            ],
+          },
+        },
       },
       grad: {
-        master: [
-          {
-            title: "Credit Requirement for Graduation",
-            credits: "33+ Credits",
-            items: [],
-          },
-          {
-            title: "Mandatory General Courses (3 Credits)",
-            items: [
-              "Select 1 from CC 500-level (CC.50010 excluded)",
-              "CC.50001 Leadership (mandatory for students entering in 2002+)",
-              "CC.00020 Ethics & Safety I",
-            ],
-          },
-          { title: "Mandatory Major Courses", items: ["None"] },
-          {
-            title: "Elective Courses (18+ Credits)",
-            items: [
-              "At least 12 credits in AIC/CS/IS 500-level or higher courses",
-              "Courses from other depts with 500+ level counted up to 6 credits",
-              "* Mandatory general and free elective courses are not counted",
-            ],
-          },
-          {
-            title: "Research Courses (6+ Credits)",
-            items: [
-              "At least 4 credits from Thesis Research",
-              "2 credits from seminar courses (AIC.93100) are required",
-            ],
-          },
-          {
+        master: {
+          title: "AI Computing - Master's",
+          subtitle: "(For students admitted in 2026 or later)",
+          sections: [
+            {
+              label: "A.",
+              title: "Credits Required for Graduation",
+              credits: "33+ credits",
+              items: [],
+            },
+            {
+              label: "B.",
+              title: "Mandatory General Courses",
+              credits: "3+ credits",
+              items: [
+                {
+                  text: "Select and complete 1 course among the university-designated Mandatory General (CC) courses (CC.50010 excluded)",
+                },
+                { text: "Complete CC.50001 Leadership (non-credit)" },
+                { text: "Complete CC.50002 Ethics and Safety I (non-credit)" },
+              ],
+            },
+            {
+              label: "C.",
+              title: "Required Major Courses",
+              items: [{ text: "None" }],
+            },
+            {
+              label: "D.",
+              title: "Electives",
+              credits: "18+ credits",
+              items: [
+                {
+                  text: "Must complete at least 12 credits of 500-level or higher major courses offered by the department (AIC code), School of Computing (CS code), or Graduate School of Information Security (IS code)",
+                },
+                {
+                  text: "Up to 6 credits are recognized from 400-level bachelor's/graduate mutually-recognized courses of this and other departments and 500-level or higher courses of other departments",
+                },
+                {
+                  text: "Mandatory General and Free Elective courses are not recognized as elective courses",
+                  note: true,
+                },
+              ],
+            },
+            {
+              label: "E.",
+              title: "Research",
+              credits: "6+ credits",
+              items: [
+                { text: "Complete 4 or more credits of Thesis Research" },
+                {
+                  text: "Must complete 2 credits of Seminar, which may be substituted with a seminar course offered by the College of AI",
+                },
+              ],
+            },
+          ],
+          transitional: {
             title: "Transitional Measures",
-            items: ["Apply to students admitted in 2026 and thereafter"],
-          },
-        ],
-        phd: [
-          {
-            title: "Credit Requirement for Graduation",
-            credits: "60+ Credits",
-            items: [],
-          },
-          {
-            title: "Mandatory General Courses (3 Credits)",
             items: [
-              "Select 1 from CC 500-level (CC.50010 excluded)",
-              "CC.50001 Leadership (mandatory for students entering in 2002+)",
-              "CC.00020 Ethics & Safety I",
+              "These requirements apply to students admitted in Fall 2026 and thereafter. However, master's students admitted before Spring 2026 who are subject to a change of major may follow these requirements.",
             ],
           },
-          {
-            title: "Elective Courses (27+ Credits)",
-            items: [
-              "At least 18 credits in AIC/CS/IS 500-level or higher courses",
-              "Courses from other depts with 500+ level counted up to 9 credits",
-            ],
-          },
-          {
-            title: "Research Courses (30+ Credits)",
-            items: [
-              "4 credits from seminar courses (AIC.93100, AIC.93200) are required",
-              "* Credits earned in Master's program (up to 2 credits) can be accumulated",
-            ],
-          },
-          {
+        },
+        phd: {
+          title: "AI Computing - Doctoral",
+          subtitle: "(For students admitted in 2026 or later)",
+          sections: [
+            {
+              label: "A.",
+              title: "Credits Required for Graduation",
+              credits: "60+ credits",
+              items: [],
+            },
+            {
+              label: "B.",
+              title: "Mandatory General Courses",
+              credits: "3+ credits",
+              items: [
+                {
+                  text: "Select and complete 1 course among the university-designated Mandatory General (CC) courses (CC.50010 excluded)",
+                },
+                { text: "Complete CC.50002 Ethics and Safety I (non-credit)" },
+              ],
+            },
+            {
+              label: "C.",
+              title: "Required Major Courses",
+              items: [{ text: "None" }],
+            },
+            {
+              label: "D.",
+              title: "Electives",
+              credits: "27+ credits",
+              items: [
+                {
+                  text: "Must complete at least 12 credits of 500-level or higher major courses offered by the department (AIC code), School of Computing (CS code), or Graduate School of Information Security (IS code)",
+                },
+                {
+                  text: "Up to 6 credits are recognized from 400-level bachelor's/graduate mutually-recognized courses of this and other departments and 500-level or higher courses of other departments",
+                },
+                {
+                  text: "Mandatory General and Free Elective courses are not recognized as elective courses",
+                  note: true,
+                },
+                {
+                  text: "Course credits completed during the master's program are cumulatively added to the doctoral program's completed credits",
+                  note: true,
+                },
+              ],
+            },
+            {
+              label: "E.",
+              title: "Research",
+              credits: "30+ credits",
+              items: [
+                {
+                  text: "Must complete 2 credits of Seminar, which may be substituted with a seminar course offered by the College of AI",
+                },
+              ],
+            },
+          ],
+          transitional: {
             title: "Transitional Measures",
-            items: ["Apply to students admitted in 2026 and thereafter"],
-          },
-        ],
-        integrated: [
-          {
-            title: "Credit Requirement for Graduation",
-            credits: "60+ Credits",
-            items: [],
-          },
-          {
-            title: "Mandatory General Courses (3 Credits)",
             items: [
-              "Select 1 from CC 500-level (CC.50010 excluded)",
-              "CC.50001 Leadership (mandatory for students entering in 2002+)",
-              "CC.00020 Ethics & Safety I",
+              "These requirements apply to students admitted in Fall 2026 and thereafter. However, doctoral students admitted before Spring 2026 who are subject to a change of major may follow these requirements.",
             ],
           },
-          {
-            title: "Elective Courses (27+ Credits)",
-            items: [
-              "At least 18 credits in AIC/CS/IS 500-level or higher courses",
-              "Courses from other depts with 500+ level counted up to 9 credits",
-            ],
-          },
-          {
-            title: "Research Courses (30+ Credits)",
-            items: [
-              "4 credits from seminar courses (AIC.93100, AIC.93200) are required",
-            ],
-          },
-          {
+        },
+        integrated: {
+          title: "AI Computing - MS-PhD Integrated",
+          subtitle: "(For students admitted in 2026 or later)",
+          sections: [
+            {
+              label: "A.",
+              title: "Credits Required for Graduation",
+              credits: "60+ credits",
+              items: [],
+            },
+            {
+              label: "B.",
+              title: "Mandatory General Courses",
+              credits: "3+ credits",
+              items: [
+                {
+                  text: "Select and complete 1 course among the university-designated Mandatory General (CC) courses (CC.50010 excluded)",
+                },
+                { text: "Complete CC.50001 Leadership (non-credit)" },
+                { text: "Complete CC.50002 Ethics and Safety I (non-credit)" },
+              ],
+            },
+            {
+              label: "C.",
+              title: "Required Major Courses",
+              items: [{ text: "None" }],
+            },
+            {
+              label: "D.",
+              title: "Electives",
+              credits: "27+ credits",
+              items: [
+                {
+                  text: "Must complete at least 12 credits of 500-level or higher major courses offered by the department (AIC code), School of Computing (CS code), or Graduate School of Information Security (IS code)",
+                },
+                {
+                  text: "Up to 6 credits are recognized from 400-level bachelor's/graduate mutually-recognized courses of this and other departments and 500-level or higher courses of other departments",
+                },
+                {
+                  text: "Mandatory General and Free Elective courses are not recognized as elective courses",
+                  note: true,
+                },
+              ],
+            },
+            {
+              label: "E.",
+              title: "Research",
+              credits: "30+ credits",
+              items: [
+                {
+                  text: "Must complete 4 credits of Seminar, which may be substituted with a seminar course offered by the College of AI",
+                },
+                {
+                  text: "Course credits and research credits (up to 2 credits of seminar) completed during the master's program are cumulatively added",
+                  note: true,
+                },
+              ],
+            },
+          ],
+          transitional: {
             title: "Transitional Measures",
-            items: ["Apply to students admitted in 2026 and thereafter"],
+            items: [
+              "These requirements apply to students admitted in Fall 2026 and thereafter. However, combined master's-doctoral students admitted before Spring 2026 who are subject to a change of major may follow these requirements.",
+            ],
           },
-        ],
+        },
       },
     },
     common: {
