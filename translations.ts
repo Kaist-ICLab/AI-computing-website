@@ -207,7 +207,7 @@ export const translations: Record<"ko" | "en", TranslationContent> = {
           {
             label: "가.",
             title: "졸업이수학점",
-            credits: "총 138학점 이상 이수",
+            credits: "총 138학점 이상",
             items: [
               {
                 text: "전공 이외에 심화전공, 부전공, 복수전공, 자유융합전공, 지정융합전공 및 특별지정전공 중에서 반드시 한 가지 이상 선택하여 이수",
@@ -218,7 +218,7 @@ export const translations: Record<"ko" | "en", TranslationContent> = {
           {
             label: "나.",
             title: "기초선택",
-            credits: "9학점 이상 이수",
+            credits: "9학점 이상",
             items: [
               { text: "MAS.10009 선형대수학개론을 반드시 포함하여 9학점 이상 이수" },
               {
@@ -233,7 +233,7 @@ export const translations: Record<"ko" | "en", TranslationContent> = {
           {
             label: "다.",
             title: "전공",
-            credits: "44학점 이상 이수",
+            credits: "44학점 이상",
             groups: [
               {
                 title: "전공필수",
@@ -271,7 +271,7 @@ export const translations: Record<"ko" | "en", TranslationContent> = {
             groups: [
               {
                 title: "심화전공",
-                credits: "총 12학점 이상 이수",
+                credits: "12학점 이상",
                 items: [
                   {
                     text: "2단위를 제외한 본 학과 전공선택(AIC 코드)에서 12학점 이상 이수",
@@ -280,7 +280,7 @@ export const translations: Record<"ko" | "en", TranslationContent> = {
               },
               {
                 title: "부전공",
-                credits: "총 21학점 이상 이수",
+                credits: "21학점 이상",
                 items: [
                   {
                     text: "전공필수 교과목 9학점을 포함하여 본 학과 전공과목 21학점(AIC 코드) 이상 이수",
@@ -293,7 +293,7 @@ export const translations: Record<"ko" | "en", TranslationContent> = {
               },
               {
                 title: "복수전공",
-                credits: "총 40학점 이상 이수",
+                credits: "40학점 이상",
                 items: [
                   { text: "전공필수 9학점을 포함하여 본 학과 전공과목 40학점 이상 이수" },
                   {
@@ -310,7 +310,7 @@ export const translations: Record<"ko" | "en", TranslationContent> = {
               },
               {
                 title: "자유융합전공",
-                credits: "총 12학점 이상 이수",
+                credits: "12학점 이상",
                 items: [
                   {
                     text: "소속 학과를 제외하고 2개 이상 학사조직의 전공교과목 중 12학점 이상 이수",
@@ -322,7 +322,7 @@ export const translations: Record<"ko" | "en", TranslationContent> = {
           {
             label: "마.",
             title: "연구",
-            credits: "총 3학점 이상 이수",
+            credits: "3학점 이상",
             items: [
               { text: "졸업연구 3학점을 포함하여 이수" },
               { text: "복수전공 이수자는 연구과목 이수를 면제함", note: true },
@@ -332,7 +332,7 @@ export const translations: Record<"ko" | "en", TranslationContent> = {
         transitional: {
           title: "경과조치",
           items: [
-            "가. 본 이수요건은 2025학년도 입학생부터 적용한다. 단, 2024학년도 이전 입학생이 전과, 심화전공, 부전공, 복수전공 및 특별지정전공 등의 적용을 받는 경우, 본 이수요건을 따를 수 있음.",
+            "가. 본 이수요건은 2025학년도 입학생부터 적용한다. 단, 2024학년도 이전 입학생이 전과, 심화전공, 부전공, 복수전공 등의 적용을 받는 경우, 본 이수요건을 따를 수 있다.",
             "나. 단, 2026학년도 봄학기 혹은 이전에 아래 과목을 이수한 경우에 한하여 다음과 같이 인정한다. 아래 전공필수 교과목은 최대 3학점까지 전공필수로 인정하며, 이를 초과하는 학점은 전공선택으로 인정한다. 전공선택은 전공선택 교과목과 전공필수 초과 인정학점을 합산하여 최대 12학점까지 인정한다.",
           ],
           table: {
@@ -361,7 +361,7 @@ export const translations: Record<"ko" | "en", TranslationContent> = {
       grad: {
         master: {
           title: "AI컴퓨팅학과 - 석사",
-          subtitle: "(2026학년도 이후 입학생 기준)",
+          subtitle: "(2026학년도 가을학기 이후 입학생 기준)",
           sections: [
             { label: "가.", title: "졸업이수학점", credits: "총 33학점 이상", items: [] },
             {
@@ -415,7 +415,7 @@ export const translations: Record<"ko" | "en", TranslationContent> = {
         },
         phd: {
           title: "AI컴퓨팅학과 - 박사",
-          subtitle: "(2026학년도 이후 입학생 기준)",
+          subtitle: "(2026학년도 가을학기 이후 입학생 기준)",
           sections: [
             { label: "가.", title: "졸업이수학점", credits: "총 60학점 이상", items: [] },
             {
@@ -426,7 +426,7 @@ export const translations: Record<"ko" | "en", TranslationContent> = {
                 {
                   text: "학교에서 지정한 공통필수(CC) 과목 중 택1 하여 이수(단, CC.50010 전산응용개론은 제외함)",
                 },
-                { text: "CC.50002 윤리 및 안전 I 이수(무학점)" },
+                { text: "CC.50002 윤리 및 안전 I 이수 (무학점)" },
               ],
             },
             { label: "다.", title: "전공필수", items: [{ text: "없음" }] },
@@ -471,7 +471,7 @@ export const translations: Record<"ko" | "en", TranslationContent> = {
         },
         integrated: {
           title: "AI컴퓨팅학과 - 석박사통합",
-          subtitle: "(2026학년도 이후 입학생 기준)",
+          subtitle: "(2026학년도 가을학기 이후 입학생 기준)",
           sections: [
             { label: "가.", title: "졸업이수학점", credits: "총 60학점 이상", items: [] },
             {
@@ -482,8 +482,8 @@ export const translations: Record<"ko" | "en", TranslationContent> = {
                 {
                   text: "학교에서 지정한 공통필수(CC) 과목 중 택1 하여 이수(단, CC.50010 전산응용개론은 제외함)",
                 },
-                { text: "CC.50001 리더십강좌 이수(무학점)" },
-                { text: "CC.50002 윤리 및 안전 I 이수(무학점)" },
+                { text: "CC.50001 리더십강좌 이수 (무학점)" },
+                { text: "CC.50002 윤리 및 안전 I 이수 (무학점)" },
               ],
             },
             { label: "다.", title: "전공필수", items: [{ text: "없음" }] },
@@ -886,7 +886,7 @@ export const translations: Record<"ko" | "en", TranslationContent> = {
         transitional: {
           title: "Transitional Measures",
           items: [
-            "1. These requirements apply to students admitted in 2025 and thereafter. However, students admitted before 2024 who are subject to a change of major, Advanced Major, Minor, Double Major, or Special Designated Major may follow these requirements.",
+            "1. These requirements apply to students admitted in 2025 and thereafter. However, students admitted before 2024 who are subject to a change of major, Advanced Major, Minor, or Double Major may follow these requirements.",
             "2. For courses completed in or before the Spring 2026 semester, credits are recognized as follows: the required major courses listed below are recognized as required-major credits up to a maximum of 3 credits, with any credits in excess recognized as major elective credits. Major elective credits are recognized up to a maximum of 12 credits, combining major elective courses and excess required-major credits.",
           ],
           table: {
@@ -947,7 +947,7 @@ export const translations: Record<"ko" | "en", TranslationContent> = {
       grad: {
         master: {
           title: "AI Computing - Master's",
-          subtitle: "(For students admitted in 2026 or later)",
+          subtitle: "(For students admitted in Fall 2026 or later)",
           sections: [
             {
               label: "A.",
@@ -1010,7 +1010,7 @@ export const translations: Record<"ko" | "en", TranslationContent> = {
         },
         phd: {
           title: "AI Computing - Doctoral",
-          subtitle: "(For students admitted in 2026 or later)",
+          subtitle: "(For students admitted in Fall 2026 or later)",
           sections: [
             {
               label: "A.",
@@ -1075,7 +1075,7 @@ export const translations: Record<"ko" | "en", TranslationContent> = {
         },
         integrated: {
           title: "AI Computing - MS-PhD Integrated",
-          subtitle: "(For students admitted in 2026 or later)",
+          subtitle: "(For students admitted in Fall 2026 or later)",
           sections: [
             {
               label: "A.",
